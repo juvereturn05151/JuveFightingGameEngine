@@ -1,0 +1,2521 @@
+fileFormatVersion: 2
+guid: 161acd283dda2324b8a930d059c9c300
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3026321383045497118
+    second: juve_sprite_0
+  - first:
+      213: -971203480632592601
+    second: juve_sprite_1
+  - first:
+      213: 7198437393534451873
+    second: juve_sprite_2
+  - first:
+      213: 892868306097258836
+    second: juve_sprite_3
+  - first:
+      213: 4036497776784951307
+    second: juve_sprite_4
+  - first:
+      213: -6862486224007473315
+    second: juve_sprite_5
+  - first:
+      213: -3211344952289137262
+    second: juve_sprite_6
+  - first:
+      213: -444110840603119365
+    second: juve_sprite_7
+  - first:
+      213: 9057758584577071788
+    second: juve_sprite_8
+  - first:
+      213: -271618522140686545
+    second: juve_sprite_9
+  - first:
+      213: 7582433965348521752
+    second: juve_sprite_10
+  - first:
+      213: 1526338143052626307
+    second: juve_sprite_11
+  - first:
+      213: 6982804545295712137
+    second: juve_sprite_12
+  - first:
+      213: -162772755360589050
+    second: juve_sprite_13
+  - first:
+      213: -6025802488053440867
+    second: juve_sprite_14
+  - first:
+      213: 5045224951150649995
+    second: juve_sprite_15
+  - first:
+      213: -164525913629313598
+    second: juve_sprite_16
+  - first:
+      213: -3245154888086404273
+    second: juve_sprite_17
+  - first:
+      213: 3316768427494156130
+    second: juve_sprite_18
+  - first:
+      213: 1294790919376045937
+    second: juve_sprite_19
+  - first:
+      213: 7731850459849825397
+    second: juve_sprite_20
+  - first:
+      213: -5132811288429980858
+    second: juve_sprite_21
+  - first:
+      213: -4816251269781857411
+    second: juve_sprite_22
+  - first:
+      213: -7827820649059036554
+    second: juve_sprite_23
+  - first:
+      213: -1391032500907329532
+    second: juve_sprite_24
+  - first:
+      213: -8186319495672513012
+    second: juve_sprite_25
+  - first:
+      213: 75706482256594217
+    second: juve_sprite_26
+  - first:
+      213: -421118620865401490
+    second: juve_sprite_27
+  - first:
+      213: 3892837928492344846
+    second: juve_sprite_28
+  - first:
+      213: 5404016070694503052
+    second: juve_sprite_29
+  - first:
+      213: -4217342817154395191
+    second: juve_sprite_30
+  - first:
+      213: -5054912576939099365
+    second: juve_sprite_31
+  - first:
+      213: 8184336392889239999
+    second: juve_sprite_32
+  - first:
+      213: -1446866767215691537
+    second: juve_sprite_33
+  - first:
+      213: 6175147157663913356
+    second: juve_sprite_34
+  - first:
+      213: 2794224458046232416
+    second: juve_sprite_35
+  - first:
+      213: -3089724363651621320
+    second: juve_sprite_36
+  - first:
+      213: 2184352316208483104
+    second: juve_sprite_37
+  - first:
+      213: 6782364360996965140
+    second: juve_sprite_38
+  - first:
+      213: -1306530786165600683
+    second: juve_sprite_39
+  - first:
+      213: -6920075955833448258
+    second: juve_sprite_40
+  - first:
+      213: 6312348693110729950
+    second: juve_sprite_41
+  - first:
+      213: 7587766986592741155
+    second: juve_sprite_42
+  - first:
+      213: 3608251332263868639
+    second: juve_sprite_43
+  - first:
+      213: 3187697774814821363
+    second: juve_sprite_44
+  - first:
+      213: -1887963310039671804
+    second: juve_sprite_45
+  - first:
+      213: -9119362408338713717
+    second: juve_sprite_46
+  - first:
+      213: -190738932706949691
+    second: juve_sprite_47
+  - first:
+      213: -1594014538643070067
+    second: juve_sprite_48
+  - first:
+      213: -6458765022290581620
+    second: juve_sprite_49
+  - first:
+      213: -209015696106600152
+    second: juve_sprite_50
+  - first:
+      213: 2824400277827105165
+    second: juve_sprite_51
+  - first:
+      213: -7965856116189056668
+    second: juve_sprite_52
+  - first:
+      213: 6739026759241170118
+    second: juve_sprite_53
+  - first:
+      213: -1996054281042333399
+    second: juve_sprite_54
+  - first:
+      213: -8683315167539168581
+    second: juve_sprite_55
+  - first:
+      213: 494151669792356940
+    second: juve_sprite_56
+  - first:
+      213: 3376133334667514449
+    second: juve_sprite_57
+  - first:
+      213: -738085715100456681
+    second: juve_sprite_58
+  - first:
+      213: -6318338351564470354
+    second: juve_sprite_59
+  - first:
+      213: -2831115671426782255
+    second: juve_sprite_60
+  - first:
+      213: -7518854761623836988
+    second: juve_sprite_61
+  - first:
+      213: -4643685732505977532
+    second: juve_sprite_62
+  - first:
+      213: -8363953071682108548
+    second: juve_sprite_63
+  - first:
+      213: 1987223714071005509
+    second: juve_sprite_64
+  - first:
+      213: -3268018684626038237
+    second: juve_sprite_65
+  - first:
+      213: 389446474554871371
+    second: juve_sprite_66
+  - first:
+      213: 6032131303219631568
+    second: juve_sprite_67
+  - first:
+      213: 3801376316063475340
+    second: juve_sprite_68
+  - first:
+      213: -5762107449974541158
+    second: juve_sprite_69
+  - first:
+      213: 4012285868169011637
+    second: juve_sprite_70
+  - first:
+      213: 7738089387730444878
+    second: juve_sprite_71
+  - first:
+      213: 1966472685856284119
+    second: juve_sprite_72
+  - first:
+      213: -7172343583317087134
+    second: juve_sprite_73
+  - first:
+      213: -6245152047134830843
+    second: juve_sprite_74
+  - first:
+      213: -7278798177615001689
+    second: juve_sprite_75
+  - first:
+      213: -6924208840673620503
+    second: juve_sprite_76
+  - first:
+      213: 9203745201481491238
+    second: juve_sprite_77
+  - first:
+      213: 1024358592930040181
+    second: juve_sprite_78
+  - first:
+      213: 3688750814046252520
+    second: juve_sprite_79
+  - first:
+      213: 8637711029428583076
+    second: juve_sprite_80
+  - first:
+      213: -154873282742959064
+    second: juve_sprite_81
+  - first:
+      213: 7472303940083045397
+    second: juve_sprite_82
+  - first:
+      213: 7442288223368266442
+    second: juve_sprite_83
+  - first:
+      213: 5539114037854329513
+    second: juve_sprite_84
+  - first:
+      213: 761062846618366707
+    second: juve_sprite_85
+  - first:
+      213: -3724740561940471101
+    second: juve_sprite_86
+  - first:
+      213: 6374345190000824916
+    second: juve_sprite_87
+  - first:
+      213: 907754251507851570
+    second: juve_sprite_88
+  - first:
+      213: 686634379089786505
+    second: juve_sprite_89
+  - first:
+      213: -5598013225074509283
+    second: juve_sprite_90
+  - first:
+      213: -3253572059448084694
+    second: juve_sprite_91
+  - first:
+      213: 7682457723114661524
+    second: juve_sprite_92
+  - first:
+      213: -8886840928313549384
+    second: juve_sprite_93
+  - first:
+      213: 5283263310605274042
+    second: juve_sprite_94
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: juve_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1185
+        width: 79
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1188948347aff920800000000000000
+      internalID: 3026321383045497118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1185
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727754c74979582f0800000000000000
+      internalID: -971203480632592601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1185
+        width: 80
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a08283abacf5e360800000000000000
+      internalID: 7198437393534451873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1185
+        width: 80
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451c1286efa146c00800000000000000
+      internalID: 892868306097258836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1185
+        width: 78
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08cbe97755840830800000000000000
+      internalID: 4036497776784951307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 1185
+        width: 79
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57d506632d83c0a0800000000000000
+      internalID: -6862486224007473315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 1185
+        width: 78
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29def83c7c20f63d0800000000000000
+      internalID: -3211344952289137262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1066
+        width: 95
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf073f02b8336d9f0800000000000000
+      internalID: -444110840603119365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 1068
+        width: 77
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa16fe417f93bd70800000000000000
+      internalID: 9057758584577071788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1068
+        width: 77
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f274369a4640b3cf0800000000000000
+      internalID: -271618522140686545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1068
+        width: 69
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817847d94873a3960800000000000000
+      internalID: 7582433965348521752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1066
+        width: 63
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389f7c74474ae2510800000000000000
+      internalID: 1526338143052626307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1066
+        width: 65
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f755accb7e7e060800000000000000
+      internalID: 6982804545295712137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 1066
+        width: 65
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bde999a07bdbdf0800000000000000
+      internalID: -162772755360589050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 2707
+        y: 1066
+        width: 94
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9ed8ec209c006ca0800000000000000
+      internalID: -6025802488053440867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 948
+        width: 94
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b82a541cc5d340640800000000000000
+      internalID: 5045224951150649995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 949
+        width: 65
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c537c1ad8c77bdf0800000000000000
+      internalID: -164525913629313598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 949
+        width: 65
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43cc76a2d4e6f2d0800000000000000
+      internalID: -3245154888086404273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 948
+        width: 67
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2672503df47870e20800000000000000
+      internalID: 3316768427494156130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 947
+        width: 89
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1778fc72b7508f110800000000000000
+      internalID: 1294790919376045937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 948
+        width: 92
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c1ac3370d0d4b60800000000000000
+      internalID: 7731850459849825397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 2327
+        y: 948
+        width: 88
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6431406f35794c8b0800000000000000
+      internalID: -5132811288429980858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 2705
+        y: 947
+        width: 96
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7bd0abdcfc392db0800000000000000
+      internalID: -4816251269781857411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 830
+        width: 84
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6725e5fd79efd5390800000000000000
+      internalID: -7827820649059036554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 830
+        width: 112
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40835687f4f02bce0800000000000000
+      internalID: -1391032500907329532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 831
+        width: 146
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0eb59aaac9546e80800000000000000
+      internalID: -8186319495672513012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 831
+        width: 143
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925491ef4a6fc0100800000000000000
+      internalID: 75706482256594217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 830
+        width: 112
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6de30378d2e72af0800000000000000
+      internalID: -421118620865401490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 830
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0624f78873260630800000000000000
+      internalID: 3892837928492344846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 712
+        width: 80
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c828f3e0cfbeefa40800000000000000
+      internalID: 5404016070694503052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 712
+        width: 89
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c3977f5d0df875c0800000000000000
+      internalID: -4217342817154395191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 712
+        width: 77
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1bf3e81bc759d9b0800000000000000
+      internalID: -5054912576939099365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 594
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9077c369a949170800000000000000
+      internalID: 8184336392889239999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 606
+        width: 123
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe87ace4752bbebe0800000000000000
+      internalID: -1446866767215691537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 640
+        width: 139
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8512506f9782b550800000000000000
+      internalID: 6175147157663913356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 627
+        width: 136
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067dd84175417c620800000000000000
+      internalID: 2794224458046232416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 604
+        width: 55
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83edca2bf081f15d0800000000000000
+      internalID: -3089724363651621320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 594
+        width: 100
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b88efbbd0605e10800000000000000
+      internalID: 2184352316208483104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 594
+        width: 100
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b4e7aa37ccf1e50800000000000000
+      internalID: 6782364360996965140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 3111
+        y: 594
+        width: 105
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ecc7a1c254edde0800000000000000
+      internalID: -1306530786165600683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 3507
+        y: 594
+        width: 155
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb853d11593f6ff90800000000000000
+      internalID: -6920075955833448258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_41
+      rect:
+        serializedVersion: 2
+        x: 1945
+        y: 594
+        width: 95
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc244f21b7f99750800000000000000
+      internalID: 6312348693110729950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_42
+      rect:
+        serializedVersion: 2
+        x: 3877
+        y: 596
+        width: 179
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327eb426fd92d4960800000000000000
+      internalID: 7587766986592741155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_43
+      rect:
+        serializedVersion: 2
+        x: 4263
+        y: 594
+        width: 179
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8fae72875131230800000000000000
+      internalID: 3608251332263868639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_44
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 477
+        width: 101
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbf32fac3afc3c20800000000000000
+      internalID: 3187697774814821363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_45
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 477
+        width: 110
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c5d145f5b9cc5e0800000000000000
+      internalID: -1887963310039671804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_46
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 477
+        width: 109
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b839be0c434817180800000000000000
+      internalID: -9119362408338713717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_47
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 477
+        width: 160
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c54a2783fb5a5df0800000000000000
+      internalID: -190738932706949691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_48
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 477
+        width: 160
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d832f59f83ce0e9e0800000000000000
+      internalID: -1594014538643070067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_52
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 477
+        width: 149
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461bda63118937190800000000000000
+      internalID: -7965856116189056668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_53
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 477
+        width: 126
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ccfb64f125d58d50800000000000000
+      internalID: 6739026759241170118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_54
+      rect:
+        serializedVersion: 2
+        x: 2723
+        y: 477
+        width: 107
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 921f21af4379c44e0800000000000000
+      internalID: -1996054281042333399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_55
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 358
+        width: 76
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbaf01e7cdaae7780800000000000000
+      internalID: -8683315167539168581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_56
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 358
+        width: 70
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ab32753549bd600800000000000000
+      internalID: 494151669792356940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_57
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152563f516f6ade20800000000000000
+      internalID: 3376133334667514449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_58
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719a5a1e3fac1c5f0800000000000000
+      internalID: -738085715100456681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_59
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7c548ceb0c058a0800000000000000
+      internalID: -6318338351564470354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_60
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dba096fb4bd5b8d0800000000000000
+      internalID: -2831115671426782255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_61
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c628af4e69a7a790800000000000000
+      internalID: -7518854761623836988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_62
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d7e69fd605e8fb0800000000000000
+      internalID: -4643685732505977532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_63
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73c954def44deb80800000000000000
+      internalID: -8363953071682108548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_64
+      rect:
+        serializedVersion: 2
+        x: 3490
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5494f6e6079049b10800000000000000
+      internalID: 1987223714071005509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_65
+      rect:
+        serializedVersion: 2
+        x: 3876
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322968f225aa5a2d0800000000000000
+      internalID: -3268018684626038237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_66
+      rect:
+        serializedVersion: 2
+        x: 4262
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e0fd65187976500800000000000000
+      internalID: 389446474554871371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_67
+      rect:
+        serializedVersion: 2
+        x: 4648
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d59beee57f66b350800000000000000
+      internalID: 6032131303219631568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_68
+      rect:
+        serializedVersion: 2
+        x: 5034
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86eb807e9331c430800000000000000
+      internalID: 3801376316063475340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_69
+      rect:
+        serializedVersion: 2
+        x: 5420
+        y: 358
+        width: 75
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94b2ae9dc1e800b0800000000000000
+      internalID: -5762107449974541158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_70
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 239
+        width: 57
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1a8853db08ea730800000000000000
+      internalID: 4012285868169011637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_71
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 239
+        width: 67
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e42a4ebcc47336b60800000000000000
+      internalID: 7738089387730444878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_72
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 239
+        width: 75
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddd8fc2d705a4b10800000000000000
+      internalID: 1966472685856284119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_73
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c255df287b67c90800000000000000
+      internalID: -7172343583317087134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_74
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f89362d43c459a0800000000000000
+      internalID: -6245152047134830843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_75
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a74f774f938cfa90800000000000000
+      internalID: -7278798177615001689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_76
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed8705deb448ef90800000000000000
+      internalID: -6924208840673620503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_77
+      rect:
+        serializedVersion: 2
+        x: 2728
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623a2894f754abf70800000000000000
+      internalID: 9203745201481491238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_78
+      rect:
+        serializedVersion: 2
+        x: 3114
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579c63686b0473e00800000000000000
+      internalID: 1024358592930040181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_79
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ede8205253113330800000000000000
+      internalID: 3688750814046252520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_80
+      rect:
+        serializedVersion: 2
+        x: 3886
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa709daa605fd770800000000000000
+      internalID: 8637711029428583076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_81
+      rect:
+        serializedVersion: 2
+        x: 4272
+        y: 239
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82448e4e197c9ddf0800000000000000
+      internalID: -154873282742959064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_82
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 121
+        width: 80
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 514d662f7d4f2b760800000000000000
+      internalID: 7472303940083045397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_83
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 121
+        width: 120
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac240fd45b1584760800000000000000
+      internalID: 7442288223368266442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_84
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 121
+        width: 99
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aadfa4bed2eedc40800000000000000
+      internalID: 5539114037854329513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_85
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 121
+        width: 74
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f27f6070a6df8a00800000000000000
+      internalID: 761062846618366707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_86
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 121
+        width: 74
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2ac0581301f4cc0800000000000000
+      internalID: -3724740561940471101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_87
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 121
+        width: 75
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45218b57d29367850800000000000000
+      internalID: 6374345190000824916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_88
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 121
+        width: 87
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231e978aeadf89c00800000000000000
+      internalID: 907754251507851570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_89
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 121
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986b730745a678900800000000000000
+      internalID: 686634379089786505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_90
+      rect:
+        serializedVersion: 2
+        x: 3107
+        y: 121
+        width: 88
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1abe7f91acdf42b0800000000000000
+      internalID: -5598013225074509283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_91
+      rect:
+        serializedVersion: 2
+        x: 3493
+        y: 121
+        width: 108
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27f579337df8d2d0800000000000000
+      internalID: -3253572059448084694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_92
+      rect:
+        serializedVersion: 2
+        x: 3884
+        y: 123
+        width: 99
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 496a43488929d9a60800000000000000
+      internalID: 7682457723114661524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_93
+      rect:
+        serializedVersion: 2
+        x: 4272
+        y: 121
+        width: 79
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bdd77c92499ba480800000000000000
+      internalID: -8886840928313549384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: juve_sprite_94
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 4
+        width: 89
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb4b733dfbe15940800000000000000
+      internalID: 5283263310605274042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d864f577b44de6947b0d3ec93ca2dd31
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      juve_sprite_0: 3026321383045497118
+      juve_sprite_1: -971203480632592601
+      juve_sprite_10: 7582433965348521752
+      juve_sprite_11: 1526338143052626307
+      juve_sprite_12: 6982804545295712137
+      juve_sprite_13: -162772755360589050
+      juve_sprite_14: -6025802488053440867
+      juve_sprite_15: 5045224951150649995
+      juve_sprite_16: -164525913629313598
+      juve_sprite_17: -3245154888086404273
+      juve_sprite_18: 3316768427494156130
+      juve_sprite_19: 1294790919376045937
+      juve_sprite_2: 7198437393534451873
+      juve_sprite_20: 7731850459849825397
+      juve_sprite_21: -5132811288429980858
+      juve_sprite_22: -4816251269781857411
+      juve_sprite_23: -7827820649059036554
+      juve_sprite_24: -1391032500907329532
+      juve_sprite_25: -8186319495672513012
+      juve_sprite_26: 75706482256594217
+      juve_sprite_27: -421118620865401490
+      juve_sprite_28: 3892837928492344846
+      juve_sprite_29: 5404016070694503052
+      juve_sprite_3: 892868306097258836
+      juve_sprite_30: -4217342817154395191
+      juve_sprite_31: -5054912576939099365
+      juve_sprite_32: 8184336392889239999
+      juve_sprite_33: -1446866767215691537
+      juve_sprite_34: 6175147157663913356
+      juve_sprite_35: 2794224458046232416
+      juve_sprite_36: -3089724363651621320
+      juve_sprite_37: 2184352316208483104
+      juve_sprite_38: 6782364360996965140
+      juve_sprite_39: -1306530786165600683
+      juve_sprite_4: 4036497776784951307
+      juve_sprite_40: -6920075955833448258
+      juve_sprite_41: 6312348693110729950
+      juve_sprite_42: 7587766986592741155
+      juve_sprite_43: 3608251332263868639
+      juve_sprite_44: 3187697774814821363
+      juve_sprite_45: -1887963310039671804
+      juve_sprite_46: -9119362408338713717
+      juve_sprite_47: -190738932706949691
+      juve_sprite_48: -1594014538643070067
+      juve_sprite_49: -6458765022290581620
+      juve_sprite_5: -6862486224007473315
+      juve_sprite_50: -209015696106600152
+      juve_sprite_51: 2824400277827105165
+      juve_sprite_52: -7965856116189056668
+      juve_sprite_53: 6739026759241170118
+      juve_sprite_54: -1996054281042333399
+      juve_sprite_55: -8683315167539168581
+      juve_sprite_56: 494151669792356940
+      juve_sprite_57: 3376133334667514449
+      juve_sprite_58: -738085715100456681
+      juve_sprite_59: -6318338351564470354
+      juve_sprite_6: -3211344952289137262
+      juve_sprite_60: -2831115671426782255
+      juve_sprite_61: -7518854761623836988
+      juve_sprite_62: -4643685732505977532
+      juve_sprite_63: -8363953071682108548
+      juve_sprite_64: 1987223714071005509
+      juve_sprite_65: -3268018684626038237
+      juve_sprite_66: 389446474554871371
+      juve_sprite_67: 6032131303219631568
+      juve_sprite_68: 3801376316063475340
+      juve_sprite_69: -5762107449974541158
+      juve_sprite_7: -444110840603119365
+      juve_sprite_70: 4012285868169011637
+      juve_sprite_71: 7738089387730444878
+      juve_sprite_72: 1966472685856284119
+      juve_sprite_73: -7172343583317087134
+      juve_sprite_74: -6245152047134830843
+      juve_sprite_75: -7278798177615001689
+      juve_sprite_76: -6924208840673620503
+      juve_sprite_77: 9203745201481491238
+      juve_sprite_78: 1024358592930040181
+      juve_sprite_79: 3688750814046252520
+      juve_sprite_8: 9057758584577071788
+      juve_sprite_80: 8637711029428583076
+      juve_sprite_81: -154873282742959064
+      juve_sprite_82: 7472303940083045397
+      juve_sprite_83: 7442288223368266442
+      juve_sprite_84: 5539114037854329513
+      juve_sprite_85: 761062846618366707
+      juve_sprite_86: -3724740561940471101
+      juve_sprite_87: 6374345190000824916
+      juve_sprite_88: 907754251507851570
+      juve_sprite_89: 686634379089786505
+      juve_sprite_9: -271618522140686545
+      juve_sprite_90: -5598013225074509283
+      juve_sprite_91: -3253572059448084694
+      juve_sprite_92: 7682457723114661524
+      juve_sprite_93: -8886840928313549384
+      juve_sprite_94: 5283263310605274042
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

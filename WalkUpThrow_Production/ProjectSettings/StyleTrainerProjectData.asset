@@ -1,0 +1,745 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07c9b2c97f84356bb2bfac29363e611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Muse.StyleTrainer::Unity.Muse.StyleTrainer.StyleTrainerProjectData
+  m_StyleTrainerData:
+    rid: 6030165489039180148
+  m_DefaultStyleData:
+    rid: 6030165489039180149
+  m_DefaultStyleVersion: 2023111600
+  m_DefaultStyles:
+  - rid: 6030165489039180150
+  m_AssetPath: 
+  m_PreviousProjectIDs: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 6030165489039180148
+      type: {class: StyleTrainerData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+        m_State: 1
+        m_Disposing: 0
+        m_Styles:
+        - rid: 6030165489039180152
+        m_Version: 202231001
+    - rid: 6030165489039180149
+      type: {class: StyleTrainerData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 11000000-0000-0000-0000-000000000011
+        m_State: 1
+        m_Disposing: 0
+        m_Styles:
+        - rid: 6030165489039180151
+        m_Version: 202231001
+    - rid: 6030165489039180150
+      type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 00000000-0000-0000-0000-000000000000
+        m_State: 1
+        m_Disposing: 0
+        m_IsFallback: 1
+        m_Thumbnail:
+          rid: -2
+        m_Visible: 0
+        selectedCheckPointGUID: 00000000-0000-0000-0000-000000000000
+        m_FavoriteCheckPointGUID: active
+        parentID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: 00000000-0000-0000-0000-000000000000
+        m_TrainingSteps: 2000
+        m_CheckPoints:
+        - m_Guid: 00000000-0000-0000-0000-000000000000
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 00000000-0000-0000-0000-000000000000
+          m_Name: Default
+          m_Description: Default style.
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 
+            m_State: 0
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 
+          m_ValidationImagesData: []
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 2000
+        m_SampleOutputPrompts: []
+        m_TrainingSetData: []
+        m_Name: Default
+        m_Description: Default style.
+    - rid: 6030165489039180151
+      type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 5cc104e0-423a-473e-8034-b9d346cb2357
+        m_State: 1
+        m_Disposing: 0
+        m_IsFallback: 0
+        m_Thumbnail:
+          rid: -2
+        m_Visible: 1
+        selectedCheckPointGUID: 00000000-0000-0000-0000-000000000000
+        m_FavoriteCheckPointGUID: active
+        parentID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: 11000000-0000-0000-0000-000000000011
+        m_TrainingSteps: 2000
+        m_CheckPoints:
+        - m_Guid: 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 11000000-0000-0000-0000-000000000011
+          m_Name: 'Happy Harvest [Orion V4 2000]'
+          m_Description: 8 Nov 2023
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 3e758588-960f-44f5-865a-d5eaa1b1dec4
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 11000000-0000-0000-0000-000000000011
+          m_ValidationImagesData:
+          - m_Guid: 96b39a19-2d3e-4bc5-aa3c-38667ed6eba5
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 96b39a19-2d3e-4bc5-aa3c-38667ed6eba5
+              m_State: 5
+              m_Disposing: 0
+            m_Prompt: A chicken
+          - m_Guid: 05de072c-ebbc-43d7-886b-7ac4f9cbd079
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 05de072c-ebbc-43d7-886b-7ac4f9cbd079
+              m_State: 5
+              m_Disposing: 0
+            m_Prompt: A cow
+          - m_Guid: 2dbfc212-f87b-45f9-a05a-06368e190ca1
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 2dbfc212-f87b-45f9-a05a-06368e190ca1
+              m_State: 5
+              m_Disposing: 0
+            m_Prompt: A dog
+          - m_Guid: e0139464-a868-402a-95b8-b4c26685a97b
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: e0139464-a868-402a-95b8-b4c26685a97b
+              m_State: 5
+              m_Disposing: 0
+            m_Prompt: A farmer
+          - m_Guid: 4421bead-a3ff-4c09-9514-61e127eb470e
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 4421bead-a3ff-4c09-9514-61e127eb470e
+              m_State: 5
+              m_Disposing: 0
+            m_Prompt: A pine tree
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 1200
+        m_SampleOutputPrompts:
+        - A chicken
+        - A cow
+        - A dog
+        - A farmer
+        - A pine tree
+        m_TrainingSetData:
+        - m_Guid: 3e758588-960f-44f5-865a-d5eaa1b1dec4
+          m_State: 5
+          m_Disposing: 0
+          m_TrainingSet: []
+          m_ProjectID: 11000000-0000-0000-0000-000000000011
+        m_Name: Default
+        m_Description: Default Style
+    - rid: 6030165489039180152
+      type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 41b55e85-025f-46ed-8ccc-634e34a17e41
+        m_State: 0
+        m_Disposing: 0
+        m_IsFallback: 0
+        m_Thumbnail:
+          rid: 6030165489039180153
+        m_Visible: 1
+        selectedCheckPointGUID: 759c81d8-cf51-437e-87a2-7fc616bfa0ec
+        m_FavoriteCheckPointGUID: active
+        parentID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+        m_TrainingSteps: 2000
+        m_CheckPoints:
+        - m_Guid: 981e630d-e21f-48ad-8388-d870e9592c1c
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 77b1b3fb-c407-43ac-8738-94d1a584f6af
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 77b1b3fb-c407-43ac-8738-94d1a584f6af
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 99f49f00-fb2f-48dc-a556-f4c0767453b2
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 99f49f00-fb2f-48dc-a556-f4c0767453b2
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: 1c752d1f-5667-4263-8400-51a2d3785f59
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 1c752d1f-5667-4263-8400-51a2d3785f59
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 200
+        - m_Guid: fac422dd-fb8a-4d79-a823-49bb6a3d7e2e
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 1aebb631-bcef-43e4-9db4-e182bb3e2973
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 1aebb631-bcef-43e4-9db4-e182bb3e2973
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 7733be71-fe8f-40ce-9c06-b57ef41e82e9
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 7733be71-fe8f-40ce-9c06-b57ef41e82e9
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: 27ec68ce-6afd-4faf-bb8a-0b8e0f2e01ec
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 27ec68ce-6afd-4faf-bb8a-0b8e0f2e01ec
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 400
+        - m_Guid: ba0148fa-fd28-4732-8305-a1677bef313d
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 81c24182-7cc6-4f67-87d9-cefa490c2b67
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 81c24182-7cc6-4f67-87d9-cefa490c2b67
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 46c7c5fe-8d2a-4a47-8073-64df63936e78
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 46c7c5fe-8d2a-4a47-8073-64df63936e78
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: e4b65889-f48c-4e87-8e13-84218fde847e
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: e4b65889-f48c-4e87-8e13-84218fde847e
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 600
+        - m_Guid: 442b7cef-e2ab-4874-b3ad-e9991d15c5b0
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 5e38648e-dcbb-42cc-a211-50cfc5f2d212
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 5e38648e-dcbb-42cc-a211-50cfc5f2d212
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: b3394bff-bb68-49ce-a66c-1bcbd700fc41
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: b3394bff-bb68-49ce-a66c-1bcbd700fc41
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: a3cf0479-7c99-4887-afc6-9aac2c359f74
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: a3cf0479-7c99-4887-afc6-9aac2c359f74
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 800
+        - m_Guid: d46e2c43-c399-4035-b4db-6827cea9052d
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 83708d0d-51e6-425a-9861-7c172a244025
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 83708d0d-51e6-425a-9861-7c172a244025
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: e9fc9052-c56b-44f8-b69b-e134d53b2335
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: e9fc9052-c56b-44f8-b69b-e134d53b2335
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: 44a83aca-bd7f-4301-a34e-ad92976f7a8f
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 44a83aca-bd7f-4301-a34e-ad92976f7a8f
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 83708d0d-51e6-425a-9861-7c172a244025
+          m_TrainingSteps: 1000
+        - m_Guid: 227580c9-1360-4d43-aa6b-ecf062a1b412
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 19423e36-a5f4-4c78-ac28-ab4d1d1f8ce7
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 19423e36-a5f4-4c78-ac28-ab4d1d1f8ce7
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 0dfc4531-16bf-4281-b89e-a9a1b7c9f3f8
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 0dfc4531-16bf-4281-b89e-a9a1b7c9f3f8
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: 28f39e10-225d-4245-ade2-0752b6e8c954
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 28f39e10-225d-4245-ade2-0752b6e8c954
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 1200
+        - m_Guid: ab8f0a80-b938-4cb1-b825-ee6d26acd35a
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 14c64ba6-cd2b-465a-a6d2-866290b51c4d
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 14c64ba6-cd2b-465a-a6d2-866290b51c4d
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 1ab6cd21-d6bc-4390-8bdb-287064d1085b
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 1ab6cd21-d6bc-4390-8bdb-287064d1085b
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: 8947b06d-efc7-46fa-9505-5fe60e296320
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 8947b06d-efc7-46fa-9505-5fe60e296320
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 1400
+        - m_Guid: f695d6fb-5894-435c-837b-3ff79cbfe4bc
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 3a2e8786-04da-4646-97fc-397c2cb4a1bc
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 3a2e8786-04da-4646-97fc-397c2cb4a1bc
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 47299b0b-e81c-4ad2-ab1a-09085cb70598
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 47299b0b-e81c-4ad2-ab1a-09085cb70598
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: ce28ac02-cab1-4caa-9b37-956724c6b6cc
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: ce28ac02-cab1-4caa-9b37-956724c6b6cc
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 3a2e8786-04da-4646-97fc-397c2cb4a1bc
+          m_TrainingSteps: 1600
+        - m_Guid: 7c6153b2-27b6-4186-8d16-4fd8e2d1b8ee
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: 6b7df66d-cd85-43ef-825f-4c069fe30542
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 6b7df66d-cd85-43ef-825f-4c069fe30542
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 91ddabfa-320a-46ad-90f5-5d6f688edae9
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 91ddabfa-320a-46ad-90f5-5d6f688edae9
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: dc27d2a1-bc4f-4e11-b207-5dbe3a0f638d
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: dc27d2a1-bc4f-4e11-b207-5dbe3a0f638d
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 1800
+        - m_Guid: 759c81d8-cf51-437e-87a2-7fc616bfa0ec
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_Name: WalkUpThrowBase
+          m_Description: WalkUpThrowBase
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+            m_State: 5
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+          m_ValidationImagesData:
+          - m_Guid: daffcbb1-974d-41f4-84ea-ea07e6a996fe
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: daffcbb1-974d-41f4-84ea-ea07e6a996fe
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: chun-li
+          - m_Guid: 50c12da7-f94e-46b0-97b1-3e7fccb6a0f1
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: 50c12da7-f94e-46b0-97b1-3e7fccb6a0f1
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: zangief
+          - m_Guid: a92e54be-ce66-4570-8de8-a35669dcff4d
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              m_Guid: a92e54be-ce66-4570-8de8-a35669dcff4d
+              m_State: 1
+              m_Disposing: 0
+            m_Prompt: e. honda
+          m_FavoriteSampleOutputDataGuid: 
+          m_TrainingSteps: 2000
+        m_SampleOutputPrompts:
+        - chun-li
+        - zangief
+        - e. honda
+        m_TrainingSetData:
+        - m_Guid: e03e4a0b-24b7-444d-9f7d-000330078cc2
+          m_State: 1
+          m_Disposing: 0
+          m_TrainingSet:
+          - m_Guid: aa5963a2-48a4-4640-9952-d98ebb499740
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180167
+          - m_Guid: 2a075ab1-be1d-47c6-8a05-481e2e4b547c
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180168
+          - m_Guid: d44844df-38af-42d4-9afc-2eba7137b7ad
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180169
+          - m_Guid: 4e72dafb-974f-4d5d-b1e7-0414b5bbc839
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180170
+          - m_Guid: 745e6c7d-b9bf-49ca-a364-0ae77d1c19c2
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180171
+          - m_Guid: 68deee5e-2bea-4806-8bd4-2828fcbdaf3e
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180172
+          - m_Guid: ab655d6a-4603-49ac-b8c8-d52ee0f75813
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180173
+          - m_Guid: 9968587d-d68f-462f-a75b-c196c64ed2b3
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180174
+          - m_Guid: e4d50019-eecc-4092-830c-779b913ad03a
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180175
+          - m_Guid: 55ce590a-b1ff-48d6-a66d-7b22665943e5
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180176
+          - m_Guid: 218f1b48-4de2-47e5-a00f-7deb2c681f47
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180177
+          - m_Guid: 911d0eb3-1d84-4f30-8c58-8328f7760481
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180178
+          - m_Guid: e2d421bf-7deb-4e76-90e7-0bf941d18fa5
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 6030165489039180179
+          m_ProjectID: 57bd11f4-e943-4483-b69d-953ef6d7a3fa
+        m_Name: WalkUpThrowBase
+        m_Description: WalkUpTjrow
+    - rid: 6030165489039180153
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 00000000-0000-0000-0000-000000000000
+        m_State: 3
+        m_Disposing: 1
+    - rid: 6030165489039180167
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: aa5963a2-48a4-4640-9952-d98ebb499740
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180168
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 2a075ab1-be1d-47c6-8a05-481e2e4b547c
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180169
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: d44844df-38af-42d4-9afc-2eba7137b7ad
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180170
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 4e72dafb-974f-4d5d-b1e7-0414b5bbc839
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180171
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 745e6c7d-b9bf-49ca-a364-0ae77d1c19c2
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180172
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 68deee5e-2bea-4806-8bd4-2828fcbdaf3e
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180173
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: ab655d6a-4603-49ac-b8c8-d52ee0f75813
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180174
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 9968587d-d68f-462f-a75b-c196c64ed2b3
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180175
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: e4d50019-eecc-4092-830c-779b913ad03a
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180176
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 55ce590a-b1ff-48d6-a66d-7b22665943e5
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180177
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 218f1b48-4de2-47e5-a00f-7deb2c681f47
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180178
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 911d0eb3-1d84-4f30-8c58-8328f7760481
+        m_State: 1
+        m_Disposing: 1
+    - rid: 6030165489039180179
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: e2d421bf-7deb-4e76-90e7-0bf941d18fa5
+        m_State: 1
+        m_Disposing: 1
