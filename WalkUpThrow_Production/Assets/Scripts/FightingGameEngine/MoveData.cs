@@ -25,6 +25,8 @@ namespace FightinGameEngine
         public int hitstun;
         public bool causesKnockdown;
         public bool isThrow;
+        public bool canCancel;
+        public string nextMoveName;
         public Vector2 knockback;
 
         public DirectionalInput requiredDirection; 

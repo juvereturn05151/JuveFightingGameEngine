@@ -4,14 +4,22 @@
  Date: 2023-07-27
  */
 
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FightinGameEngine 
 {
+    [System.Serializable]
+    public class HitboxData
+    {
+        public Rect box;
+        public HitboxType type; // Hit, Hurt, Throw, etc.
+    }
+
+    [System.Serializable]
     public class HitboxFrame
     {
         public int frame;
-        public Rect hitbox;
-        public HitboxType type;
+        public List<HitboxData> hitboxes = new List<HitboxData>();
     }
 }

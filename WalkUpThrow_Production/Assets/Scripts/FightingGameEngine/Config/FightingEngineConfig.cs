@@ -9,8 +9,8 @@ namespace FightinGameEngine
 {
     public enum HitboxType
     {
-        Hit,
-        Hurt
+        Attack,
+        Throw
     }
 
     public enum DirectionalInput
