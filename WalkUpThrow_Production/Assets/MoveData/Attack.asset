@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: Assembly-CSharp::FightinGameEngine.MoveData
   moveName: Cr. MK
-  animation: {fileID: 0}
+  animation: {fileID: 7400000, guid: 2a8f8a9d3f47e8c4085f735201f7ec3f, type: 2}
   startup: 0
   active: 0
   recovery: 0
@@ -22,11 +22,13 @@ MonoBehaviour:
   hitstun: 0
   causesKnockdown: 0
   isThrow: 0
+  canCancel: 0
+  nextMoveName: 
   knockback: {x: 0, y: 0}
   requiredDirection: 0
   button: 0
   hitboxFrames:
-  - frame: 0
+  - frame: 5
     hitboxes:
     - box:
         serializedVersion: 2
