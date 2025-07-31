@@ -24,7 +24,7 @@ namespace FightingGameEngine
 
     public class Hitbox : BoxBase
     {
-        public int attackID;
+        public AttackID attackID;
     }
 
     public class Hurtbox : BoxBase

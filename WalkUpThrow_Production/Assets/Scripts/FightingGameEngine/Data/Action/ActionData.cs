@@ -10,6 +10,7 @@ namespace FightingGameEngine
 {
     public enum ActionID
     {
+        Nothing = -1,
         Stand
     }
 
@@ -23,6 +24,7 @@ namespace FightingGameEngine
 
     public enum AttackID
     {
+        Nothing = -1,
         CrouchMediumKick,
     }
 
@@ -51,13 +53,13 @@ namespace FightingGameEngine
     }
 
     [System.Serializable]
-    public class HurtboxData : FrameData
+    public class HurtboxData : CollisionBoxData
     {
 
     }
 
     [System.Serializable]
-    public class PushboxData : FrameData
+    public class PushboxData : CollisionBoxData
     {
 
     }
@@ -73,7 +75,7 @@ namespace FightingGameEngine
     {
         public bool buffer;
         public bool execute;
-        public List<int> actionID = new List<int>();
+        public List<ActionID> actionID = new List<ActionID>();
     }
 
     [CreateAssetMenu]
