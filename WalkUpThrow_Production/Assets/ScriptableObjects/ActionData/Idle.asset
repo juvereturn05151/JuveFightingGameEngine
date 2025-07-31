@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
+  animationStarterID: 0
+  actionType: 0
+  frameCount: 25
+  isLoop: 0
+  loopFromFrame: 0
+  animations:
+  - startEndFrame: {x: 0, y: 3}
+    animationID: 0
+  - startEndFrame: {x: 4, y: 8}
+    animationID: 1
+  - startEndFrame: {x: 9, y: 12}
+    animationID: 2
+  - startEndFrame: {x: 13, y: 16}
+    animationID: 3
+  - startEndFrame: {x: 17, y: 20}
+    animationID: 4
+  - startEndFrame: {x: 21, y: 24}
+    animationID: 5
+  hitboxes: []
+  hurtboxes: []
+  pushboxes: []
+  movements: []
+  cancels: []
+  alwaysCancelable: 1

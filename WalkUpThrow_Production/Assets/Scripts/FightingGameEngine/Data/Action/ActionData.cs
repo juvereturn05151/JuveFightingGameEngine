@@ -8,6 +8,11 @@ using UnityEngine;
 
 namespace FightingGameEngine 
 {
+    public enum ActionID
+    {
+        Stand
+    }
+
     public enum ActionType
     {
         Movement,
@@ -29,7 +34,7 @@ namespace FightingGameEngine
     [System.Serializable]
     public class AnimationFrameData : FrameData
     {
-        public AnimationData animationID;
+        public AnimationID animationID;
     }
 
     [System.Serializable]
@@ -74,7 +79,7 @@ namespace FightingGameEngine
     [CreateAssetMenu]
     public class ActionData : ScriptableObject
     {
-        public AnimationID animationStarterID;
+        public ActionID actionID;
         public ActionType actionType;
         public int frameCount;
         public bool isLoop;

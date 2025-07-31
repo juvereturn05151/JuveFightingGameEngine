@@ -14,14 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationDataContainer
   animationDataList:
   - animationID: 0
-    sprite: {fileID: 0}
+    sprite: {fileID: 3026321383045497118, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
   - animationID: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: -971203480632592601, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
   - animationID: 2
-    sprite: {fileID: 0}
+    sprite: {fileID: 892868306097258836, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
   - animationID: 3
-    sprite: {fileID: 0}
+    sprite: {fileID: 4036497776784951307, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
   - animationID: 4
-    sprite: {fileID: 0}
+    sprite: {fileID: -6862486224007473315, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
   - animationID: 5
-    sprite: {fileID: 0}
+    sprite: {fileID: -3211344952289137262, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
