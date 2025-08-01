@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: c9be2c76ef39ebe4a8eb82242d2ecc9a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2807851655226956696
+    second: perfect_victory_spritesheet_0
+  - first:
+      213: 6812543063276319095
+    second: perfect_victory_spritesheet_1
+  - first:
+      213: 4429252556944903321
+    second: perfect_victory_spritesheet_2
+  - first:
+      213: -5835921316269388899
+    second: perfect_victory_spritesheet_3
+  - first:
+      213: 854068630506624786
+    second: perfect_victory_spritesheet_4
+  - first:
+      213: 4864741042798865075
+    second: perfect_victory_spritesheet_5
+  - first:
+      213: 8840901955490120080
+    second: perfect_victory_spritesheet_6
+  - first:
+      213: -3908964755917091659
+    second: perfect_victory_spritesheet_7
+  - first:
+      213: 3115231467494536000
+    second: perfect_victory_spritesheet_8
+  - first:
+      213: -1840748780998808789
+    second: perfect_victory_spritesheet_9
+  - first:
+      213: 5523097762277554526
+    second: perfect_victory_spritesheet_10
+  - first:
+      213: 1813483032083756316
+    second: perfect_victory_spritesheet_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 37
+        width: 57
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b9bcb243e77f620800000000000000
+      internalID: 2807851655226956696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 37
+        width: 67
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771f2a752d30b8e50800000000000000
+      internalID: 6812543063276319095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 37
+        width: 75
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c013dbbbdd77d30800000000000000
+      internalID: 4429252556944903321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b02ae9b74a20fa0800000000000000
+      internalID: -5835921316269388899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217d627f4e24adb00800000000000000
+      internalID: 854068630506624786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba2a443438038340800000000000000
+      internalID: 4864741042798865075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0918b07cc7131ba70800000000000000
+      internalID: 8840901955490120080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc4a0cd34190c9c0800000000000000
+      internalID: -3908964755917091659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 3234
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0437125b3868b3b20800000000000000
+      internalID: 3115231467494536000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 3620
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b25d38cb85476e0800000000000000
+      internalID: -1840748780998808789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59fe44f62cf5ac40800000000000000
+      internalID: 5523097762277554526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect_victory_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 37
+        width: 75
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15fc8d9539ca2910800000000000000
+      internalID: 1813483032083756316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      perfect_victory_spritesheet_0: 2807851655226956696
+      perfect_victory_spritesheet_1: 6812543063276319095
+      perfect_victory_spritesheet_10: 5523097762277554526
+      perfect_victory_spritesheet_11: 1813483032083756316
+      perfect_victory_spritesheet_2: 4429252556944903321
+      perfect_victory_spritesheet_3: -5835921316269388899
+      perfect_victory_spritesheet_4: 854068630506624786
+      perfect_victory_spritesheet_5: 4864741042798865075
+      perfect_victory_spritesheet_6: 8840901955490120080
+      perfect_victory_spritesheet_7: -3908964755917091659
+      perfect_victory_spritesheet_8: 3115231467494536000
+      perfect_victory_spritesheet_9: -1840748780998808789
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
