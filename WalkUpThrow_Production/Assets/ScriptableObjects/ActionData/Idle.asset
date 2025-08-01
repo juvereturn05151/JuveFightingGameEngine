@@ -12,27 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
   m_Name: Idle
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
-  animationStarterID: 0
+  actionID: 0
   actionType: 0
-  frameCount: 25
+  frameCount: 30
   isLoop: 0
   loopFromFrame: 0
   animations:
   - startEndFrame: {x: 0, y: 3}
     animationID: 0
-  - startEndFrame: {x: 4, y: 8}
+  - startEndFrame: {x: 4, y: 7}
     animationID: 1
-  - startEndFrame: {x: 9, y: 12}
+  - startEndFrame: {x: 8, y: 16}
     animationID: 2
-  - startEndFrame: {x: 13, y: 16}
-    animationID: 3
   - startEndFrame: {x: 17, y: 20}
-    animationID: 4
+    animationID: 3
   - startEndFrame: {x: 21, y: 24}
+    animationID: 4
+  - startEndFrame: {x: 25, y: 29}
     animationID: 5
   hitboxes: []
-  hurtboxes: []
-  pushboxes: []
+  hurtboxes:
+  - startEndFrame: {x: 0, y: 59}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 1.2
+    useBaseRect: 1
+  pushboxes:
+  - startEndFrame: {x: 0, y: 59}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0.8
+      height: 1
+    useBaseRect: 1
   movements: []
   cancels: []
   alwaysCancelable: 1

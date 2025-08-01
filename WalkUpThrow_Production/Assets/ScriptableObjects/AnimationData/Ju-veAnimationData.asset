@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb24e7b4e24ba9d4b96370c3fd90c55e, type: 3}
-  m_Name: JuveAnimationData
+  m_Name: Ju-veAnimationData
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationDataContainer
   animationDataList:
   - animationID: 0

@@ -306,8 +306,13 @@ namespace FightingGameEngine
             }
 
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
+            if (pushBoxData == null)
+            {
+                Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
+            }
             pushbox = new Pushbox();
             Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
+
             pushbox.rect = TransformToFightRect(pushRect, position, isFaceRight);
         }
 
