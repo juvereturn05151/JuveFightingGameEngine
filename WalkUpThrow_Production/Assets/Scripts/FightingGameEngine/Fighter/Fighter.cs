@@ -47,7 +47,7 @@ namespace FightingGameEngine
         public void SetupBattleStart(FighterData fighterData, Vector2 startPosition, bool isPlayerOne)
         {
             this.fighterData = fighterData;
-            position = startPosition;
+            //position = startPosition;
             isFaceRight = isPlayerOne;
 
             vitalHealth = 1;

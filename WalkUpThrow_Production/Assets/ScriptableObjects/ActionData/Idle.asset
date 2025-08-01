@@ -15,7 +15,7 @@ MonoBehaviour:
   actionID: 0
   actionType: 0
   frameCount: 30
-  isLoop: 0
+  isLoop: 1
   loopFromFrame: 0
   animations:
   - startEndFrame: {x: 0, y: 3}

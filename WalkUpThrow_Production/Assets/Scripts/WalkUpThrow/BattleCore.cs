@@ -30,8 +30,10 @@ namespace WalkUpThrow
         private float timer = 0;
         private uint maxRoundWon = 3;
 
-        public Fighter fighter1 { get; private set; }
-        public Fighter fighter2 { get; private set; }
+        [SerializeField]
+        public Fighter fighter1;
+        [SerializeField]
+        public Fighter fighter2;
 
         public uint fighter1RoundWon { get; private set; }
         public uint fighter2RoundWon { get; private set; }
@@ -54,9 +56,6 @@ namespace WalkUpThrow
         {
             // Setup dictionary from ScriptableObject data
             fighterDataList.ForEach((data) => data.SetupDictionary());
-
-            fighter1 = new Fighter();
-            fighter2 = new Fighter();
 
             _fighters.Add(fighter1);
             _fighters.Add(fighter2);
@@ -258,40 +257,40 @@ namespace WalkUpThrow
 
         void UpdatePushCharacterVsCharacter()
         {
-            var rect1 = fighter1.pushbox.rect;
-            var rect2 = fighter2.pushbox.rect;
+            //var rect1 = fighter1.pushbox.rect;
+            //var rect2 = fighter2.pushbox.rect;
 
-            if (rect1.Overlaps(rect2))
-            {
-                if (fighter1.position.x < fighter2.position.x)
-                {
-                    fighter1.ApplyPositionChange((rect1.xMax - rect2.xMin) * -1 / 2, fighter1.position.y);
-                    fighter2.ApplyPositionChange((rect1.xMax - rect2.xMin) * 1 / 2, fighter2.position.y);
-                }
-                else if (fighter1.position.x > fighter2.position.x)
-                {
-                    fighter1.ApplyPositionChange((rect2.xMax - rect1.xMin) * 1 / 2, fighter1.position.y);
-                    fighter2.ApplyPositionChange((rect2.xMax - rect1.xMin) * -1 / 2, fighter1.position.y);
-                }
-            }
+            //if (rect1.Overlaps(rect2))
+            //{
+            //    if (fighter1.position.x < fighter2.position.x)
+            //    {
+            //        fighter1.ApplyPositionChange((rect1.xMax - rect2.xMin) * -1 / 2, fighter1.position.y);
+            //        fighter2.ApplyPositionChange((rect1.xMax - rect2.xMin) * 1 / 2, fighter2.position.y);
+            //    }
+            //    else if (fighter1.position.x > fighter2.position.x)
+            //    {
+            //        fighter1.ApplyPositionChange((rect2.xMax - rect1.xMin) * 1 / 2, fighter1.position.y);
+            //        fighter2.ApplyPositionChange((rect2.xMax - rect1.xMin) * -1 / 2, fighter1.position.y);
+            //    }
+            //}
         }
 
         void UpdatePushCharacterVsBackground()
         {
-            var stageMinX = battleAreaWidth * -1 / 2;
-            var stageMaxX = battleAreaWidth / 2;
+            //var stageMinX = battleAreaWidth * -1 / 2;
+            //var stageMaxX = battleAreaWidth / 2;
 
-            _fighters.ForEach((f) =>
-            {
-                if (f.pushbox.xMin < stageMinX)
-                {
-                    f.ApplyPositionChange(stageMinX - f.pushbox.xMin, f.position.y);
-                }
-                else if (f.pushbox.xMax > stageMaxX)
-                {
-                    f.ApplyPositionChange(stageMaxX - f.pushbox.xMax, f.position.y);
-                }
-            });
+            //_fighters.ForEach((f) =>
+            //{
+            //    if (f.pushbox.xMin < stageMinX)
+            //    {
+            //        f.ApplyPositionChange(stageMinX - f.pushbox.xMin, f.position.y);
+            //    }
+            //    else if (f.pushbox.xMax > stageMaxX)
+            //    {
+            //        f.ApplyPositionChange(stageMaxX - f.pushbox.xMax, f.position.y);
+            //    }
+            //});
         }
 
         void UpdateHitboxHurtboxCollision()

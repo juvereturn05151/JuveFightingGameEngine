@@ -1,3 +1,5 @@
+using FightingGameEngine;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,6 +13,12 @@ namespace WalkUpThrow
         private SpriteRenderer fighter1Sprite;
         [SerializeField]
         private SpriteRenderer fighter2Sprite;
+
+        [SerializeField]
+        private float _battleBoxLineWidth = 2f;
+
+        [SerializeField]
+        private GUIStyle debugTextStyle;
 
         private Vector2 battleAreaTopLeftPoint;
         private Vector2 battleAreaBottomRightPoint;
@@ -34,6 +42,11 @@ namespace WalkUpThrow
             //CalculateFightPointToScreenScale();
 
             UpdateSprite();
+        }
+
+        void OnGUI()
+        {
+            battleCore.fighters.ForEach((f) => DrawFighter(f));
         }
 
         void UpdateSprite()
@@ -61,6 +74,26 @@ namespace WalkUpThrow
 
             }
         }
+
+        void DrawFighter(Fighter fighter)
+        {
+            var labelRect = new Rect(0, Screen.height * 0.86f, Screen.width * 0.22f, 50);
+
+            labelRect.y += Screen.height * 0.03f;
+            //var frameAdvantage = battleCore.GetFrameAdvantage(fighter.isFaceRight);
+            //var frameAdvText = frameAdvantage > 0 ? "+" + frameAdvantage : frameAdvantage.ToString();
+            GUI.Label(labelRect, "Frame: " + fighter.currentActionFrame + "/" + fighter.currentActionFrameCount
+               /* + "(" + frameAdvText + ")"*/, debugTextStyle);
+
+            labelRect.y += Screen.height * 0.03f;
+            GUI.Label(labelRect, "Stun: " + fighter.currentHitStunFrame, debugTextStyle);
+
+            labelRect.y += Screen.height * 0.03f;
+            GUI.Label(labelRect, "Action: " + fighter.currentActionID, debugTextStyle);
+        }
+
+
+        
     }
 
 }
