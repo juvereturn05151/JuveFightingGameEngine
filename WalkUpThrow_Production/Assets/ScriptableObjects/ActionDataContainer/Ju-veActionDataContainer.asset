@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionDataContainer
   actions:
   - {fileID: 11400000, guid: 59cfb6387112f7f4daffa267cc037019, type: 2}
+  - {fileID: 11400000, guid: e1032275a48d5d44baa837b03dd3f10c, type: 2}
+  - {fileID: 11400000, guid: c4913de39b42d394186b08b8734b767b, type: 2}

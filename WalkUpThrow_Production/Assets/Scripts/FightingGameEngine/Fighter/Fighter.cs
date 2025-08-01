@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace FightingGameEngine 
 {
     public class Fighter : MonoBehaviour
     {
-        public Vector2 position;
+        [SerializeField] private InputManager _inputManager;
+
         public float velocity_x;
         public bool isFaceRight;
 
@@ -38,6 +40,61 @@ namespace FightingGameEngine
         private ActionID bufferActionID = ActionID.Nothing;
         private bool hasWon = false;
 
+        private void Update()
+        {
+            // Replace your old input recording with this:
+            RecordInputs();
+        }
+
+        private void RecordInputs()
+        {
+            if (_inputManager == null) 
+            {
+                return;
+            }
+
+            // Shift previous inputs
+            for (int i = inputRecordFrame - 1; i > 0; i--)
+            {
+                input[i] = input[i - 1];
+                inputDown[i] = inputDown[i - 1];
+                inputUp[i] = inputUp[i - 1];
+            }
+
+            // Get new inputs from InputManager
+            input[0] = 0;
+            if (_inputManager.GetInput(InputDefine.Left)) input[0] |= (int)InputDefine.Left;
+            if (_inputManager.GetInput(InputDefine.Right)) input[0] |= (int)InputDefine.Right;
+            if (_inputManager.GetInput(InputDefine.Attack)) input[0] |= (int)InputDefine.Attack;
+
+            inputDown[0] = 0;
+            if (_inputManager.GetInputDown(InputDefine.Left)) inputDown[0] |= (int)InputDefine.Left;
+            if (_inputManager.GetInputDown(InputDefine.Right)) inputDown[0] |= (int)InputDefine.Right;
+            if (_inputManager.GetInputDown(InputDefine.Attack)) inputDown[0] |= (int)InputDefine.Attack;
+
+            inputUp[0] = 0;
+            // Note: You'll need to add GetInputUp to InputManager if needed
+        }
+
+        private bool IsForwardInput(int input)
+        {
+            return isFaceRight ?
+                (input & (int)InputDefine.Right) != 0 :
+                (input & (int)InputDefine.Left) != 0;
+        }
+
+        private bool IsBackwardInput(int input)
+        {
+            return isFaceRight ?
+                (input & (int)InputDefine.Left) != 0 :
+                (input & (int)InputDefine.Right) != 0;
+        }
+
+        private bool IsAttackInput(int input)
+        {
+            return (input & (int)InputDefine.Attack) != 0;
+        }
+
         /// <summary>
         /// Setup fighter at the start of battle
         /// </summary>
@@ -57,7 +114,7 @@ namespace FightingGameEngine
 
             ClearInput();
 
-            SetCurrentAction(ActionID.Stand);
+            SetCurrentAction(ActionID.Idle);
         }
 
         /// <summary>
@@ -89,7 +146,7 @@ namespace FightingGameEngine
         /// </summary>
         public void UpdateIntroAction()
         {
-            RequestAction(ActionID.Stand);
+            RequestAction(ActionID.Idle);
         }
 
         /// <summary>
@@ -115,8 +172,8 @@ namespace FightingGameEngine
             //    return;
             //}
 
-            //var isForward = IsForwardInput(input[0]);
-            //var isBackward = IsBackwardInput(input[0]);
+            var isForward = IsForwardInput(input[0]);
+            var isBackward = IsBackwardInput(input[0]);
             //bool isAttack = IsAttackInput(inputDown[0]);
             //if (CheckSpecialAttackInput())
             //{
@@ -141,27 +198,24 @@ namespace FightingGameEngine
             //}
 
             // for proximity guard check
-            //isInputBackward = isBackward;
+            isInputBackward = isBackward;
 
-            //if (isForward && isBackward)
-            //{
-            //    RequestAction((int)CommonActionID.STAND);
-            //}
-            //else if (isForward)
-            //{
-            //    RequestAction((int)CommonActionID.FORWARD);
-            //}
-            //else if (isBackward)
-            //{
-            //    if (isReserveProximityGuard)
-            //        RequestAction((int)CommonActionID.GUARD_PROXIMITY);
-            //    else
-            //        RequestAction((int)CommonActionID.BACKWARD);
-            //}
-            //else
-            //{
-            //    RequestAction((int)CommonActionID.STAND);
-            //}
+            if (isForward && isBackward)
+            {
+                RequestAction(ActionID.Idle);
+            }
+            else if (isForward)
+            {
+                RequestAction(ActionID.Forward);
+            }
+            else if (isBackward)
+            {
+                RequestAction(ActionID.Backward);
+            }
+            else
+            {
+                RequestAction(ActionID.Idle);
+            }
         }
 
         public void RequestWinAction()
@@ -175,15 +229,49 @@ namespace FightingGameEngine
         }
 
         /// <summary>
+        /// Update character position
+        /// </summary>
+        public void UpdateMovement()
+        {
+            if (isInHitStun)
+                return;
+
+            // Position changes from walking forward and backward
+            var sign = isFaceRight ? 1 : -1;
+            float newX = transform.position.x;
+            if (currentActionID == ActionID.Forward)
+            {
+                newX += fighterData.forwardMoveSpeed * sign * Time.deltaTime;
+                transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+                return;
+            }
+            else if (currentActionID == ActionID.Backward)
+            {
+                newX -= fighterData.backwardMoveSpeed * sign * Time.deltaTime;
+                transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+                return;
+            }
+
+            // Position changes from action data
+            var movementData = fighterData.actions[currentActionID].GetMovementData(currentActionFrame);
+            if (movementData != null)
+            {
+                velocity_x = movementData.velocity_x;
+                if (velocity_x != 0)
+                {
+                    newX += velocity_x * sign * Time.deltaTime;
+                    transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+                }
+            }
+        }
+
+        /// <summary>
         /// Apply position changed to all variable
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
         public void ApplyPositionChange(float x, float y)
         {
-            position.x += x;
-            position.y += y;
-
             foreach (var hitbox in hitboxes)
             {
                 hitbox.rect.x += x;
@@ -292,7 +380,7 @@ namespace FightingGameEngine
             foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
             {
                 var box = new Hitbox();
-                box.rect = TransformToFightRect(hitbox.rect, position, isFaceRight);
+                box.rect = TransformToFightRect(hitbox.rect, transform.position, isFaceRight);
                 box.attackID = hitbox.attackID;
                 hitboxes.Add(box);
             }
@@ -301,7 +389,7 @@ namespace FightingGameEngine
             {
                 var box = new Hurtbox();
                 Rect rect = hurtbox.useBaseRect ? fighterData.baseHurtBoxRect : hurtbox.rect;
-                box.rect = TransformToFightRect(rect, position, isFaceRight);
+                box.rect = TransformToFightRect(rect, transform.position, isFaceRight);
                 hurtboxes.Add(box);
             }
 
@@ -313,7 +401,7 @@ namespace FightingGameEngine
             pushbox = new Pushbox();
             Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
 
-            pushbox.rect = TransformToFightRect(pushRect, position, isFaceRight);
+            pushbox.rect = TransformToFightRect(pushRect, transform.position, isFaceRight);
         }
 
         /// <summary>

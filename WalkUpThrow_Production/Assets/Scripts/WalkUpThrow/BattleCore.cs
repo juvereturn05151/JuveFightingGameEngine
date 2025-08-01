@@ -212,7 +212,7 @@ namespace WalkUpThrow
             _fighters.ForEach((f) => f.IncrementActionFrame());
 
             _fighters.ForEach((f) => f.UpdateIntroAction());
-            //_fighters.ForEach((f) => f.UpdateMovement());
+            _fighters.ForEach((f) => f.UpdateMovement());
             _fighters.ForEach((f) => f.UpdateBoxes());
 
             UpdatePushCharacterVsCharacter();
@@ -230,7 +230,7 @@ namespace WalkUpThrow
             _fighters.ForEach((f) => f.IncrementActionFrame());
 
             _fighters.ForEach((f) => f.UpdateActionRequest());
-            //_fighters.ForEach((f) => f.UpdateMovement());
+            _fighters.ForEach((f) => f.UpdateMovement());
             _fighters.ForEach((f) => f.UpdateBoxes());
 
             UpdatePushCharacterVsCharacter();

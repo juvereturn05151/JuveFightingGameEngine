@@ -11,7 +11,9 @@ namespace FightingGameEngine
     public enum ActionID
     {
         Nothing = -1,
-        Stand
+        Idle,
+        Forward,
+        Backward
     }
 
     public enum ActionType
