@@ -15,6 +15,23 @@ namespace FightingGameEngine
         Idle4,
         Idle5,
         Idle6,
+        Idle7,
+        Forward1,
+        Forward2,
+        Forward3,
+        Forward4,
+        Forward5,
+        Forward6,
+        Forward7,
+        Forward8,
+        Backward1,
+        Backward2,
+        Backward3,
+        Backward4,
+        Backward5,
+        Backward6,
+        Backward7,
+        Backward8
     }
 
     [System.Serializable]

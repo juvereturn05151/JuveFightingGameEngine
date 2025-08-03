@@ -14,20 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationDataContainer
   animationDataList:
   - animationID: 0
-    sprite: {fileID: 3026321383045497118, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    sprite: {fileID: 184509271508132499, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
     audioClip: {fileID: 0}
   - animationID: 1
-    sprite: {fileID: -971203480632592601, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    sprite: {fileID: -963246791371173594, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
     audioClip: {fileID: 0}
   - animationID: 2
-    sprite: {fileID: 892868306097258836, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    sprite: {fileID: -6216102738368683946, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
     audioClip: {fileID: 0}
   - animationID: 3
-    sprite: {fileID: 4036497776784951307, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    sprite: {fileID: 1875201663349578254, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
     audioClip: {fileID: 0}
   - animationID: 4
-    sprite: {fileID: -6862486224007473315, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    sprite: {fileID: -7884478899600137425, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
     audioClip: {fileID: 0}
   - animationID: 5
-    sprite: {fileID: -3211344952289137262, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    sprite: {fileID: 8095801490465326343, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 6
+    sprite: {fileID: -3940989541337913716, guid: 169404eb46fb41b4fbc32d0d03901ffc, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 7
+    sprite: {fileID: -6674600254926772470, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 8
+    sprite: {fileID: 5106253373636336682, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 9
+    sprite: {fileID: 7068741827128701353, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 10
+    sprite: {fileID: 6340164941017808596, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 11
+    sprite: {fileID: -7109001938045969362, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 12
+    sprite: {fileID: -1701435636903814576, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 13
+    sprite: {fileID: 9078078585068111927, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 14
+    sprite: {fileID: -6674600254926772470, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
     audioClip: {fileID: 0}

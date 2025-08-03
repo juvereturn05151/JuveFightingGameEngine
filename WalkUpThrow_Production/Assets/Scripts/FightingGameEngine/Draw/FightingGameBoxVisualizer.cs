@@ -1,5 +1,6 @@
 using FightingGameEngine;
 using UnityEngine;
+using UnityEngine.UIElements;
 using WalkUpThrow;
 
 namespace FightingGameEngine
@@ -79,28 +80,37 @@ namespace FightingGameEngine
             // 1. Get base position
             Vector3 worldPos = fighter.transform.position;
 
-            // 2. Adjust for facing direction and box offset
+            // 2. Calculate the box's center position in local space
+            Vector2 boxCenterLocal = new Vector2(
+                boxRect.x + boxRect.width * 0.5f,
+                boxRect.y + boxRect.height * 0.5f
+            );
+
+            // 3. Flip the x position if facing left
             if (!fighter.isFaceRight)
             {
-                // Mirror the x position while maintaining box width
-                worldPos.x -= boxRect.x + boxRect.width; // Flip the local offset
-            }
-            else
-            {
-                worldPos.x += boxRect.x; // Normal right-facing offset
+                boxCenterLocal.x *= -1;
             }
 
-            worldPos.y += boxRect.y;
+            // 4. Convert to world position
+            Vector3 boxCenterWorld = new Vector3(
+                worldPos.x + boxCenterLocal.x,
+                worldPos.y + boxCenterLocal.y,
+                worldPos.z
+            );
 
             // 3. Convert to screen space
             Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
             screenPos.y = Screen.height - screenPos.y;
 
+            float width = boxRect.width * 50f;
+            float height = boxRect.height * 50f;
+
             // 4. Apply scaling (adjust multiplier to match your game units)
             float scaleMultiplier = 50f;
             return new Rect(
-                screenPos.x,
-                screenPos.y,
+                screenPos.x - width * 0.5f,
+                screenPos.y - height * 0.5f,
                 boxRect.width * scaleMultiplier,
                 boxRect.height * scaleMultiplier
             );

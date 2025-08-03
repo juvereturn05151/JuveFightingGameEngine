@@ -56,22 +56,15 @@ namespace WalkUpThrow
                 var sprite = battleCore.fighter1.GetCurrentAnimationSprite();
                 if (sprite != null)
                     fighter1Sprite.sprite = sprite;
-
-                //var position = fighter1Image.transform.position;
-                //position.x = TransformHorizontalFightPointToScreen(battleCore.fighter1.position.x);
-                //fighter1Image.transform.position = position;
             }
 
             if (fighter2Sprite != null)
             {
                 var sprite = battleCore.fighter2.GetCurrentAnimationSprite();
-                if (sprite != null)
+                if (sprite != null) 
+                {
                     fighter2Sprite.sprite = sprite;
-
-                //var position = fighter2Image.transform.position;
-                //position.x = TransformHorizontalFightPointToScreen(battleCore.fighter2.position.x);
-                //fighter2Image.transform.position = position;
-
+                }
             }
         }
 

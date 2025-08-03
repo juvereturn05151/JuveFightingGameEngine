@@ -14,22 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
   actionID: 1
   actionType: 0
-  frameCount: 30
+  frameCount: 40
   isLoop: 1
   loopFromFrame: 0
   animations:
-  - startEndFrame: {x: 0, y: 3}
-    animationID: 0
-  - startEndFrame: {x: 4, y: 7}
-    animationID: 1
-  - startEndFrame: {x: 8, y: 16}
-    animationID: 2
-  - startEndFrame: {x: 17, y: 20}
-    animationID: 3
-  - startEndFrame: {x: 21, y: 24}
-    animationID: 4
+  - startEndFrame: {x: 0, y: 4}
+    animationID: 7
+  - startEndFrame: {x: 5, y: 9}
+    animationID: 8
+  - startEndFrame: {x: 10, y: 14}
+    animationID: 9
+  - startEndFrame: {x: 15, y: 19}
+    animationID: 10
+  - startEndFrame: {x: 20, y: 24}
+    animationID: 11
   - startEndFrame: {x: 25, y: 29}
-    animationID: 5
+    animationID: 12
+  - startEndFrame: {x: 30, y: 34}
+    animationID: 13
+  - startEndFrame: {x: 35, y: 39}
+    animationID: 14
   hitboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 59}
