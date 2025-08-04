@@ -58,3 +58,27 @@ MonoBehaviour:
   - animationID: 14
     sprite: {fileID: -6674600254926772470, guid: 2f1d3a02f166f0d4091d56bb4c4013d0, type: 3}
     audioClip: {fileID: 0}
+  - animationID: 15
+    sprite: {fileID: 3935588158922446423, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 16
+    sprite: {fileID: 14231801302146768, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 17
+    sprite: {fileID: -5624069752820044329, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 18
+    sprite: {fileID: -6402121444091569453, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 19
+    sprite: {fileID: 2879043516764418938, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 20
+    sprite: {fileID: 8300815426131302624, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 21
+    sprite: {fileID: -3658019204814988344, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 22
+    sprite: {fileID: -2014415727781387884, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
+    audioClip: {fileID: 0}

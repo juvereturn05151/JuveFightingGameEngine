@@ -1,12 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using WalkUpThrow;
 
 namespace FightingGameEngine 
 {
     public class Fighter : MonoBehaviour
     {
-        [SerializeField] private InputManager _inputManager;
+        [SerializeField] 
+        private InputManager _inputManager;
+
+        [SerializeField]
+        private SpriteRenderer _spriteRenderer;
 
         public float velocity_x;
         public bool isFaceRight;
@@ -44,6 +49,24 @@ namespace FightingGameEngine
         {
             // Replace your old input recording with this:
             RecordInputs();
+        }
+
+
+        private void FixedUpdate()
+        {
+            UpdateSprite();
+        }
+
+        void UpdateSprite()
+        {
+            if (_spriteRenderer != null)
+            {
+                var sprite = GetCurrentAnimationSprite();
+                if (sprite != null) 
+                {
+                    _spriteRenderer.sprite = sprite;
+                }
+            }
         }
 
         private void RecordInputs()
@@ -272,20 +295,20 @@ namespace FightingGameEngine
         /// <param name="y"></param>
         public void ApplyPositionChange(float x, float y)
         {
-            foreach (var hitbox in hitboxes)
-            {
-                hitbox.rect.x += x;
-                hitbox.rect.y += y;
-            }
+            //foreach (var hitbox in hitboxes)
+            //{
+            //    hitbox.rect.x += x;
+            //    hitbox.rect.y += y;
+            //}
 
-            foreach (var hurtbox in hurtboxes)
-            {
-                hurtbox.rect.x += x;
-                hurtbox.rect.y += y;
-            }
+            //foreach (var hurtbox in hurtboxes)
+            //{
+            //    hurtbox.rect.x += x;
+            //    hurtbox.rect.y += y;
+            //}
 
-            pushbox.rect.x += x;
-            pushbox.rect.y += y;
+            //pushbox.rect.x += x;
+            //pushbox.rect.y += y;
         }
 
         /// <summary>
@@ -416,8 +439,8 @@ namespace FightingGameEngine
             var sign = isFaceRight ? 1 : -1;
 
             var fightPosRect = new Rect();
-            fightPosRect.x = basePosition.x + (dataRect.x * sign);
-            fightPosRect.y = basePosition.y + dataRect.y;
+            fightPosRect.x = basePosition.x;
+            fightPosRect.y = basePosition.y;
             fightPosRect.width = dataRect.width;
             fightPosRect.height = dataRect.height;
 

@@ -77,44 +77,46 @@ namespace FightingGameEngine
 
         private Rect GetScreenRect(Fighter fighter, Rect boxRect)
         {
-            // 1. Get base position
-            Vector3 worldPos = fighter.transform.position;
+            // 1. Get base world position of fighter
+            Vector3 fighterWorldPos = fighter.transform.position;
 
-            // 2. Calculate the box's center position in local space
+            // 2. Calculate box center in local space
             Vector2 boxCenterLocal = new Vector2(
                 boxRect.x + boxRect.width * 0.5f,
                 boxRect.y + boxRect.height * 0.5f
             );
 
-            // 3. Flip the x position if facing left
-            if (!fighter.isFaceRight)
-            {
-                boxCenterLocal.x *= -1;
-            }
+            // 3. Flip X if facing left
+            //if (!fighter.isFaceRight)
+            //{
+            //    boxCenterLocal.x *= -1;
+            //}
 
-            // 4. Convert to world position
-            Vector3 boxCenterWorld = new Vector3(
-                worldPos.x + boxCenterLocal.x,
-                worldPos.y + boxCenterLocal.y,
-                worldPos.z
-            );
+            // 4. Convert box center to world
+            Vector3 boxCenterWorld = fighterWorldPos + new Vector3(boxCenterLocal.x, boxCenterLocal.y, 0f);
 
-            // 3. Convert to screen space
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-            screenPos.y = Screen.height - screenPos.y;
+            // 5. Convert corners to screen points
+            Vector3 boxMinWorld = boxCenterWorld - new Vector3(boxRect.width * 0.5f, boxRect.height * 0.5f, 0f);
+            Vector3 boxMaxWorld = boxCenterWorld + new Vector3(boxRect.width * 0.5f, boxRect.height * 0.5f, 0f);
 
-            float width = boxRect.width * 50f;
-            float height = boxRect.height * 50f;
+            Vector3 screenMin = Camera.main.WorldToScreenPoint(boxMinWorld);
+            Vector3 screenMax = Camera.main.WorldToScreenPoint(boxMaxWorld);
 
-            // 4. Apply scaling (adjust multiplier to match your game units)
-            float scaleMultiplier = 50f;
-            return new Rect(
-                screenPos.x - width * 0.5f,
-                screenPos.y - height * 0.5f,
-                boxRect.width * scaleMultiplier,
-                boxRect.height * scaleMultiplier
-            );
+            // Convert Y since screen space in GUI is bottom-up
+            screenMin.y = Screen.height - screenMin.y;
+            screenMax.y = Screen.height - screenMax.y;
+
+            // Create rect from screen min/max
+            float x = Mathf.Min(screenMin.x, screenMax.x);
+            float y = Mathf.Min(screenMin.y, screenMax.y);
+            float width = Mathf.Abs(screenMax.x - screenMin.x);
+            float height = Mathf.Abs(screenMax.y - screenMin.y);
+
+            Debug.Log($"Fighter: {fighter.name}, Box Rect: {boxRect}, Screen Rect: {x}, {y}, {width}, {height}");
+
+            return new Rect(x, y, width, height);
         }
+
 
         private void DrawBox(Rect rect, Color color, string label = "")
         {

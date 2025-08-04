@@ -257,22 +257,56 @@ namespace WalkUpThrow
 
         void UpdatePushCharacterVsCharacter()
         {
-            //var rect1 = fighter1.pushbox.rect;
-            //var rect2 = fighter2.pushbox.rect;
+            var rect1 = fighter1.pushbox.rect;
+            var rect2 = fighter2.pushbox.rect;
 
-            //if (rect1.Overlaps(rect2))
-            //{
-            //    if (fighter1.position.x < fighter2.position.x)
-            //    {
-            //        fighter1.ApplyPositionChange((rect1.xMax - rect2.xMin) * -1 / 2, fighter1.position.y);
-            //        fighter2.ApplyPositionChange((rect1.xMax - rect2.xMin) * 1 / 2, fighter2.position.y);
-            //    }
-            //    else if (fighter1.position.x > fighter2.position.x)
-            //    {
-            //        fighter1.ApplyPositionChange((rect2.xMax - rect1.xMin) * 1 / 2, fighter1.position.y);
-            //        fighter2.ApplyPositionChange((rect2.xMax - rect1.xMin) * -1 / 2, fighter1.position.y);
-            //    }
-            //}
+            // Log rect details before checking overlap
+            Debug.Log($"=== DEBUGGING RECT OVERLAP ===");
+            Debug.Log($"Fighter1 Rect: X={rect1.x}, Y={rect1.y}, Width={rect1.width}, Height={rect1.height}");
+            Debug.Log($"Fighter2 Rect: X={rect2.x}, Y={rect2.y}, Width={rect2.width}, Height={rect2.height}");
+
+            // Log world positions of the fighters
+            Vector2 fighter1Pos = fighter1.transform.position;
+            Vector2 fighter2Pos = fighter2.transform.position;
+            Debug.Log($"Fighter1 World Position: X={fighter1Pos.x}, Y={fighter1Pos.y}");
+            Debug.Log($"Fighter2 World Position: X={fighter2Pos.x}, Y={fighter2Pos.y}");
+
+            bool isOverlapping = rect1.Overlaps(rect2);
+            Debug.Log($"Overlap Check Result: {isOverlapping}");
+
+            if (!isOverlapping)
+            {
+                // Calculate horizontal and vertical distances between rect edges
+                float horizontalGap = Mathf.Max(rect2.xMin - rect1.xMax, rect1.xMin - rect2.xMax);
+                float verticalGap = Mathf.Max(rect2.yMin - rect1.yMax, rect1.yMin - rect2.yMax);
+
+                Debug.Log($"Gap Between Rects Horizontal: {horizontalGap}, Vertical: {verticalGap}");
+
+                // Check if they are very close but not overlapping (possible floatingpoint precision issue)
+                if (Mathf.Abs(horizontalGap) < 0.01f && Mathf.Abs(verticalGap) < 0.01f)
+                {
+                    Debug.LogWarning("Rects are extremely close but not overlapping Possible floating-point error.");
+                }
+            }
+            else
+            {
+                Debug.Log("Overlap detected! Applying push...");
+                // Your original overlap resolution logic here
+                if (fighter1Pos.x < fighter2Pos.x)
+                {
+                    float pushAmount = (rect1.xMax - rect2.xMin) * -0.5f;
+                    fighter1.ApplyPositionChange(pushAmount, 0);
+                    fighter2.ApplyPositionChange(-pushAmount, 0);
+                    Debug.Log($"Pushing: Fighter1 left by {pushAmount}, Fighter2 right by {-pushAmount}");
+                }
+                else
+                {
+                    float pushAmount = (rect2.xMax - rect1.xMin) * 0.5f;
+                    fighter1.ApplyPositionChange(pushAmount, 0);
+                    fighter2.ApplyPositionChange(-pushAmount, 0);
+                    Debug.Log($"Pushing: Fighter1 right by {pushAmount}, Fighter2 left by {-pushAmount}");
+                }
+            }
         }
 
         void UpdatePushCharacterVsBackground()

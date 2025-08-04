@@ -20,11 +20,6 @@ namespace WalkUpThrow
         [SerializeField]
         private GUIStyle debugTextStyle;
 
-        private Vector2 battleAreaTopLeftPoint;
-        private Vector2 battleAreaBottomRightPoint;
-
-        private Vector2 fightPointToScreenScale;
-        private float centerPoint;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -40,8 +35,6 @@ namespace WalkUpThrow
 
             //CalculateBattleArea();
             //CalculateFightPointToScreenScale();
-
-            UpdateSprite();
         }
 
         void OnGUI()
@@ -49,34 +42,13 @@ namespace WalkUpThrow
             battleCore.fighters.ForEach((f) => DrawFighter(f));
         }
 
-        void UpdateSprite()
-        {
-            if (fighter1Sprite != null)
-            {
-                var sprite = battleCore.fighter1.GetCurrentAnimationSprite();
-                if (sprite != null)
-                    fighter1Sprite.sprite = sprite;
-            }
-
-            if (fighter2Sprite != null)
-            {
-                var sprite = battleCore.fighter2.GetCurrentAnimationSprite();
-                if (sprite != null) 
-                {
-                    fighter2Sprite.sprite = sprite;
-                }
-            }
-        }
-
         void DrawFighter(Fighter fighter)
         {
             var labelRect = new Rect(0, Screen.height * 0.86f, Screen.width * 0.22f, 50);
 
             labelRect.y += Screen.height * 0.03f;
-            //var frameAdvantage = battleCore.GetFrameAdvantage(fighter.isFaceRight);
-            //var frameAdvText = frameAdvantage > 0 ? "+" + frameAdvantage : frameAdvantage.ToString();
-            GUI.Label(labelRect, "Frame: " + fighter.currentActionFrame + "/" + fighter.currentActionFrameCount
-               /* + "(" + frameAdvText + ")"*/, debugTextStyle);
+
+            GUI.Label(labelRect, "Frame: " + fighter.currentActionFrame + "/" + fighter.currentActionFrameCount, debugTextStyle);
 
             labelRect.y += Screen.height * 0.03f;
             GUI.Label(labelRect, "Stun: " + fighter.currentHitStunFrame, debugTextStyle);
@@ -84,9 +56,6 @@ namespace WalkUpThrow
             labelRect.y += Screen.height * 0.03f;
             GUI.Label(labelRect, "Action: " + fighter.currentActionID, debugTextStyle);
         }
-
-
-        
     }
 
 }
