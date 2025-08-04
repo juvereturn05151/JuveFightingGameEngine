@@ -295,20 +295,7 @@ namespace FightingGameEngine
         /// <param name="y"></param>
         public void ApplyPositionChange(float x, float y)
         {
-            //foreach (var hitbox in hitboxes)
-            //{
-            //    hitbox.rect.x += x;
-            //    hitbox.rect.y += y;
-            //}
-
-            //foreach (var hurtbox in hurtboxes)
-            //{
-            //    hurtbox.rect.x += x;
-            //    hurtbox.rect.y += y;
-            //}
-
-            //pushbox.rect.x += x;
-            //pushbox.rect.y += y;
+            transform.position += new Vector3(x, y, 0f);
         }
 
         /// <summary>

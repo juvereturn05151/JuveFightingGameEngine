@@ -573,8 +573,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WalkUpThrow.FightingArenaController
   battleCore: {fileID: 436632637}
-  fighter1Sprite: {fileID: 1275636297}
-  fighter2Sprite: {fileID: 1654880546}
   _battleBoxLineWidth: 2
   debugTextStyle:
     m_Name: 
@@ -659,11 +657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8108fc1a19bde7b428bf47b5de42e1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.Fighter
---- !u!212 &1275636297 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4486832894738740244, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
-  m_PrefabInstance: {fileID: 3781307341750934646}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1654880543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -745,60 +738,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1482794105809344554, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
   m_PrefabInstance: {fileID: 1654880543}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &1654880546 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4486832894738740244, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
-  m_PrefabInstance: {fileID: 1654880543}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1788339383
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1788339385}
-  - component: {fileID: 1788339386}
-  m_Layer: 0
-  m_Name: FightingGameVisualizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1788339385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788339383}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1788339386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788339383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbfb2322515f5eb4e80ab4ec862b0a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.FightingGameBoxVisualizer
-  _battleCore: {fileID: 436632637}
-  _pushboxColor: {r: 0, g: 0.5, b: 1, a: 0.3}
-  _hurtboxColor: {r: 0, g: 1, b: 0.3, a: 0.3}
-  _hitboxColor: {r: 1, g: 0.2, b: 0.2, a: 0.4}
-  _outlineThickness: 1.5
 --- !u!1001 &3781307341750934646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,5 +811,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 436632638}
   - {fileID: 1259826317}
-  - {fileID: 1788339385}
   - {fileID: 601164918}
