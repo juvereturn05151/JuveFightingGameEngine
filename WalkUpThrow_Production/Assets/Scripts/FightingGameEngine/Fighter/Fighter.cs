@@ -179,8 +179,6 @@ namespace FightingGameEngine
                 input[i] = input[i - 1];
                 inputDown[i] = inputDown[i - 1];
                 inputUp[i] = inputUp[i - 1];
-
-                //Debug.Log($"Frame {i}: input={input[i]}, inputDown={inputDown[i]}, inputUp={inputUp[i]}");
             }
 
             // Insert new input data at the front of the buffer
@@ -399,7 +397,7 @@ namespace FightingGameEngine
             foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
             {
                 var box = new Hitbox();
-                box.rect = TransformToFightRect(hitbox.rect, transform.position, isFaceRight);
+                box.rect = UpdateCollisionBox(hitbox.rect, transform.position, isFaceRight);
                 box.attackID = hitbox.attackID;
                 hitboxes.Add(box);
             }
@@ -408,7 +406,7 @@ namespace FightingGameEngine
             {
                 var box = new Hurtbox();
                 Rect rect = hurtbox.useBaseRect ? fighterData.baseHurtBoxRect : hurtbox.rect;
-                box.rect = TransformToFightRect(rect, transform.position, isFaceRight);
+                box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
                 hurtboxes.Add(box);
             }
 
@@ -420,23 +418,16 @@ namespace FightingGameEngine
             pushbox = new Pushbox();
             Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
 
-            pushbox.rect = TransformToFightRect(pushRect, transform.position, isFaceRight);
+            pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
         }
 
-        /// <summary>
-        /// Convert relative box position with current fighter position
-        /// </summary>
-        /// <param name="dataRect"></param>
-        /// <param name="basePosition"></param>
-        /// <param name="isFaceRight"></param>
-        /// <returns></returns>
-        private Rect TransformToFightRect(Rect dataRect, Vector2 basePosition, bool isFaceRight)
+        private Rect UpdateCollisionBox(Rect dataRect, Vector2 basePosition, bool isFaceRight)
         {
             var sign = isFaceRight ? 1 : -1;
 
             var fightPosRect = new Rect();
-            fightPosRect.x = basePosition.x;
-            fightPosRect.y = basePosition.y;
+            fightPosRect.x = basePosition.x + dataRect.x;
+            fightPosRect.y = basePosition.y + dataRect.y;
             fightPosRect.width = dataRect.width;
             fightPosRect.height = dataRect.height;
 

@@ -59,7 +59,7 @@ namespace FightingGameEngine
             UpdateInputHistory(_currentInput);
 
             // DEBUG: Show current frame's input
-            Debug.Log($"[InputManager] Frame Input: {((InputDefine)_currentInput.input)} @ {Time.time:F2}");
+            //Debug.Log($"[InputManager] Frame Input: {((InputDefine)_currentInput.input)} @ {Time.time:F2}");
 
             // Optional: Display history at interval or key press
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -86,14 +86,14 @@ namespace FightingGameEngine
             if (_attackAction.triggered)
             {
                 _currentInput.input |= (int)InputDefine.Attack;
-                Debug.Log("[InputManager] Attack Pressed!");
+                //Debug.Log("[InputManager] Attack Pressed!");
             }
 
             if (_currentInput.input != (int)InputDefine.None)
             {
                 _inputBuffer.Enqueue(_currentInput.ShallowCopy());
 
-                Debug.Log($"[InputManager] Buffered Input: {((InputDefine)_currentInput.input)}");
+                //Debug.Log($"[InputManager] Buffered Input: {((InputDefine)_currentInput.input)}");
 
                 if (_inputBuffer.Count > MaxQueueBufferSize)
                     _inputBuffer.Dequeue();
@@ -114,11 +114,11 @@ namespace FightingGameEngine
             inputDown[0] = (input[0] ^ input[1]) & input[0];   // Buttons pressed this frame
             inputUp[0] = (input[0] ^ input[1]) & ~input[0];   // Buttons released this frame
 
-            if (inputDown[0] != 0)
-                Debug.Log($"[InputManager] InputDown Detected: {((InputDefine)inputDown[0])}");
+            //if (inputDown[0] != 0)
+                //Debug.Log($"[InputManager] InputDown Detected: {((InputDefine)inputDown[0])}");
 
-            if (inputUp[0] != 0)
-                Debug.Log($"[InputManager] InputUp Detected: {((InputDefine)inputUp[0])}");
+            //if (inputUp[0] != 0)
+                //Debug.Log($"[InputManager] InputUp Detected: {((InputDefine)inputUp[0])}");
         }
 
         public bool GetInput(InputDefine inputCheck)

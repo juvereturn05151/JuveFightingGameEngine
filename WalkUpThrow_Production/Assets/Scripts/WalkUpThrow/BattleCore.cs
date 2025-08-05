@@ -415,7 +415,6 @@ namespace WalkUpThrow
             {
                 Vector2 damagePos = Vector2.zero;
                 bool isHit = false;
-                //bool isProximity = false;
                 AttackID hitAttackID = 0;
 
                 foreach (var damaged in _fighters)
@@ -460,9 +459,6 @@ namespace WalkUpThrow
                         //var hitStunFrame = attacker.GetHitStunFrame(damageResult, hitAttackID);
                         //attacker.SetHitStun(hitStunFrame);
                         //damaged.SetHitStun(hitStunFrame);
-                        //damaged.SetSpriteShakeFrame(hitStunFrame / 3);
-
-                        //damageHandler(damaged, damagePos, damageResult);
                     }
                 }
             }
