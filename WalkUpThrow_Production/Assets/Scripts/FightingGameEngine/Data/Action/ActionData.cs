@@ -13,7 +13,8 @@ namespace FightingGameEngine
         Nothing = -1,
         Idle,
         Forward,
-        Backward
+        Backward,
+        Cr_Mk
     }
 
     public enum ActionType

@@ -31,7 +31,13 @@ namespace FightingGameEngine
         Backward5,
         Backward6,
         Backward7,
-        Backward8
+        Backward8,
+        Cr_Mk1,
+        Cr_Mk2,
+        Cr_Mk3,
+        Cr_MK4,
+        Cr_Mk5,
+        Cr_Mk6,
     }
 
     [System.Serializable]

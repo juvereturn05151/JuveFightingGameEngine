@@ -107,7 +107,7 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""id"": ""ab227274-aa61-4fa5-81a4-4b73016b5f49"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {

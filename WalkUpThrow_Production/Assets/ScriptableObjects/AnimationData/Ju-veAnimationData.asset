@@ -82,3 +82,21 @@ MonoBehaviour:
   - animationID: 22
     sprite: {fileID: -2014415727781387884, guid: 1eda2060a9cf0e74599ebffa59ff84da, type: 3}
     audioClip: {fileID: 0}
+  - animationID: 23
+    sprite: {fileID: -7827820649059036554, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 24
+    sprite: {fileID: -1391032500907329532, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 25
+    sprite: {fileID: -8186319495672513012, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 26
+    sprite: {fileID: 75706482256594217, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 27
+    sprite: {fileID: -421118620865401490, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 28
+    sprite: {fileID: 3892837928492344846, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}

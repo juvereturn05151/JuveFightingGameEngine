@@ -9,89 +9,137 @@ namespace FightingGameEngine
 
     public class InputManager : MonoBehaviour
     {
-        // Input Action Asset reference
         [SerializeField] private InputActionAsset _inputActions;
-
-        // Input buffers
-        private Queue<InputData> _inputBuffer = new Queue<InputData>();
-        private InputData _currentInput = new InputData();
 
         // Input Actions
         private InputAction _moveAction;
         private InputAction _attackAction;
 
+        // Raw input per frame
+        private InputData _currentInput = new InputData();
+        public InputData CurrentInput => _currentInput;
+
+        // Queue buffer for command detection (Hadoken, etc.)
+        private Queue<InputData> _inputBuffer = new Queue<InputData>();
+        public Queue<InputData> InputBuffer => _inputBuffer;
+        private const int MaxQueueBufferSize = 60;
+
+        // Fixed-length frame-by-frame input history
+        private const int HistorySize = 10;
+        private int[] input = new int[HistorySize];
+        private int[] inputDown = new int[HistorySize];
+        private int[] inputUp = new int[HistorySize];
+
+        public int[] InputHistory => input;
+        public int[] InputDownHistory => inputDown;
+        public int[] InputUpHistory => inputUp;
+
         private void Awake()
         {
-            // Set up input actions
             _moveAction = _inputActions.FindAction("Move");
             _attackAction = _inputActions.FindAction("Attack");
 
-            // Enable actions
             _moveAction.Enable();
             _attackAction.Enable();
+
+            Debug.Log("[InputManager] Input actions enabled.");
         }
 
         private void OnDestroy()
         {
             _moveAction.Disable();
             _attackAction.Disable();
+
+            Debug.Log("[InputManager] Input actions disabled.");
         }
 
         private void Update()
         {
-            // Process raw inputs each frame
             ProcessInputs();
+            UpdateInputHistory(_currentInput);
+
+            // DEBUG: Show current frame's input
+            Debug.Log($"[InputManager] Frame Input: {((InputDefine)_currentInput.input)} @ {Time.time:F2}");
+
+            // Optional: Display history at interval or key press
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                Debug.Log("[InputManager] Input History Dump:");
+                for (int i = 0; i < HistorySize; i++)
+                {
+                    Debug.Log($"  [{i}] Input={((InputDefine)input[i])}, Down={((InputDefine)inputDown[i])}, Up={((InputDefine)inputUp[i])}");
+                }
+            }
         }
 
         private void ProcessInputs()
         {
-            // Reset current input
             _currentInput.input = (int)InputDefine.None;
             _currentInput.time = Time.time;
 
-            // Movement
             Vector2 moveInput = _moveAction.ReadValue<Vector2>();
             if (moveInput.x < -0.5f) _currentInput.input |= (int)InputDefine.Left;
             if (moveInput.x > 0.5f) _currentInput.input |= (int)InputDefine.Right;
+            //if (moveInput.y < -0.5f) _currentInput.input |= (int)InputDefine.Down;
+            //if (moveInput.y > 0.5f) _currentInput.input |= (int)InputDefine.Up;
 
-            // Attack
             if (_attackAction.triggered)
-                _currentInput.input |= (int)InputDefine.Attack;
-
-            // Add to buffer if there's any input
-            if (_currentInput.input != (int)InputDefine.None)
-                _inputBuffer.Enqueue(_currentInput.ShallowCopy());
-        }
-
-        public bool GetInput(InputDefine input)
-        {
-            return (_currentInput.input & (int)input) != 0;
-        }
-
-        public bool GetInputDown(InputDefine input)
-        {
-            foreach (InputData data in _inputBuffer)
             {
-                if ((data.input & (int)input) != 0)
-                    return true;
+                _currentInput.input |= (int)InputDefine.Attack;
+                Debug.Log("[InputManager] Attack Pressed!");
             }
-            return false;
+
+            if (_currentInput.input != (int)InputDefine.None)
+            {
+                _inputBuffer.Enqueue(_currentInput.ShallowCopy());
+
+                Debug.Log($"[InputManager] Buffered Input: {((InputDefine)_currentInput.input)}");
+
+                if (_inputBuffer.Count > MaxQueueBufferSize)
+                    _inputBuffer.Dequeue();
+            }
+        }
+
+
+        private void UpdateInputHistory(InputData inputData)
+        {
+            for (int i = HistorySize - 1; i >= 1; i--)
+            {
+                input[i] = input[i - 1];
+                inputDown[i] = inputDown[i - 1];
+                inputUp[i] = inputUp[i - 1];
+            }
+
+            input[0] = inputData.input;
+            inputDown[0] = (input[0] ^ input[1]) & input[0];   // Buttons pressed this frame
+            inputUp[0] = (input[0] ^ input[1]) & ~input[0];   // Buttons released this frame
+
+            if (inputDown[0] != 0)
+                Debug.Log($"[InputManager] InputDown Detected: {((InputDefine)inputDown[0])}");
+
+            if (inputUp[0] != 0)
+                Debug.Log($"[InputManager] InputUp Detected: {((InputDefine)inputUp[0])}");
+        }
+
+        public bool GetInput(InputDefine inputCheck)
+        {
+            return (_currentInput.input & (int)inputCheck) != 0;
+        }
+
+        public bool GetInputDown(InputDefine inputCheck)
+        {
+            return (inputDown[0] & (int)inputCheck) != 0;
+        }
+
+        public bool GetInputUp(InputDefine inputCheck)
+        {
+            return (inputUp[0] & (int)inputCheck) != 0;
         }
 
         public void ClearBuffer()
         {
             _inputBuffer.Clear();
-        }
-
-        // For the new Input System UI
-        public void OnMove(InputAction.CallbackContext context)
-        {
-            // Can be used for UI-driven input if needed
-        }
-
-        public void OnAttack(InputAction.CallbackContext context)
-        {
-            // Can be used for UI-driven input if needed
+            Debug.Log("[InputManager] Input buffer cleared.");
         }
     }
 }

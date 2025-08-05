@@ -1,7 +1,5 @@
 using FightingGameEngine;
-using Newtonsoft.Json.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace WalkUpThrow 
 {
@@ -16,14 +14,19 @@ namespace WalkUpThrow
         [SerializeField]
         private GUIStyle debugTextStyle;
 
+        float xPos = 0f;
+
         void OnGUI()
         {
-            battleCore.fighters.ForEach((f) => DrawFighter(f));
+            xPos = Screen.width * 0.2f;
+            DrawFighter(battleCore.fighters[0]);
+            xPos = Screen.width * 0.8f;
+            DrawFighter(battleCore.fighters[1]);
         }
 
         void DrawFighter(Fighter fighter)
         {
-            var labelRect = new Rect(0, Screen.height * 0.86f, Screen.width * 0.22f, 50);
+            var labelRect = new Rect(xPos, Screen.height * 0.86f, Screen.width * 0.22f, 50);
 
             labelRect.y += Screen.height * 0.03f;
             GUI.Label(labelRect, "Frame: " + fighter.currentActionFrame + "/" + fighter.currentActionFrameCount, debugTextStyle);

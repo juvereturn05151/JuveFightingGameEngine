@@ -47,6 +47,17 @@ namespace WalkUpThrow
         public RoundStateType roundState { get { return _roundState; } }
         private RoundStateType _roundState = RoundStateType.Stop;
 
+        private static uint maxRecordingInputFrame = 60 * 60 * 5;
+        private InputData[] recordingP1Input = new InputData[maxRecordingInputFrame];
+        private InputData[] recordingP2Input = new InputData[maxRecordingInputFrame];
+        private uint currentRecordingInputIndex = 0;
+
+        private InputData[] lastRoundP1Input = new InputData[maxRecordingInputFrame];
+        private InputData[] lastRoundP2Input = new InputData[maxRecordingInputFrame];
+        private uint currentReplayingInputIndex = 0;
+        private uint lastRoundMaxRecordingInput = 0;
+        private bool isReplayingLastRoundInput = false;
+
         private float introStateTime = 3f;
         private float koStateTime = 2f;
         private float endStateTime = 3f;
@@ -59,6 +70,12 @@ namespace WalkUpThrow
 
             _fighters.Add(fighter1);
             _fighters.Add(fighter2);
+        }
+
+        void Start()
+        {
+            Application.targetFrameRate = 60;
+            QualitySettings.vSyncCount = 0; // Turn off vSync to control FPS manually
         }
 
         void FixedUpdate()
@@ -221,11 +238,11 @@ namespace WalkUpThrow
 
         void UpdateFightState()
         {
-            //var p1Input = GetP1InputData();
-            //var p2Input = GetP2InputData();
-            //RecordInput(p1Input, p2Input);
-            //fighter1.UpdateInput(p1Input);
-            //fighter2.UpdateInput(p2Input);
+            var p1Input = GetP1InputData();
+            var p2Input = GetP2InputData();
+            RecordInput(p1Input, p2Input);
+            fighter1.UpdateInput(p1Input);
+            fighter2.UpdateInput(p2Input);
 
             _fighters.ForEach((f) => f.IncrementActionFrame());
 
@@ -255,32 +272,100 @@ namespace WalkUpThrow
             UpdatePushCharacterVsBackground();
         }
 
+        InputData GetP1InputData()
+        {
+            if (isReplayingLastRoundInput)
+            {
+                return lastRoundP1Input[currentReplayingInputIndex];
+            }
+
+            var time = Time.fixedTime - roundStartTime;
+
+            InputData p1Input = new InputData();
+            p1Input.input |= fighter1.InputManager.GetInput(InputDefine.Left) ? (int)InputDefine.Left : 0;
+            p1Input.input |= fighter1.InputManager.GetInput(InputDefine.Right) ? (int)InputDefine.Right : 0;
+            p1Input.input |= fighter1.InputManager.GetInput(InputDefine.Attack) ? (int)InputDefine.Attack : 0;
+            p1Input.time = time;
+
+            //Debug.Log(p1Input.input);
+
+            //if (debugP1Attack)
+            //    p1Input.input |= (int)InputDefine.Attack;
+            //if (debugP1Guard)
+            //    p1Input.input |= (int)InputDefine.Left;
+
+            return p1Input;
+        }
+
+        InputData GetP2InputData()
+        {
+
+
+            if (isReplayingLastRoundInput)
+            {
+                return lastRoundP2Input[currentReplayingInputIndex];
+            }
+
+            var time = Time.fixedTime - roundStartTime;
+
+            InputData p2Input = new InputData();
+            
+            //Hack
+            return p2Input;
+
+            //if (battleAI != null)
+            //{
+            //    p2Input.input |= battleAI.getNextAIInput();
+            //}
+            //else
+            //{
+            p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Left) ? (int)InputDefine.Left : 0;
+                p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Right) ? (int)InputDefine.Right : 0;
+                p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Attack) ? (int)InputDefine.Attack : 0;
+            //}
+
+            p2Input.time = time;
+
+            //if (debugP2Attack)
+            //    p2Input.input |= (int)InputDefine.Attack;
+            //if (debugP2Guard)
+            //    p2Input.input |= (int)InputDefine.Right;
+
+            return p2Input;
+        }
+
+        void RecordInput(InputData p1Input, InputData p2Input)
+        {
+            if (currentRecordingInputIndex >= maxRecordingInputFrame)
+                return;
+
+            recordingP1Input[currentRecordingInputIndex] = p1Input.ShallowCopy();
+            recordingP2Input[currentRecordingInputIndex] = p2Input.ShallowCopy();
+            currentRecordingInputIndex++;
+
+            if (isReplayingLastRoundInput)
+            {
+                if (currentReplayingInputIndex < lastRoundMaxRecordingInput)
+                    currentReplayingInputIndex++;
+            }
+        }
+
         void UpdatePushCharacterVsCharacter()
         {
             var rect1 = fighter1.pushbox.rect;
             var rect2 = fighter2.pushbox.rect;
 
-            // Log rect details before checking overlap
-            Debug.Log($"=== DEBUGGING RECT OVERLAP ===");
-            Debug.Log($"Fighter1 Rect: X={rect1.x}, Y={rect1.y}, Width={rect1.width}, Height={rect1.height}");
-            Debug.Log($"Fighter2 Rect: X={rect2.x}, Y={rect2.y}, Width={rect2.width}, Height={rect2.height}");
-
             // Log world positions of the fighters
             Vector2 fighter1Pos = fighter1.transform.position;
             Vector2 fighter2Pos = fighter2.transform.position;
-            Debug.Log($"Fighter1 World Position: X={fighter1Pos.x}, Y={fighter1Pos.y}");
-            Debug.Log($"Fighter2 World Position: X={fighter2Pos.x}, Y={fighter2Pos.y}");
 
             bool isOverlapping = rect1.Overlaps(rect2);
-            Debug.Log($"Overlap Check Result: {isOverlapping}");
 
             if (!isOverlapping)
             {
                 // Calculate horizontal and vertical distances between rect edges
                 float horizontalGap = Mathf.Max(rect2.xMin - rect1.xMax, rect1.xMin - rect2.xMax);
                 float verticalGap = Mathf.Max(rect2.yMin - rect1.yMax, rect1.yMin - rect2.yMax);
-
-                Debug.Log($"Gap Between Rects Horizontal: {horizontalGap}, Vertical: {verticalGap}");
 
                 // Check if they are very close but not overlapping (possible floatingpoint precision issue)
                 if (Mathf.Abs(horizontalGap) < 0.01f && Mathf.Abs(verticalGap) < 0.01f)
@@ -290,21 +375,18 @@ namespace WalkUpThrow
             }
             else
             {
-                Debug.Log("Overlap detected! Applying push...");
                 // Your original overlap resolution logic here
                 if (fighter1Pos.x < fighter2Pos.x)
                 {
                     float pushAmount = (rect1.xMax - rect2.xMin) * -0.5f;
                     fighter1.ApplyPositionChange(pushAmount, 0);
                     fighter2.ApplyPositionChange(-pushAmount, 0);
-                    Debug.Log($"Pushing: Fighter1 left by {pushAmount}, Fighter2 right by {-pushAmount}");
                 }
                 else
                 {
                     float pushAmount = (rect2.xMax - rect1.xMin) * 0.5f;
                     fighter1.ApplyPositionChange(pushAmount, 0);
                     fighter2.ApplyPositionChange(-pushAmount, 0);
-                    Debug.Log($"Pushing: Fighter1 right by {pushAmount}, Fighter2 left by {-pushAmount}");
                 }
             }
         }

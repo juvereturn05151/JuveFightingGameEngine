@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -9,6 +10,7 @@ namespace FightingGameEngine
     {
         [SerializeField] 
         private InputManager _inputManager;
+        public InputManager InputManager => _inputManager;
 
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
@@ -113,7 +115,7 @@ namespace FightingGameEngine
                 (input & (int)InputDefine.Right) != 0;
         }
 
-        private bool IsAttackInput(int input)
+        public bool IsAttackInput(int input)
         {
             return (input & (int)InputDefine.Attack) != 0;
         }
@@ -164,6 +166,30 @@ namespace FightingGameEngine
             }
         }
 
+
+        /// <summary>
+        /// UpdateInput
+        /// </summary>
+        /// <param name="inputData"></param>
+        public void UpdateInput(InputData inputData)
+        {
+            // Shift input history by 1 frame
+            for (int i = input.Length - 1; i >= 1; i--)
+            {
+                input[i] = input[i - 1];
+                inputDown[i] = inputDown[i - 1];
+                inputUp[i] = inputUp[i - 1];
+
+                //Debug.Log($"Frame {i}: input={input[i]}, inputDown={inputDown[i]}, inputUp={inputUp[i]}");
+            }
+
+            // Insert new input data at the front of the buffer
+            input[0] = inputData.input;
+            inputDown[0] = (input[0] ^ input[1]) & input[0];
+            inputUp[0] = (input[0] ^ input[1]) & ~input[0];
+        }
+
+
         /// <summary>
         /// Action request for intro state ()
         /// </summary>
@@ -177,51 +203,34 @@ namespace FightingGameEngine
         /// </summary>
         public void UpdateActionRequest()
         {
+            if (_inputManager == null) 
+            {
+                return;
+            }
+
             // If won then just request win animation
             //if (hasWon)
             //{
             //    RequestAction((int)CommonActionID.WIN);
             //    return;
             //}
+            var isForward = IsForwardInput(_inputManager.CurrentInput.input);
+            var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
+            bool isAttack = _inputManager.GetInputDown(InputDefine.Attack);
 
-            // If there is any buffer action, set that to current action
-            // Use for canceling normal to special attack
-            //if (bufferActionID != -1
-            //    && canCancelAttack()
-            //    && currentHitStunFrame <= 0)
-            //{
-            //    SetCurrentAction(bufferActionID);
-            //    bufferActionID = -1;
-            //    return;
-            //}
+            if (isAttack)
+            {
+                //Debug.Log("Attack Input");
+                //Debug.Log(_inputManager.CurrentInput.input);
+                RequestAction(ActionID.Cr_Mk);
+            }
+            else 
+            {
+                //Debug.Log(_inputManager.CurrentInput.input);
+            }
 
-            var isForward = IsForwardInput(input[0]);
-            var isBackward = IsBackwardInput(input[0]);
-            //bool isAttack = IsAttackInput(inputDown[0]);
-            //if (CheckSpecialAttackInput())
-            //{
-            //    if (isBackward || isForward)
-            //        RequestAction((int)CommonActionID.B_SPECIAL);
-            //    else
-            //        RequestAction((int)CommonActionID.N_SPECIAL);
-            //}
-            //else if (isAttack)
-            //{
-            //    if ((currentActionID == (int)CommonActionID.N_ATTACK ||
-            //        currentActionID == (int)CommonActionID.B_ATTACK) &&
-            //        !isActionEnd)
-            //        RequestAction((int)CommonActionID.N_SPECIAL);
-            //    else
-            //    {
-            //        if (isBackward || isForward)
-            //            RequestAction((int)CommonActionID.B_ATTACK);
-            //        else
-            //            RequestAction((int)CommonActionID.N_ATTACK);
-            //    }
-            //}
-
-            // for proximity guard check
-            isInputBackward = isBackward;
+                // for proximity guard check
+                isInputBackward = isBackward;
 
             if (isForward && isBackward)
             {

@@ -4,10 +4,10 @@ namespace FightingGameEngine
 {
     public enum InputDefine
     {
-        None = 0,
-        Left = 1 << 0,
-        Right = 1 << 1,
-        Attack = 1 << 2,
+        None = 0, //0000
+        Left = 1 << 0, //0001
+        Right = 1 << 1,//0010
+        Attack = 1 << 2,    //0100
     }
 
     public class InputData
