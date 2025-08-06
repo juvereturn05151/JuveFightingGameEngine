@@ -10,38 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
-  m_Name: Cr_Mk
+  m_Name: Hurt
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
-  actionID: 3
-  actionType: 1
-  frameCount: 30
+  actionID: 4
+  actionType: 2
+  frameCount: 15
   isLoop: 0
   loopFromFrame: 0
   animations:
   - startEndFrame: {x: 0, y: 4}
-    animationID: 23
+    animationID: 29
   - startEndFrame: {x: 5, y: 9}
-    animationID: 24
+    animationID: 30
   - startEndFrame: {x: 10, y: 14}
-    animationID: 25
-  - startEndFrame: {x: 15, y: 19}
-    animationID: 26
-  - startEndFrame: {x: 20, y: 24}
-    animationID: 27
-  - startEndFrame: {x: 25, y: 29}
-    animationID: 28
-  hitboxes:
-  - startEndFrame: {x: 10, y: 18}
-    rect:
-      serializedVersion: 2
-      x: 3.04
-      y: -1.73
-      width: 1.68
-      height: 1
-    useBaseRect: 0
-    attackID: 0
+    animationID: 31
+  hitboxes: []
   hurtboxes:
-  - startEndFrame: {x: 0, y: 59}
+  - startEndFrame: {x: 0, y: 15}
     rect:
       serializedVersion: 2
       x: 0
@@ -50,7 +35,7 @@ MonoBehaviour:
       height: 1.2
     useBaseRect: 1
   pushboxes:
-  - startEndFrame: {x: 0, y: 59}
+  - startEndFrame: {x: 0, y: 15}
     rect:
       serializedVersion: 2
       x: 0

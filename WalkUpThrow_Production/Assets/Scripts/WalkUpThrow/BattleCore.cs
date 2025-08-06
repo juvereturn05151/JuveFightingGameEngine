@@ -432,6 +432,9 @@ namespace WalkUpThrow
 
                         foreach (var hurtbox in damaged.hurtboxes)
                         {
+                            Debug.Log($"Hitbox bounds: ({hitbox.xMin}, {hitbox.yMin}) to ({hitbox.xMax}, {hitbox.yMax})");
+                            Debug.Log($"Hurtbox bounds: ({hurtbox.xMin}, {hurtbox.yMin}) to ({hurtbox.xMax}, {hurtbox.yMax})");
+
                             if (hitbox.Overlaps(hurtbox))
                             {
                                 isHit = true;
@@ -444,6 +447,10 @@ namespace WalkUpThrow
                                 damagePos.y = (y1 + y2) / 2;
                                 break;
 
+                            }
+                            else 
+                            {
+                                Debug.Log("No overlap");
                             }
                         }
 
@@ -459,6 +466,8 @@ namespace WalkUpThrow
                         //var hitStunFrame = attacker.GetHitStunFrame(damageResult, hitAttackID);
                         //attacker.SetHitStun(hitStunFrame);
                         //damaged.SetHitStun(hitStunFrame);
+                        Debug.Log("It hurts");
+                        damaged.RequestAction(ActionID.Hurt);
                     }
                 }
             }

@@ -394,12 +394,19 @@ namespace FightingGameEngine
             hitboxes.Clear();
             hurtboxes.Clear();
 
+            Debug.Log($"=== APPLY CURRENT ACTION DATA ===");
+            Debug.Log($"Current Action: {currentActionID}, Frame: {currentActionFrame}, Facing Right: {isFaceRight}");
+            Debug.Log($"Fighter Position: {transform.position}");
+
             foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
             {
                 var box = new Hitbox();
                 box.rect = UpdateCollisionBox(hitbox.rect, transform.position, isFaceRight);
                 box.attackID = hitbox.attackID;
                 hitboxes.Add(box);
+
+                Debug.Log($"[Hitbox] Local: {hitbox.rect}, World: {box.rect}, AttackID: {box.attackID}");
+                Debug.Log($"          World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
             }
 
             foreach (var hurtbox in fighterData.actions[currentActionID].GetHurtboxData(currentActionFrame))
@@ -408,6 +415,9 @@ namespace FightingGameEngine
                 Rect rect = hurtbox.useBaseRect ? fighterData.baseHurtBoxRect : hurtbox.rect;
                 box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
                 hurtboxes.Add(box);
+
+                Debug.Log($"[Hurtbox] Local: {rect}, World: {box.rect}, UseBase: {hurtbox.useBaseRect}");
+                Debug.Log($"           World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
             }
 
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
@@ -415,11 +425,20 @@ namespace FightingGameEngine
             {
                 Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
             }
-            pushbox = new Pushbox();
-            Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
+            else
+            {
+                pushbox = new Pushbox();
+                Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
+                pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
 
-            pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
+                Debug.Log($"[Pushbox] Local: {pushRect}, World: {pushbox.rect}, UseBase: {pushBoxData.useBaseRect}");
+                Debug.Log($"           World xMin: {pushbox.rect.xMin}, yMin: {pushbox.rect.yMin}, xMax: {pushbox.rect.xMax}, yMax: {pushbox.rect.yMax}");
+            }
+
+            Debug.Log("==================================");
         }
+
+
 
         private Rect UpdateCollisionBox(Rect dataRect, Vector2 basePosition, bool isFaceRight)
         {

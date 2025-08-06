@@ -38,6 +38,9 @@ namespace FightingGameEngine
         Cr_MK4,
         Cr_Mk5,
         Cr_Mk6,
+        Hurt1,
+        Hurt2,
+        Hurt3,
     }
 
     [System.Serializable]

@@ -14,7 +14,8 @@ namespace FightingGameEngine
         Idle,
         Forward,
         Backward,
-        Cr_Mk
+        Cr_Mk,
+        Hurt
     }
 
     public enum ActionType

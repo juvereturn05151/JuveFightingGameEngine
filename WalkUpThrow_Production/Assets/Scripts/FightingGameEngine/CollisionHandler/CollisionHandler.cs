@@ -8,8 +8,8 @@ namespace FightingGameEngine
 
         public float xMin { get { return rect.x - rect.width / 2; } }
         public float xMax { get { return rect.x + rect.width / 2; } }
-        public float yMin { get { return rect.y; } }
-        public float yMax { get { return rect.y + rect.height; } }
+        public float yMin { get { return rect.y - rect.height / 2; } }
+        public float yMax { get { return rect.y + rect.height / 2; } }
 
         public bool Overlaps(BoxBase otherBox)
         {
