@@ -522,22 +522,6 @@
                     "isOR": false
                 }
             ]
-        },
-        {
-            "name": "Gamepad+Keyboard",
-            "bindingGroup": "Gamepad+Keyboard",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": true,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Gamepad>",
-                    "isOptional": true,
-                    "isOR": false
-                }
-            ]
         }
     ]
 }

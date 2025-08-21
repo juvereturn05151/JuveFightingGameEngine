@@ -608,22 +608,6 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""isOR"": false
                 }
             ]
-        },
-        {
-            ""name"": ""Gamepad+Keyboard"",
-            ""bindingGroup"": ""Gamepad+Keyboard"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
         }
     ]
 }");
@@ -1122,19 +1106,6 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
         {
             if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
             return asset.controlSchemes[m_GamepadSchemeIndex];
-        }
-    }
-    private int m_GamepadKeyboardSchemeIndex = -1;
-    /// <summary>
-    /// Provides access to the input control scheme.
-    /// </summary>
-    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
-    public InputControlScheme GamepadKeyboardScheme
-    {
-        get
-        {
-            if (m_GamepadKeyboardSchemeIndex == -1) m_GamepadKeyboardSchemeIndex = asset.FindControlSchemeIndex("Gamepad+Keyboard");
-            return asset.controlSchemes[m_GamepadKeyboardSchemeIndex];
         }
     }
     /// <summary>
