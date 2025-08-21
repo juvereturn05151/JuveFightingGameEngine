@@ -7,7 +7,7 @@ namespace FightingGameEngine
     // InputManager is responsible for managing input data and handling input events in the fighting game engine.
     // It can be extended to include methods for processing input, handling player controls, etc.
 
-    public class InputManager : MonoBehaviour
+    public class CharacterInputManager : MonoBehaviour
     {
         private PlayerInput _playerInput;
 
@@ -36,14 +36,24 @@ namespace FightingGameEngine
 
         private void Awake()
         {
-            _playerInput = GetComponent<PlayerInput>();
+            //_playerInput = GetComponent<PlayerInput>();
+            //_moveAction = _playerInput.actions["Move"];
+            //_attackAction = _playerInput.actions["Attack"];
+
+            //_moveAction.Enable();
+            //_attackAction.Enable();
+
+            Debug.Log("[InputManager] Input actions enabled.");
+        }
+
+        public void AssignInput(PlayerInput playerInput) 
+        {
+            _playerInput = playerInput;
             _moveAction = _playerInput.actions["Move"];
             _attackAction = _playerInput.actions["Attack"];
 
             _moveAction.Enable();
             _attackAction.Enable();
-
-            Debug.Log("[InputManager] Input actions enabled.");
         }
 
         private void OnDestroy()
@@ -53,6 +63,7 @@ namespace FightingGameEngine
 
             Debug.Log("[InputManager] Input actions disabled.");
         }
+
 
         private void Update()
         {
@@ -75,6 +86,11 @@ namespace FightingGameEngine
 
         private void ProcessInputs()
         {
+            if (_playerInput == null) 
+            {
+                return;
+            }
+
             _currentInput.input = (int)InputDefine.None;
             _currentInput.time = Time.time;
 

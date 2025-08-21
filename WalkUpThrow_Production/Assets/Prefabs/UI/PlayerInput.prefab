@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8788042573341165537}
   - component: {fileID: 1091251316171490297}
+  - component: {fileID: 6295262705884424817}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -59,6 +60,18 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: ff605adc-96a5-40d8-acd7-3c90ad9c30ed
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6295262705884424817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78883177171914648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932b7dfaa1fd45041879833a92d5fe47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoadObject

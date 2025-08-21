@@ -9,8 +9,8 @@ namespace FightingGameEngine
     public class Fighter : MonoBehaviour
     {
         [SerializeField] 
-        private InputManager _inputManager;
-        public InputManager InputManager => _inputManager;
+        private CharacterInputManager _inputManager;
+        public CharacterInputManager InputManager => _inputManager;
 
         [SerializeField]
         private SpriteRenderer _spriteRenderer;

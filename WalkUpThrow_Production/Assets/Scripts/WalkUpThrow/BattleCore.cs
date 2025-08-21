@@ -69,7 +69,9 @@ namespace WalkUpThrow
             fighterDataList.ForEach((data) => data.SetupDictionary());
 
             _fighters.Add(fighter1);
+            fighter1.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player1Input);
             _fighters.Add(fighter2);
+            fighter2.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player2Input);
         }
 
         void Start()
