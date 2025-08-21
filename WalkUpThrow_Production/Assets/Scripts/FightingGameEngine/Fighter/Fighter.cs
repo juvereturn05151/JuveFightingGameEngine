@@ -203,6 +203,12 @@ namespace FightingGameEngine
         {
             if (_inputManager == null) 
             {
+                //Hack
+                if (currentActionID == ActionID.Hurt && isActionEnd) 
+                {
+                    RequestAction(ActionID.Idle);
+                }
+
                 return;
             }
 

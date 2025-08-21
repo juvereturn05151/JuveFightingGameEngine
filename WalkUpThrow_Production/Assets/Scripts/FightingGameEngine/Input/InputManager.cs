@@ -9,7 +9,7 @@ namespace FightingGameEngine
 
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] private InputActionAsset _inputActions;
+        private PlayerInput _playerInput;
 
         // Input Actions
         private InputAction _moveAction;
@@ -36,8 +36,9 @@ namespace FightingGameEngine
 
         private void Awake()
         {
-            _moveAction = _inputActions.FindAction("Move");
-            _attackAction = _inputActions.FindAction("Attack");
+            _playerInput = GetComponent<PlayerInput>();
+            _moveAction = _playerInput.actions["Move"];
+            _attackAction = _playerInput.actions["Attack"];
 
             _moveAction.Enable();
             _attackAction.Enable();

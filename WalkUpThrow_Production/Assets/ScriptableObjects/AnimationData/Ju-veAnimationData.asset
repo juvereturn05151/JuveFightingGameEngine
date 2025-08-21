@@ -100,3 +100,12 @@ MonoBehaviour:
   - animationID: 28
     sprite: {fileID: 3892837928492344846, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
     audioClip: {fileID: 0}
+  - animationID: 29
+    sprite: {fileID: 5404016070694503052, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 30
+    sprite: {fileID: -4217342817154395191, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 31
+    sprite: {fileID: -5054912576939099365, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
