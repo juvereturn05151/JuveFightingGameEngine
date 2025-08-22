@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 78883177171914648, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
       propertyPath: m_Name
-      value: PlayerInput
+      value: PlayerInput1
       objectReference: {fileID: 0}
     - target: {fileID: 8788042573341165537, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,7 +791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 78883177171914648, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
       propertyPath: m_Name
-      value: PlayerInput (1)
+      value: PlayerInput2
       objectReference: {fileID: 0}
     - target: {fileID: 8788042573341165537, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -914,6 +914,10 @@ PrefabInstance:
       propertyPath: isFaceRight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9006658082590481384, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
+      propertyPath: _playerInput
+      value: 
+      objectReference: {fileID: 1474686079}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -987,6 +991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter1
       objectReference: {fileID: 0}
+    - target: {fileID: 9006658082590481384, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
+      propertyPath: _playerInput
+      value: 
+      objectReference: {fileID: 426798875}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

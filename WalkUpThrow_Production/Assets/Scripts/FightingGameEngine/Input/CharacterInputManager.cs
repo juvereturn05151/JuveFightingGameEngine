@@ -9,6 +9,7 @@ namespace FightingGameEngine
 
     public class CharacterInputManager : MonoBehaviour
     {
+        [SerializeField]
         private PlayerInput _playerInput;
 
         // Input Actions

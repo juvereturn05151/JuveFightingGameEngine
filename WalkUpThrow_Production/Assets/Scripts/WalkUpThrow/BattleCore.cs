@@ -69,13 +69,27 @@ namespace WalkUpThrow
             fighterDataList.ForEach((data) => data.SetupDictionary());
 
             _fighters.Add(fighter1);
-            fighter1.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player1Input);
+
+
+
             _fighters.Add(fighter2);
-            fighter2.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player2Input);
+
+
         }
 
         void Start()
         {
+            if (GameInputManager.Instance.player1Input)
+            {
+                fighter1.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player1Input);
+            }
+
+
+            if (GameInputManager.Instance.player2Input)
+            {
+                fighter2.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player2Input);
+            }
+
             Application.targetFrameRate = 60;
             QualitySettings.vSyncCount = 0; // Turn off vSync to control FPS manually
         }
