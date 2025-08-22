@@ -111,6 +111,15 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a575cc5-9688-46f7-a75d-9c51b2bd59e1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Block"",
                     ""type"": ""Button"",
                     ""id"": ""e54b7037-ac7e-42ab-a363-0ac2587e448d"",
@@ -164,6 +173,28 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Up"",
+                    ""id"": ""94f8bdc7-c78a-49f0-8831-cb3c361b2d10"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""e13210a5-cdb2-4b17-b08f-139bcce48bf0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""2D Vector"",
                     ""id"": ""b3090b7e-ff1c-404c-9480-9e405714d9bb"",
                     ""path"": ""2DVector"",
@@ -197,6 +228,28 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Up"",
+                    ""id"": ""76d78670-63cf-4f5c-8c29-4e693d2835ee"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""24aed0e7-54c7-40ea-8455-947790957034"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""45fd6b32-692e-49dd-90ae-9f45c2db6ead"",
                     ""path"": ""<Keyboard>/j"",
@@ -215,6 +268,28 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f515574-cd4d-4f19-86a4-00ce256af103"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""214c4127-c80c-4195-8102-3f4189427f26"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -287,6 +362,15 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb4e35fd-d6d3-4016-8d31-4e9f97001c3c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Block"",
                     ""type"": ""Button"",
                     ""id"": ""7eb9460d-348d-4780-9084-87165b604e52"",
@@ -340,6 +424,28 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Up"",
+                    ""id"": ""cb6741e1-c4ac-4e35-be27-53cd6a812544"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""0be51b3b-4fca-4e33-b960-0d1dfe3836ba"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""2D Vector"",
                     ""id"": ""5da841e3-30b4-41b9-8206-14b762f6576b"",
                     ""path"": ""2DVector"",
@@ -371,6 +477,50 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""8be20e13-7d88-4275-9702-4eaaaeefebac"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""048882db-a599-46cd-b4f4-273be7bf36dd"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""596ee7fc-0006-42ee-8cd9-8986055d152b"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b3f1cb68-bb9b-4017-9e1b-9efbb5283028"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -615,12 +765,14 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Move = m_Player1.FindAction("Move", throwIfNotFound: true);
         m_Player1_Attack = m_Player1.FindAction("Attack", throwIfNotFound: true);
+        m_Player1_Special = m_Player1.FindAction("Special", throwIfNotFound: true);
         m_Player1_Block = m_Player1.FindAction("Block", throwIfNotFound: true);
         m_Player1_Throw = m_Player1.FindAction("Throw", throwIfNotFound: true);
         // Player2
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Attack = m_Player2.FindAction("Attack", throwIfNotFound: true);
+        m_Player2_Special = m_Player2.FindAction("Special", throwIfNotFound: true);
         m_Player2_Block = m_Player2.FindAction("Block", throwIfNotFound: true);
         m_Player2_Throw = m_Player2.FindAction("Throw", throwIfNotFound: true);
         // UI
@@ -712,6 +864,7 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
     private List<IPlayer1Actions> m_Player1ActionsCallbackInterfaces = new List<IPlayer1Actions>();
     private readonly InputAction m_Player1_Move;
     private readonly InputAction m_Player1_Attack;
+    private readonly InputAction m_Player1_Special;
     private readonly InputAction m_Player1_Block;
     private readonly InputAction m_Player1_Throw;
     /// <summary>
@@ -733,6 +886,10 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
         /// Provides access to the underlying input action "Player1/Attack".
         /// </summary>
         public InputAction @Attack => m_Wrapper.m_Player1_Attack;
+        /// <summary>
+        /// Provides access to the underlying input action "Player1/Special".
+        /// </summary>
+        public InputAction @Special => m_Wrapper.m_Player1_Special;
         /// <summary>
         /// Provides access to the underlying input action "Player1/Block".
         /// </summary>
@@ -773,6 +930,9 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
             @Block.started += instance.OnBlock;
             @Block.performed += instance.OnBlock;
             @Block.canceled += instance.OnBlock;
@@ -796,6 +956,9 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
             @Block.started -= instance.OnBlock;
             @Block.performed -= instance.OnBlock;
             @Block.canceled -= instance.OnBlock;
@@ -841,6 +1004,7 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
     private List<IPlayer2Actions> m_Player2ActionsCallbackInterfaces = new List<IPlayer2Actions>();
     private readonly InputAction m_Player2_Move;
     private readonly InputAction m_Player2_Attack;
+    private readonly InputAction m_Player2_Special;
     private readonly InputAction m_Player2_Block;
     private readonly InputAction m_Player2_Throw;
     /// <summary>
@@ -862,6 +1026,10 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
         /// Provides access to the underlying input action "Player2/Attack".
         /// </summary>
         public InputAction @Attack => m_Wrapper.m_Player2_Attack;
+        /// <summary>
+        /// Provides access to the underlying input action "Player2/Special".
+        /// </summary>
+        public InputAction @Special => m_Wrapper.m_Player2_Special;
         /// <summary>
         /// Provides access to the underlying input action "Player2/Block".
         /// </summary>
@@ -902,6 +1070,9 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
             @Block.started += instance.OnBlock;
             @Block.performed += instance.OnBlock;
             @Block.canceled += instance.OnBlock;
@@ -925,6 +1096,9 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
             @Block.started -= instance.OnBlock;
             @Block.performed -= instance.OnBlock;
             @Block.canceled -= instance.OnBlock;
@@ -1130,6 +1304,13 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "Special" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpecial(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "Block" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -1165,6 +1346,13 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Special" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpecial(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Block" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

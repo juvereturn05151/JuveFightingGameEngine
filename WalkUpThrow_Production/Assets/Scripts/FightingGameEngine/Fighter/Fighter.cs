@@ -221,20 +221,19 @@ namespace FightingGameEngine
             var isForward = IsForwardInput(_inputManager.CurrentInput.input);
             var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
             bool isAttack = _inputManager.GetInputDown(InputDefine.Attack);
+            bool isSpecial = _inputManager.GetInputDown(InputDefine.Special);
 
             if (isAttack)
             {
-                //Debug.Log("Attack Input");
-                //Debug.Log(_inputManager.CurrentInput.input);
                 RequestAction(ActionID.Cr_Mk);
             }
-            else 
+            else if (isSpecial) 
             {
-                //Debug.Log(_inputManager.CurrentInput.input);
+                RequestAction(ActionID.Hadouken);
             }
 
                 // for proximity guard check
-                isInputBackward = isBackward;
+            isInputBackward = isBackward;
 
             if (isForward && isBackward)
             {

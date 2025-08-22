@@ -15,7 +15,8 @@ namespace FightingGameEngine
         Forward,
         Backward,
         Cr_Mk,
-        Hurt
+        Hurt,
+        Hadouken
     }
 
     public enum ActionType
@@ -30,6 +31,7 @@ namespace FightingGameEngine
     {
         Nothing = -1,
         CrouchMediumKick,
+        Hadouken
     }
 
     public abstract class FrameData

@@ -7,7 +7,10 @@ namespace FightingGameEngine
         None = 0, //0000
         Left = 1 << 0, //0001
         Right = 1 << 1,//0010
-        Attack = 1 << 2,    //0100
+        Down = 1 << 2,
+        Up = 1 << 3,
+        Attack = 1 << 4,
+        Special = 1 << 5,
     }
 
     public class InputData

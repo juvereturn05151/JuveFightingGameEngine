@@ -15,6 +15,7 @@ namespace FightingGameEngine
         // Input Actions
         private InputAction _moveAction;
         private InputAction _attackAction;
+        private InputAction _specialAction;
 
         // Raw input per frame
         private InputData _currentInput = new InputData();
@@ -37,14 +38,7 @@ namespace FightingGameEngine
 
         private void Awake()
         {
-            //_playerInput = GetComponent<PlayerInput>();
-            //_moveAction = _playerInput.actions["Move"];
-            //_attackAction = _playerInput.actions["Attack"];
 
-            //_moveAction.Enable();
-            //_attackAction.Enable();
-
-            Debug.Log("[InputManager] Input actions enabled.");
         }
 
         public void AssignInput(PlayerInput playerInput) 
@@ -52,9 +46,11 @@ namespace FightingGameEngine
             _playerInput = playerInput;
             _moveAction = _playerInput.actions["Move"];
             _attackAction = _playerInput.actions["Attack"];
+            _specialAction = _playerInput.actions["Special"];
 
             _moveAction.Enable();
             _attackAction.Enable();
+            _specialAction.Enable();
         }
 
         private void OnDestroy()
@@ -98,13 +94,22 @@ namespace FightingGameEngine
             Vector2 moveInput = _moveAction.ReadValue<Vector2>();
             if (moveInput.x < -0.5f) _currentInput.input |= (int)InputDefine.Left;
             if (moveInput.x > 0.5f) _currentInput.input |= (int)InputDefine.Right;
-            //if (moveInput.y < -0.5f) _currentInput.input |= (int)InputDefine.Down;
-            //if (moveInput.y > 0.5f) _currentInput.input |= (int)InputDefine.Up;
+            if (moveInput.y < -0.5f) _currentInput.input |= (int)InputDefine.Down;
+            if (moveInput.y > 0.5f) _currentInput.input |= (int)InputDefine.Up;
 
             if (_attackAction.triggered)
             {
                 _currentInput.input |= (int)InputDefine.Attack;
-                //Debug.Log("[InputManager] Attack Pressed!");
+            }
+
+            if (_attackAction.triggered)
+            {
+                _currentInput.input |= (int)InputDefine.Attack;
+            }
+
+            if (_specialAction.triggered) 
+            {
+                _currentInput.input |= (int)InputDefine.Special;
             }
 
             if (_currentInput.input != (int)InputDefine.None)

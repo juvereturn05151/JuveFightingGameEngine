@@ -41,6 +41,14 @@ namespace FightingGameEngine
         Hurt1,
         Hurt2,
         Hurt3,
+        Hadouken1,
+        Hadouken2,
+        Hadouken3,
+        Hadouken4,
+        Hadouken5,
+        Hadouken6,
+        Hadouken7,
+        Hadouken8,
     }
 
     [System.Serializable]

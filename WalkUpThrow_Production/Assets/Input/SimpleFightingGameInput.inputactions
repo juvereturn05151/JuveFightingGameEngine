@@ -25,6 +25,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Special",
+                    "type": "Button",
+                    "id": "6a575cc5-9688-46f7-a75d-9c51b2bd59e1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Block",
                     "type": "Button",
                     "id": "e54b7037-ac7e-42ab-a363-0ac2587e448d",
@@ -78,6 +87,28 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Up",
+                    "id": "94f8bdc7-c78a-49f0-8831-cb3c361b2d10",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "e13210a5-cdb2-4b17-b08f-139bcce48bf0",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "2D Vector",
                     "id": "b3090b7e-ff1c-404c-9480-9e405714d9bb",
                     "path": "2DVector",
@@ -111,6 +142,28 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Up",
+                    "id": "76d78670-63cf-4f5c-8c29-4e693d2835ee",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "24aed0e7-54c7-40ea-8455-947790957034",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "45fd6b32-692e-49dd-90ae-9f45c2db6ead",
                     "path": "<Keyboard>/j",
@@ -129,6 +182,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f515574-cd4d-4f19-86a4-00ce256af103",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "214c4127-c80c-4195-8102-3f4189427f26",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -201,6 +276,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Special",
+                    "type": "Button",
+                    "id": "eb4e35fd-d6d3-4016-8d31-4e9f97001c3c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Block",
                     "type": "Button",
                     "id": "7eb9460d-348d-4780-9084-87165b604e52",
@@ -254,6 +338,28 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Up",
+                    "id": "cb6741e1-c4ac-4e35-be27-53cd6a812544",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "0be51b3b-4fca-4e33-b960-0d1dfe3836ba",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "2D Vector",
                     "id": "5da841e3-30b4-41b9-8206-14b762f6576b",
                     "path": "2DVector",
@@ -285,6 +391,50 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "Up",
+                    "id": "8be20e13-7d88-4275-9702-4eaaaeefebac",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "048882db-a599-46cd-b4f4-273be7bf36dd",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "596ee7fc-0006-42ee-8cd9-8986055d152b",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3f1cb68-bb9b-4017-9e1b-9efbb5283028",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

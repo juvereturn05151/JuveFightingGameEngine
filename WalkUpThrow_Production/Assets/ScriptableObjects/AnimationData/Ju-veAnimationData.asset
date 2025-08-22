@@ -109,3 +109,27 @@ MonoBehaviour:
   - animationID: 31
     sprite: {fileID: -5054912576939099365, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
     audioClip: {fileID: 0}
+  - animationID: 32
+    sprite: {fileID: 3187697774814821363, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 33
+    sprite: {fileID: -1887963310039671804, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 34
+    sprite: {fileID: -9119362408338713717, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 35
+    sprite: {fileID: -190738932706949691, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 36
+    sprite: {fileID: -1594014538643070067, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 37
+    sprite: {fileID: -7965856116189056668, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 38
+    sprite: {fileID: 6739026759241170118, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
+  - animationID: 39
+    sprite: {fileID: -1996054281042333399, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}
