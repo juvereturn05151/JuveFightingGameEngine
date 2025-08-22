@@ -26,6 +26,8 @@ namespace FightingGameEngine
         public Queue<InputData> InputBuffer => _inputBuffer;
         private const int MaxQueueBufferSize = 60;
 
+        private const float MotionTimeout = 0.5f;
+
         // Fixed-length frame-by-frame input history
         private const int HistorySize = 10;
         private int[] input = new int[HistorySize];
@@ -97,10 +99,8 @@ namespace FightingGameEngine
             if (moveInput.y < -0.5f) _currentInput.input |= (int)InputDefine.Down;
             if (moveInput.y > 0.5f) _currentInput.input |= (int)InputDefine.Up;
 
-            if (_attackAction.triggered)
-            {
-                _currentInput.input |= (int)InputDefine.Attack;
-            }
+            Debug.Log("Left: " + (int)InputDefine.Left);
+            Debug.Log("Down: " + (int)InputDefine.Down);
 
             if (_attackAction.triggered)
             {
@@ -163,6 +163,51 @@ namespace FightingGameEngine
         {
             _inputBuffer.Clear();
             Debug.Log("[InputManager] Input buffer cleared.");
+        }
+
+        public bool CheckHadokenMotion()
+        {
+            // Hadoken motion: 236 + Attack
+            // Convert to: Down, DownRight, Right, Attack
+
+            // Check if we have enough inputs in the buffer
+            if (_inputBuffer.Count < 4) return false;
+
+            var bufferArray = _inputBuffer.ToArray();
+
+            // Look for the motion pattern in recent inputs
+            for (int i = 0; i < Mathf.Min(bufferArray.Length - 3, 20); i++) // Check last 20 frames
+            {
+                // Check if the timing is reasonable (within motion timeout)
+                if (bufferArray[i].time - bufferArray[i + 3].time > MotionTimeout) continue;
+
+                // Check for Down input
+                if ((bufferArray[i + 3].input & (int)InputDefine.Down) == 0) continue;
+
+                // Check for Down+Right input (or Down then Right quickly)
+                bool hasDownRight = false;
+                for (int j = i + 2; j >= i + 1; j--)
+                {
+                    if (j >= bufferArray.Length) continue;
+                    if ((bufferArray[j].input & (int)InputDefine.Down) != 0 &&
+                        (bufferArray[j].input & (int)InputDefine.Right) != 0)
+                    {
+                        hasDownRight = true;
+                        break;
+                    }
+                }
+                if (!hasDownRight) continue;
+
+                // Check for Right input
+                if ((bufferArray[i + 1].input & (int)InputDefine.Right) == 0) continue;
+
+                // Check for Attack input
+                if ((bufferArray[i].input & (int)InputDefine.Attack) == 0) continue;
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

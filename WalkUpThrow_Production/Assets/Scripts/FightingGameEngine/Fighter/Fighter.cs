@@ -218,6 +218,14 @@ namespace FightingGameEngine
             //    RequestAction((int)CommonActionID.WIN);
             //    return;
             //}
+
+            if (_inputManager.CheckHadokenMotion())
+            {
+                RequestAction(ActionID.Hadouken);
+                return;
+            }
+
+
             var isForward = IsForwardInput(_inputManager.CurrentInput.input);
             var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
             bool isAttack = _inputManager.GetInputDown(InputDefine.Attack);
@@ -399,9 +407,9 @@ namespace FightingGameEngine
             hitboxes.Clear();
             hurtboxes.Clear();
 
-            Debug.Log($"=== APPLY CURRENT ACTION DATA ===");
-            Debug.Log($"Current Action: {currentActionID}, Frame: {currentActionFrame}, Facing Right: {isFaceRight}");
-            Debug.Log($"Fighter Position: {transform.position}");
+            //Debug.Log($"=== APPLY CURRENT ACTION DATA ===");
+            //Debug.Log($"Current Action: {currentActionID}, Frame: {currentActionFrame}, Facing Right: {isFaceRight}");
+            //Debug.Log($"Fighter Position: {transform.position}");
 
             foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
             {
@@ -410,8 +418,8 @@ namespace FightingGameEngine
                 box.attackID = hitbox.attackID;
                 hitboxes.Add(box);
 
-                Debug.Log($"[Hitbox] Local: {hitbox.rect}, World: {box.rect}, AttackID: {box.attackID}");
-                Debug.Log($"          World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
+                //Debug.Log($"[Hitbox] Local: {hitbox.rect}, World: {box.rect}, AttackID: {box.attackID}");
+                //Debug.Log($"          World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
             }
 
             foreach (var hurtbox in fighterData.actions[currentActionID].GetHurtboxData(currentActionFrame))
@@ -421,8 +429,8 @@ namespace FightingGameEngine
                 box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
                 hurtboxes.Add(box);
 
-                Debug.Log($"[Hurtbox] Local: {rect}, World: {box.rect}, UseBase: {hurtbox.useBaseRect}");
-                Debug.Log($"           World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
+                //Debug.Log($"[Hurtbox] Local: {rect}, World: {box.rect}, UseBase: {hurtbox.useBaseRect}");
+                //Debug.Log($"           World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
             }
 
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
@@ -436,11 +444,11 @@ namespace FightingGameEngine
                 Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
                 pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
 
-                Debug.Log($"[Pushbox] Local: {pushRect}, World: {pushbox.rect}, UseBase: {pushBoxData.useBaseRect}");
-                Debug.Log($"           World xMin: {pushbox.rect.xMin}, yMin: {pushbox.rect.yMin}, xMax: {pushbox.rect.xMax}, yMax: {pushbox.rect.yMax}");
+                //Debug.Log($"[Pushbox] Local: {pushRect}, World: {pushbox.rect}, UseBase: {pushBoxData.useBaseRect}");
+                //Debug.Log($"           World xMin: {pushbox.rect.xMin}, yMin: {pushbox.rect.yMin}, xMax: {pushbox.rect.xMax}, yMax: {pushbox.rect.yMax}");
             }
 
-            Debug.Log("==================================");
+           // Debug.Log("==================================");
         }
 
 

@@ -184,7 +184,7 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Left"",
+                    ""name"": ""Down"",
                     ""id"": ""e13210a5-cdb2-4b17-b08f-139bcce48bf0"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -435,7 +435,7 @@ public partial class @SimpleFightingGameInput: IInputActionCollection2, IDisposa
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Left"",
+                    ""name"": ""Down"",
                     ""id"": ""0be51b3b-4fca-4e33-b960-0d1dfe3836ba"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
