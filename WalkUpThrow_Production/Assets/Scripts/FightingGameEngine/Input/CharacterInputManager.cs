@@ -172,7 +172,6 @@ namespace FightingGameEngine
             var bufferArray = _inputBuffer.ToArray();
 
             // Look for the pattern: Down - DownRight - Right - Attack
-            // We need to check in chronological order (oldest to newest)
             for (int startIndex = 0; startIndex <= bufferArray.Length - 4; startIndex++)
             {
                 InputData downInput = bufferArray[startIndex];
@@ -200,11 +199,42 @@ namespace FightingGameEngine
                 if (hasDown && hasDownRight && hasRight && hasAttack)
                 {
                     Debug.Log($" HADOKEN DETECTED! Pattern: {debugPattern}");
+
+                    // CONSUME these inputs so they can't be used again
+                    ConsumeInputs(startIndex, startIndex + 3);
+
                     return true;
                 }
             }
 
             return false;
+        }
+
+        // Add this method to consume inputs so they can't be reused
+        private void ConsumeInputs(int startIndex, int endIndex)
+        {
+            // Mark these inputs as consumed by setting a special flag or removing them
+            // For simplicity, let's remove them from the buffer
+
+            var bufferList = new List<InputData>(_inputBuffer);
+
+            // Remove the consumed inputs
+            for (int i = endIndex; i >= startIndex; i--)
+            {
+                if (i < bufferList.Count)
+                {
+                    bufferList.RemoveAt(i);
+                }
+            }
+
+            // Rebuild the queue
+            _inputBuffer.Clear();
+            foreach (var input in bufferList)
+            {
+                _inputBuffer.Enqueue(input);
+            }
+
+            Debug.Log($"Consumed inputs {startIndex} to {endIndex}");
         }
 
         private void OnGUI()
@@ -268,10 +298,10 @@ namespace FightingGameEngine
             }
 
             // Display motion detection result
-            yPos += 10f;
-            bool hadokenDetected = CheckHadokenMotion();
-            string resultText = hadokenDetected ? " HADOKEN" : "No special";
-            GUI.Label(new Rect(xPos, yPos, 300, 20), resultText, headerStyle);
+            //yPos += 10f;
+            //bool hadokenDetected = CheckHadokenMotion();
+            //string resultText = hadokenDetected ? " HADOKEN" : "No special";
+            //GUI.Label(new Rect(xPos, yPos, 300, 20), resultText, headerStyle);
         }
 
         private void RebuildBufferWithUpdatedDuration()
