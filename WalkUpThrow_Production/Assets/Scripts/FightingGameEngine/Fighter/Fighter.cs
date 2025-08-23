@@ -219,7 +219,7 @@ namespace FightingGameEngine
             //    return;
             //}
 
-            if (_inputManager.CheckHadokenMotion())
+            if (currentActionID != ActionID.Hadouken && _inputManager.CheckHadokenMotion())
             {
                 RequestAction(ActionID.Hadouken);
                 return;

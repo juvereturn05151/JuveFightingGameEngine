@@ -102,37 +102,29 @@ namespace FightingGameEngine
             if (moveInput.y < -0.5f) newInput |= (int)InputDefine.Down;
             if (moveInput.y > 0.5f) newInput |= (int)InputDefine.Up;
 
-            if (_attackAction.triggered) newInput |= (int)InputDefine.Attack;
-            if (_specialAction.triggered) newInput |= (int)InputDefine.Special;
+            // Use ReadValue instead of triggered for continuous button state
+            float attackValue = _attackAction.ReadValue<float>();
+            float specialValue = _specialAction.ReadValue<float>();
+
+            if (attackValue > 0.5f) newInput |= (int)InputDefine.Attack;
+            if (specialValue > 0.5f) newInput |= (int)InputDefine.Special;
 
             // Check if input changed from previous frame
             if (newInput != _currentInput.input)
             {
-                // Only add to buffer if input changed
-                if (_inputBuffer.Count > 0)
-                {
-                    // Update duration of the previous input
-                    var lastInput = _inputBuffer.Peek();
-                    lastInput.duration = Time.frameCount - lastInput.frame;
-                    // Can't modify queue elements directly, so we need to rebuild
-                }
-
-                // Add new input state
                 _currentInput.input = newInput;
                 _currentInput.time = Time.time;
                 _currentInput.frame = Time.frameCount;
-                _currentInput.duration = 1; // Start with 1 frame
+                _currentInput.duration = 1;
 
                 _inputBuffer.Enqueue(_currentInput.ShallowCopy());
             }
             else if (_inputBuffer.Count > 0)
             {
-                // Input didn't change, update duration of the last entry
-                // Since we can't modify queue elements, we need to rebuild the queue
+                // Update duration of the last input
                 RebuildBufferWithUpdatedDuration();
             }
 
-            // Clean up old inputs (keep last 60 frames worth of input changes)
             CleanupOldInputs();
         }
 
@@ -175,45 +167,41 @@ namespace FightingGameEngine
 
         public bool CheckHadokenMotion()
         {
-            if (_inputBuffer.Count < 3) return false; // Need at least 3 input changes
+            if (_inputBuffer.Count < 4) return false;
 
             var bufferArray = _inputBuffer.ToArray();
-            const int MAX_FRAME_WINDOW = 25; // More lenient window
 
-            // Look for the motion pattern: Down  Right  Attack
-            for (int i = 0; i < Mathf.Min(bufferArray.Length - 2, MAX_FRAME_WINDOW); i++)
+            // Look for the pattern: Down - DownRight - Right - Attack
+            // We need to check in chronological order (oldest to newest)
+            for (int startIndex = 0; startIndex <= bufferArray.Length - 4; startIndex++)
             {
-                // Check frame timing (more lenient)
-                if (bufferArray[i].frame - bufferArray[i + 2].frame > 20) continue;
+                InputData downInput = bufferArray[startIndex];
+                InputData downRightInput = bufferArray[startIndex + 1];
+                InputData rightInput = bufferArray[startIndex + 2];
+                InputData attackInput = bufferArray[startIndex + 3];
 
-                InputData downInput = bufferArray[i + 2];
-                InputData rightInput = bufferArray[i + 1];
-                InputData attackInput = bufferArray[i];
+                // Check if inputs are within reasonable time window (20 frames ~0.33s)
+                if (attackInput.frame - downInput.frame > 20) continue;
 
-                // Check for Down input
-                if ((downInput.input & (int)InputDefine.Down) == 0) continue;
+                // Debug: Show what we're checking
+                string debugPattern = $"{InputToSymbols(downInput.input)} - " +
+                                     $"{InputToSymbols(downRightInput.input)} - " +
+                                     $"{InputToSymbols(rightInput.input)} - " +
+                                     $"{InputToSymbols(attackInput.input)}";
+                Debug.Log($"Checking pattern: {debugPattern} (Frames: {downInput.frame}-{attackInput.frame})");
 
-                // Check for Right input (can be pure Right or Down+Right)
-                if ((rightInput.input & (int)InputDefine.Right) == 0) continue;
+                // Check for the quarter-circle forward pattern
+                bool hasDown = (downInput.input & (int)InputDefine.Down) != 0;
+                bool hasDownRight = (downRightInput.input & (int)InputDefine.Down) != 0 &&
+                                   (downRightInput.input & (int)InputDefine.Right) != 0;
+                bool hasRight = (rightInput.input & (int)InputDefine.Right) != 0;
+                bool hasAttack = (attackInput.input & (int)InputDefine.Attack) != 0;
 
-                // Check for Attack input
-                if ((attackInput.input & (int)InputDefine.Attack) == 0) continue;
-
-                // Optional: Check if we had a diagonal (more authentic but less lenient)
-                bool hasDiagonal = false;
-                for (int j = i + 1; j >= i; j--)
+                if (hasDown && hasDownRight && hasRight && hasAttack)
                 {
-                    if (j < bufferArray.Length &&
-                        (bufferArray[j].input & (int)InputDefine.Down) != 0 &&
-                        (bufferArray[j].input & (int)InputDefine.Right) != 0)
-                    {
-                        hasDiagonal = true;
-                        break;
-                    }
+                    Debug.Log($" HADOKEN DETECTED! Pattern: {debugPattern}");
+                    return true;
                 }
-
-                // For now, be lenient - don't require the diagonal
-                return true;
             }
 
             return false;
