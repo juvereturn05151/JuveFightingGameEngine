@@ -17,10 +17,18 @@ namespace FightingGameEngine
     {
         public int input;
         public float time;
+        public int frame;
+        public int duration; // Add this to track how many frames this input was held
 
         public InputData ShallowCopy()
         {
-            return (InputData)this.MemberwiseClone();
+            return new InputData()
+            {
+                input = this.input,
+                time = this.time,
+                frame = this.frame,
+                duration = this.duration
+            };
         }
     }
 

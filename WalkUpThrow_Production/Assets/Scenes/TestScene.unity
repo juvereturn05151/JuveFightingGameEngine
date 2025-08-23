@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerInput1
       objectReference: {fileID: 0}
+    - target: {fileID: 1091251316171490297, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: c21c6ba0-9490-4689-a222-01ff6798f39c
+      objectReference: {fileID: 0}
     - target: {fileID: 8788042573341165537, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.60726
@@ -793,6 +797,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerInput2
       objectReference: {fileID: 0}
+    - target: {fileID: 1091251316171490297, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: f98bec17-f4b4-44f9-8fd7-bec23f954c04
+      objectReference: {fileID: 0}
     - target: {fileID: 8788042573341165537, guid: 853eae066682b0d4c989f69362e6934f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.60726
@@ -913,6 +921,10 @@ PrefabInstance:
     - target: {fileID: 7066602496559337583, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
       propertyPath: isFaceRight
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006658082590481384, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
+      propertyPath: _isPlayerOne
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9006658082590481384, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
       propertyPath: _playerInput
