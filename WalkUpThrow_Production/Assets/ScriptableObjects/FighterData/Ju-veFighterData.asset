@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b166c9757434fcc43973991ff0913cee, type: 3}
   m_Name: Ju-veFighterData
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.FighterData
-  forwardMoveSpeed: 2.2
-  backwardMoveSpeed: 1.8
+  forwardMoveSpeed: 2.6
+  backwardMoveSpeed: 2.2
   baseHurtBoxRect:
     serializedVersion: 2
     x: 0

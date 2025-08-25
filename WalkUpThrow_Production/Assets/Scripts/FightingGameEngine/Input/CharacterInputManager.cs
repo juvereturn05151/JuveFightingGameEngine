@@ -28,10 +28,6 @@ namespace FightingGameEngine
         public Queue<InputData> InputBuffer => _inputBuffer;
         private const int MaxQueueBufferSize = 60;
 
-        private List<InputDefine> _currentMotion = new List<InputDefine>();
-        private const float MotionTimeout = 0.5f; // Half second timeout for motion input
-        private float _lastInputTime;
-
         // Fixed-length frame-by-frame input history
         private const int HistorySize = 10;
         private int[] input = new int[HistorySize];
@@ -63,7 +59,7 @@ namespace FightingGameEngine
         {
             _moveAction.Disable();
             _attackAction.Disable();
-
+            _specialAction.Disable();
             Debug.Log("[InputManager] Input actions disabled.");
         }
 
@@ -72,19 +68,6 @@ namespace FightingGameEngine
         {
             ProcessInputs();
             UpdateInputHistory(_currentInput);
-
-            // DEBUG: Show current frame's input
-            //Debug.Log($"[InputManager] Frame Input: {((InputDefine)_currentInput.input)} @ {Time.time:F2}");
-
-            // Optional: Display history at interval or key press
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                Debug.Log("[InputManager] Input History Dump:");
-                for (int i = 0; i < HistorySize; i++)
-                {
-                    Debug.Log($"  [{i}] Input={((InputDefine)input[i])}, Down={((InputDefine)inputDown[i])}, Up={((InputDefine)inputUp[i])}");
-                }
-            }
         }
 
         private void ProcessInputs()
@@ -117,7 +100,7 @@ namespace FightingGameEngine
                 _currentInput.frame = Time.frameCount;
                 _currentInput.duration = 1;
 
-                _inputBuffer.Enqueue(_currentInput.ShallowCopy());
+                _inputBuffer.Enqueue(_currentInput.Copy());
             }
             else if (_inputBuffer.Count > 0)
             {
@@ -128,7 +111,36 @@ namespace FightingGameEngine
             CleanupOldInputs();
         }
 
+        private void RebuildBufferWithUpdatedDuration()
+        {
+            if (_inputBuffer.Count == 0) 
+            {
+                return;
+            } 
 
+            // Convert queue to list so we can modify the last element
+            var bufferList = new List<InputData>(_inputBuffer);
+            var lastInput = bufferList[bufferList.Count - 1];
+            lastInput.duration = Time.frameCount - lastInput.frame + 1;
+            bufferList[bufferList.Count - 1] = lastInput;
+
+            // Rebuild the queue
+            _inputBuffer.Clear();
+            foreach (var input in bufferList)
+            {
+                _inputBuffer.Enqueue(input);
+            }
+        }
+
+        private void CleanupOldInputs()
+        {
+            // Remove inputs older than MaxQueueBufferSize frames
+            while (_inputBuffer.Count > 0 &&
+                   Time.frameCount - _inputBuffer.Peek().frame > MaxQueueBufferSize)
+            {
+                _inputBuffer.Dequeue();
+            }
+        }
 
         private void UpdateInputHistory(InputData inputData)
         {
@@ -140,8 +152,10 @@ namespace FightingGameEngine
             }
 
             input[0] = inputData.input;
-            inputDown[0] = (input[0] ^ input[1]) & input[0];   // Buttons pressed this frame
-            inputUp[0] = (input[0] ^ input[1]) & ~input[0];   // Buttons released this frame
+            // Buttons pressed this frame
+            inputDown[0] = (input[0] ^ input[1]) & input[0];
+            // Buttons released this frame
+            inputUp[0] = (input[0] ^ input[1]) & ~input[0];
         }
 
         public bool GetInput(InputDefine inputCheck)
@@ -304,45 +318,19 @@ namespace FightingGameEngine
             //GUI.Label(new Rect(xPos, yPos, 300, 20), resultText, headerStyle);
         }
 
-        private void RebuildBufferWithUpdatedDuration()
-        {
-            if (_inputBuffer.Count == 0) return;
 
-            // Convert queue to list so we can modify the last element
-            var bufferList = new List<InputData>(_inputBuffer);
-            var lastInput = bufferList[bufferList.Count - 1];
-            lastInput.duration = Time.frameCount - lastInput.frame + 1;
-            bufferList[bufferList.Count - 1] = lastInput;
-
-            // Rebuild the queue
-            _inputBuffer.Clear();
-            foreach (var input in bufferList)
-            {
-                _inputBuffer.Enqueue(input);
-            }
-        }
-
-        private void CleanupOldInputs()
-        {
-            // Remove inputs older than MaxQueueBufferSize frames
-            while (_inputBuffer.Count > 0 &&
-                   Time.frameCount - _inputBuffer.Peek().frame > MaxQueueBufferSize)
-            {
-                _inputBuffer.Dequeue();
-            }
-        }
 
         private string InputToSymbols(int inputValue)
         {
             // Check for diagonals first
             if ((inputValue & (int)InputDefine.Down) != 0 && (inputValue & (int)InputDefine.Left) != 0)
-                return "Down+Left"; // Down+Left
+                return "Down+Left"; 
             if ((inputValue & (int)InputDefine.Down) != 0 && (inputValue & (int)InputDefine.Right) != 0)
-                return "Down+Right"; // Down+Right
+                return "Down+Right"; 
             if ((inputValue & (int)InputDefine.Up) != 0 && (inputValue & (int)InputDefine.Left) != 0)
-                return "Up+Left"; // Up+Left
+                return "Up+Left"; 
             if ((inputValue & (int)InputDefine.Up) != 0 && (inputValue & (int)InputDefine.Right) != 0)
-                return "Up+Right"; // Up+Right
+                return "Up+Right"; 
 
             // Check for cardinal directions
             if ((inputValue & (int)InputDefine.Left) != 0) return "Left";
@@ -364,8 +352,10 @@ namespace FightingGameEngine
                 if ((inputValue & (int)InputDefine.Down) != 0) direction = "Down";
                 if ((inputValue & (int)InputDefine.Up) != 0) direction = "Up";
 
-                if (!string.IsNullOrEmpty(direction))
+                if (!string.IsNullOrEmpty(direction)) 
+                {
                     return direction + "+" + buttons;
+                }
 
                 return buttons;
             }

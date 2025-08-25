@@ -59,5 +59,9 @@ MonoBehaviour:
       height: 1
     useBaseRect: 1
   movements: []
-  cancels: []
+  cancels:
+  - startEndFrame: {x: 10, y: 19}
+    buffer: 0
+    execute: 1
+    actionID: 05000000
   alwaysCancelable: 0

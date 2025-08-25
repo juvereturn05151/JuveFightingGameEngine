@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using WalkUpThrow;
 
 namespace FightingGameEngine 
 {
@@ -15,7 +12,6 @@ namespace FightingGameEngine
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
-        public float velocity_x;
         public bool isFaceRight;
 
         public List<Hitbox> hitboxes = new List<Hitbox>();
@@ -46,6 +42,7 @@ namespace FightingGameEngine
         private bool isInputBackward;
         private ActionID bufferActionID = ActionID.Nothing;
         private bool hasWon = false;
+        private bool isHitThisFrame = false;
 
         private void Update()
         {
@@ -129,13 +126,10 @@ namespace FightingGameEngine
         public void SetupBattleStart(FighterData fighterData, Vector2 startPosition, bool isPlayerOne)
         {
             this.fighterData = fighterData;
-            //position = startPosition;
             isFaceRight = isPlayerOne;
 
             vitalHealth = 1;
             hasWon = false;
-
-            velocity_x = 0;
 
             ClearInput();
 
@@ -299,10 +293,9 @@ namespace FightingGameEngine
             var movementData = fighterData.actions[currentActionID].GetMovementData(currentActionFrame);
             if (movementData != null)
             {
-                velocity_x = movementData.velocity_x;
-                if (velocity_x != 0)
+                if (movementData.velocity_x != 0)
                 {
-                    newX += velocity_x * sign * Time.deltaTime;
+                    newX += movementData.velocity_x * sign * Time.deltaTime;
                     transform.position = new Vector3(newX, transform.position.y, transform.position.z);
                 }
             }
@@ -458,7 +451,7 @@ namespace FightingGameEngine
             var sign = isFaceRight ? 1 : -1;
 
             var fightPosRect = new Rect();
-            fightPosRect.x = basePosition.x + dataRect.x;
+            fightPosRect.x = basePosition.x + (dataRect.x * sign);
             fightPosRect.y = basePosition.y + dataRect.y;
             fightPosRect.width = dataRect.width;
             fightPosRect.height = dataRect.height;

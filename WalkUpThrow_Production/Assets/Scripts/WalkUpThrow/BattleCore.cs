@@ -355,8 +355,8 @@ namespace WalkUpThrow
             if (currentRecordingInputIndex >= maxRecordingInputFrame)
                 return;
 
-            recordingP1Input[currentRecordingInputIndex] = p1Input.ShallowCopy();
-            recordingP2Input[currentRecordingInputIndex] = p2Input.ShallowCopy();
+            recordingP1Input[currentRecordingInputIndex] = p1Input.Copy();
+            recordingP2Input[currentRecordingInputIndex] = p2Input.Copy();
             currentRecordingInputIndex++;
 
             if (isReplayingLastRoundInput)
@@ -409,20 +409,20 @@ namespace WalkUpThrow
 
         void UpdatePushCharacterVsBackground()
         {
-            //var stageMinX = battleAreaWidth * -1 / 2;
-            //var stageMaxX = battleAreaWidth / 2;
+            var stageMinX = battleAreaWidth * -1 ;
+            var stageMaxX = battleAreaWidth;
 
-            //_fighters.ForEach((f) =>
-            //{
-            //    if (f.pushbox.xMin < stageMinX)
-            //    {
-            //        f.ApplyPositionChange(stageMinX - f.pushbox.xMin, f.position.y);
-            //    }
-            //    else if (f.pushbox.xMax > stageMaxX)
-            //    {
-            //        f.ApplyPositionChange(stageMaxX - f.pushbox.xMax, f.position.y);
-            //    }
-            //});
+            _fighters.ForEach((f) =>
+            {
+                if (f.pushbox.xMin < stageMinX)
+                {
+                    f.ApplyPositionChange(stageMinX - f.pushbox.xMin, 0);
+                }
+                else if (f.pushbox.xMax > stageMaxX)
+                {
+                    f.ApplyPositionChange(stageMaxX - f.pushbox.xMax, 0);
+                }
+            });
         }
 
         void UpdateHitboxHurtboxCollision()

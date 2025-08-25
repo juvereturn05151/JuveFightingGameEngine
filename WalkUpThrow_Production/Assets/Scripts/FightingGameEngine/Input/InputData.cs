@@ -20,7 +20,7 @@ namespace FightingGameEngine
         public int frame;
         public int duration; // Add this to track how many frames this input was held
 
-        public InputData ShallowCopy()
+        public InputData Copy()
         {
             return new InputData()
             {
