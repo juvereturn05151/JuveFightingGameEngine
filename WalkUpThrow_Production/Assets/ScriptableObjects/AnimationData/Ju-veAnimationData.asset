@@ -133,3 +133,6 @@ MonoBehaviour:
   - animationID: 39
     sprite: {fileID: -1996054281042333399, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
     audioClip: {fileID: 0}
+  - animationID: 40
+    sprite: {fileID: 5283263310605274042, guid: 161acd283dda2324b8a930d059c9c300, type: 3}
+    audioClip: {fileID: 0}

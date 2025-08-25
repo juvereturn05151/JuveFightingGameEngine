@@ -49,6 +49,7 @@ namespace FightingGameEngine
         Hadouken6,
         Hadouken7,
         Hadouken8,
+        Block1,
     }
 
     [System.Serializable]

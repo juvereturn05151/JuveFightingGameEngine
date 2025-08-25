@@ -16,7 +16,8 @@ namespace FightingGameEngine
         Backward,
         Cr_Mk,
         Hurt,
-        Hadouken
+        Hadouken,
+        Block
     }
 
     public enum ActionType

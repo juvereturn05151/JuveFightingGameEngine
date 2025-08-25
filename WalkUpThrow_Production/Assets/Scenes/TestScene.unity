@@ -918,6 +918,10 @@ PrefabInstance:
       value: Fighter2
       objectReference: {fileID: 0}
     - target: {fileID: 7066602496559337583, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
+      propertyPath: opponent
+      value: 
+      objectReference: {fileID: 1272283595}
+    - target: {fileID: 7066602496559337583, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
       propertyPath: isFaceRight
       value: 1
       objectReference: {fileID: 0}
@@ -1002,6 +1006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter1
       objectReference: {fileID: 0}
+    - target: {fileID: 7066602496559337583, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
+      propertyPath: opponent
+      value: 
+      objectReference: {fileID: 1654880544}
     - target: {fileID: 9006658082590481384, guid: e3c95b1a40b527d4a8b93f1a69751a98, type: 3}
       propertyPath: _playerInput
       value: 

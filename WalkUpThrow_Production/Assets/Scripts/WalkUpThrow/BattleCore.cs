@@ -482,8 +482,11 @@ namespace WalkUpThrow
                         //var hitStunFrame = attacker.GetHitStunFrame(damageResult, hitAttackID);
                         //attacker.SetHitStun(hitStunFrame);
                         //damaged.SetHitStun(hitStunFrame);
-                        Debug.Log("It hurts");
-                        damaged.RequestAction(ActionID.Hurt);
+
+
+                        //Debug.Log("It hurts");
+                        //damaged.RequestAction(ActionID.Hurt);
+                        damaged.HandleOnAttackHit();
                     }
                 }
             }

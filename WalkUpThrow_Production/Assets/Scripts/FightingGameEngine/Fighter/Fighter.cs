@@ -12,6 +12,9 @@ namespace FightingGameEngine
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
+        [SerializeField]
+        private Fighter opponent;
+
         public bool isFaceRight;
 
         public List<Hitbox> hitboxes = new List<Hitbox>();
@@ -43,6 +46,10 @@ namespace FightingGameEngine
         private ActionID bufferActionID = ActionID.Nothing;
         private bool hasWon = false;
         private bool isHitThisFrame = false;
+        public bool isBlocking { get; private set; }
+        private bool _wasBlockingLastFrame = false;
+        public int currentBlockStunFrame { get; private set; }
+        public bool isInBlockStun { get { return currentBlockStunFrame > 0; } }
 
         private void Update()
         {
@@ -142,9 +149,10 @@ namespace FightingGameEngine
         public void IncrementActionFrame()
         {
             // If fighter is in hit stun then the action frame stay the same
-            if (currentHitStunFrame > 0)
+            if (currentHitStunFrame > 0 || currentBlockStunFrame > 0)
             {
-                currentHitStunFrame--;
+                currentHitStunFrame = Mathf.Max(0, currentHitStunFrame - 1);
+                currentBlockStunFrame = Mathf.Max(0, currentBlockStunFrame - 1);
                 return;
             }
 
@@ -181,6 +189,65 @@ namespace FightingGameEngine
             inputUp[0] = (input[0] ^ input[1]) & ~input[0];
         }
 
+        public void UpdateBlockingState()
+        {
+            // Can't block while in hit stun, block stun, or during certain actions
+            if (isInHitStun || isInBlockStun ||
+                currentActionID == ActionID.Hurt ||
+                currentActionID == ActionID.Hadouken ||
+                IsAttacking())
+            {
+                isBlocking = false;
+                return;
+            }
+
+            // Check if holding back (relative to facing direction)
+            bool isHoldingBack = IsBackwardInput(_inputManager.CurrentInput.input);
+
+            // Blocking requires holding back relative to opponent
+            isBlocking = isHoldingBack;
+
+            // Transition to block animation if just started blocking
+            if (isBlocking)
+            {
+                if (opponent.IsAttacking())
+                    RequestAction(ActionID.Block);
+                else 
+                {
+                    if (currentActionID == ActionID.Block)
+                    {
+                        RequestAction(ActionID.Idle);
+                    }
+                }
+            }
+            // Return to idle if stopped blocking
+            else
+            {
+                if (currentActionID == ActionID.Block) 
+                {
+                    RequestAction(ActionID.Idle);
+                }
+            }
+        }
+
+        private bool IsAttacking()
+        {
+            // Define which action IDs are considered attacks
+            return currentActionID == ActionID.Cr_Mk ||
+                   currentActionID == ActionID.Hadouken;
+        }
+
+        /// <summary>
+        /// Handle being hit by an attack - check if blocking
+        /// </summary>
+        public void HandleOnAttackHit()
+        {
+            // Can't block if not in a blocking state or during certain situations
+            if (!isBlocking)
+            {
+                RequestAction(ActionID.Hurt);
+            }
+        }
 
         /// <summary>
         /// Action request for intro state ()
@@ -203,6 +270,15 @@ namespace FightingGameEngine
                     RequestAction(ActionID.Idle);
                 }
 
+                return;
+            }
+
+            // Update blocking state first
+            UpdateBlockingState();
+
+            // If currently blocking, don't process other actions
+            if (isBlocking && (currentActionID == ActionID.Block))
+            {
                 return;
             }
 
@@ -400,19 +476,12 @@ namespace FightingGameEngine
             hitboxes.Clear();
             hurtboxes.Clear();
 
-            //Debug.Log($"=== APPLY CURRENT ACTION DATA ===");
-            //Debug.Log($"Current Action: {currentActionID}, Frame: {currentActionFrame}, Facing Right: {isFaceRight}");
-            //Debug.Log($"Fighter Position: {transform.position}");
-
             foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
             {
                 var box = new Hitbox();
                 box.rect = UpdateCollisionBox(hitbox.rect, transform.position, isFaceRight);
                 box.attackID = hitbox.attackID;
                 hitboxes.Add(box);
-
-                //Debug.Log($"[Hitbox] Local: {hitbox.rect}, World: {box.rect}, AttackID: {box.attackID}");
-                //Debug.Log($"          World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
             }
 
             foreach (var hurtbox in fighterData.actions[currentActionID].GetHurtboxData(currentActionFrame))
@@ -421,9 +490,6 @@ namespace FightingGameEngine
                 Rect rect = hurtbox.useBaseRect ? fighterData.baseHurtBoxRect : hurtbox.rect;
                 box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
                 hurtboxes.Add(box);
-
-                //Debug.Log($"[Hurtbox] Local: {rect}, World: {box.rect}, UseBase: {hurtbox.useBaseRect}");
-                //Debug.Log($"           World xMin: {box.rect.xMin}, yMin: {box.rect.yMin}, xMax: {box.rect.xMax}, yMax: {box.rect.yMax}");
             }
 
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
@@ -436,12 +502,7 @@ namespace FightingGameEngine
                 pushbox = new Pushbox();
                 Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
                 pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
-
-                //Debug.Log($"[Pushbox] Local: {pushRect}, World: {pushbox.rect}, UseBase: {pushBoxData.useBaseRect}");
-                //Debug.Log($"           World xMin: {pushbox.rect.xMin}, yMin: {pushbox.rect.yMin}, xMax: {pushbox.rect.xMax}, yMax: {pushbox.rect.yMax}");
             }
-
-           // Debug.Log("==================================");
         }
 
         private Rect UpdateCollisionBox(Rect dataRect, Vector2 basePosition, bool isFaceRight)
