@@ -9,9 +9,6 @@ namespace WalkUpThrow
         private BattleCore battleCore;
 
         [SerializeField]
-        private float _battleBoxLineWidth = 2f;
-
-        [SerializeField]
         private GUIStyle debugTextStyle;
 
         float xPos = 0f;

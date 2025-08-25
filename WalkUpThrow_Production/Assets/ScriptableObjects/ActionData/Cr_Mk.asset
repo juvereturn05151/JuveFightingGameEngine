@@ -49,6 +49,46 @@ MonoBehaviour:
       width: 0
       height: 1.2
     useBaseRect: 1
+  - startEndFrame: {x: 0, y: 4}
+    rect:
+      serializedVersion: 2
+      x: 1.75
+      y: -1.73
+      width: 1
+      height: 1
+    useBaseRect: 0
+  - startEndFrame: {x: 5, y: 9}
+    rect:
+      serializedVersion: 2
+      x: 2
+      y: -1.73
+      width: 1.75
+      height: 1
+    useBaseRect: 0
+  - startEndFrame: {x: 10, y: 19}
+    rect:
+      serializedVersion: 2
+      x: 2.5
+      y: -1.73
+      width: 3
+      height: 1
+    useBaseRect: 0
+  - startEndFrame: {x: 20, y: 24}
+    rect:
+      serializedVersion: 2
+      x: 2
+      y: -1.73
+      width: 1.75
+      height: 1
+    useBaseRect: 0
+  - startEndFrame: {x: 25, y: 29}
+    rect:
+      serializedVersion: 2
+      x: 1.75
+      y: -1.73
+      width: 1
+      height: 1
+    useBaseRect: 0
   pushboxes:
   - startEndFrame: {x: 0, y: 59}
     rect:

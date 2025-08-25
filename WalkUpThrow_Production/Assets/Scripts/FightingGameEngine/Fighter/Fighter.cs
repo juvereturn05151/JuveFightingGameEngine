@@ -444,8 +444,6 @@ namespace FightingGameEngine
            // Debug.Log("==================================");
         }
 
-
-
         private Rect UpdateCollisionBox(Rect dataRect, Vector2 basePosition, bool isFaceRight)
         {
             var sign = isFaceRight ? 1 : -1;
