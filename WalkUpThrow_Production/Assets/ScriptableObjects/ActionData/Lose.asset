@@ -45,6 +45,12 @@ MonoBehaviour:
   hitboxes: []
   hurtboxes: []
   pushboxes: []
-  movements: []
+  movements:
+  - startEndFrame: {x: 0, y: 27}
+    velocity_x: -15
+    velocity_y: 8
+  - startEndFrame: {x: 40, y: 51}
+    velocity_x: 0
+    velocity_y: -25
   cancels: []
   alwaysCancelable: 0

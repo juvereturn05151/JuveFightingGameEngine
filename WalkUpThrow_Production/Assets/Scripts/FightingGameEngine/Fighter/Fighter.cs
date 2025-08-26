@@ -291,7 +291,15 @@ namespace FightingGameEngine
             //    return;
             //}
 
+            if (hasLost)
+            {
+                if (currentActionID != ActionID.Lose) 
+                {
+                    RequestAction(ActionID.Lose);
+                }
 
+                return;
+            }
 
             if (currentActionID != ActionID.Hadouken && _inputManager.CheckHadokenMotion())
             {
@@ -306,10 +314,21 @@ namespace FightingGameEngine
                 return;
             }
 
-            if (hasLost)
+
+
+            if (!isFaceRight) 
             {
-                return;
+                if (currentActionID == ActionID.Cr_Mk && opponent.currentActionID == ActionID.Hurt)
+                {
+                    Debug.Log("Hit confirmable");
+                }
+                else
+                {
+                    Debug.Log("currentActionID: " + currentActionID + " opponent.currentActionID: " + opponent.currentActionID);
+                }
+
             }
+
 
             var isForward = IsForwardInput(_inputManager.CurrentInput.input);
             var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
@@ -321,8 +340,7 @@ namespace FightingGameEngine
                 if (currentActionID == ActionID.Cr_Mk && opponent.currentActionID == ActionID.Hurt)
                 {
                     RequestAction(ActionID.Hadouken);
-                    opponent.hasLost = true;
-                    opponent.RequestAction(ActionID.Lose);
+                    opponent.RequestLoseAction();
                 }
                 else 
                 {
@@ -356,6 +374,11 @@ namespace FightingGameEngine
             }
         }
 
+        public void RequestLoseAction() 
+        {
+            hasLost = true;
+        }
+
         public void RequestWinAction()
         {
             hasWon = true;
@@ -377,6 +400,7 @@ namespace FightingGameEngine
             // Position changes from walking forward and backward
             var sign = isFaceRight ? 1 : -1;
             float newX = transform.position.x;
+            float newY = transform.position.y;
             if (currentActionID == ActionID.Forward)
             {
                 newX += fighterData.forwardMoveSpeed * sign * Time.deltaTime;
@@ -394,10 +418,11 @@ namespace FightingGameEngine
             var movementData = fighterData.actions[currentActionID].GetMovementData(currentActionFrame);
             if (movementData != null)
             {
-                if (movementData.velocity_x != 0)
+                if (movementData.velocity_x != 0 || movementData.velocity_y != 0)
                 {
                     newX += movementData.velocity_x * sign * Time.deltaTime;
-                    transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+                    newY += movementData.velocity_y * Time.deltaTime;
+                    transform.position = new Vector3(newX, newY, transform.position.z);
                 }
             }
         }
@@ -520,7 +545,7 @@ namespace FightingGameEngine
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
             if (pushBoxData == null)
             {
-                Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
+                //Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
             }
             else
             {

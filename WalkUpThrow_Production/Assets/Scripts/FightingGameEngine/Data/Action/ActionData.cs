@@ -77,6 +77,7 @@ namespace FightingGameEngine
     public class MovementData : FrameData
     {
         public float velocity_x;
+        public float velocity_y;
     }
 
     [System.Serializable]

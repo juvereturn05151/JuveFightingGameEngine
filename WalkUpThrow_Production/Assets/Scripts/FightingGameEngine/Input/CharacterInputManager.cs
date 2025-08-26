@@ -201,7 +201,7 @@ namespace FightingGameEngine
                                      $"{InputToSymbols(downRightInput.input)} - " +
                                      $"{InputToSymbols(rightInput.input)} - " +
                                      $"{InputToSymbols(attackInput.input)}";
-                Debug.Log($"Checking pattern: {debugPattern} (Frames: {downInput.frame}-{attackInput.frame})");
+                //Debug.Log($"Checking pattern: {debugPattern} (Frames: {downInput.frame}-{attackInput.frame})");
 
                 // Check for the quarter-circle forward pattern
                 bool hasDown = (downInput.input & (int)InputDefine.Down) != 0;

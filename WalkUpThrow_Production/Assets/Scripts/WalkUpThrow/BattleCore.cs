@@ -113,19 +113,8 @@ namespace WalkUpThrow
                         ChangeRoundState(RoundStateType.Fight);
                     }
 
-                    //if (debugPlayLastRoundInput
-                    //    && !isReplayingLastRoundInput)
-                    //{
-                    //    StartPlayLastRoundInput();
-                    //}
-
                     break;
                 case RoundStateType.Fight:
-
-                    //if (CheckUpdateDebugPause())
-                    //{
-                    //    break;
-                    //}
 
                     frameCount++;
 
@@ -281,7 +270,7 @@ namespace WalkUpThrow
             _fighters.ForEach((f) => f.IncrementActionFrame());
 
             _fighters.ForEach((f) => f.UpdateActionRequest());
-            //_fighters.ForEach((f) => f.UpdateMovement());
+            _fighters.ForEach((f) => f.UpdateMovement());
             _fighters.ForEach((f) => f.UpdateBoxes());
 
             UpdatePushCharacterVsCharacter();
@@ -422,6 +411,11 @@ namespace WalkUpThrow
                 {
                     f.ApplyPositionChange(stageMaxX - f.pushbox.xMax, 0);
                 }
+
+                if (f.transform.position.y <= -1.17f) 
+                {
+                    f.transform.position = new Vector3(f.transform.position.x, -1.17f, 0);
+                }
             });
         }
 
@@ -448,8 +442,8 @@ namespace WalkUpThrow
 
                         foreach (var hurtbox in damaged.hurtboxes)
                         {
-                            Debug.Log($"Hitbox bounds: ({hitbox.xMin}, {hitbox.yMin}) to ({hitbox.xMax}, {hitbox.yMax})");
-                            Debug.Log($"Hurtbox bounds: ({hurtbox.xMin}, {hurtbox.yMin}) to ({hurtbox.xMax}, {hurtbox.yMax})");
+                            //Debug.Log($"Hitbox bounds: ({hitbox.xMin}, {hitbox.yMin}) to ({hitbox.xMax}, {hitbox.yMax})");
+                            //Debug.Log($"Hurtbox bounds: ({hurtbox.xMin}, {hurtbox.yMin}) to ({hurtbox.xMax}, {hurtbox.yMax})");
 
                             if (hitbox.Overlaps(hurtbox))
                             {
