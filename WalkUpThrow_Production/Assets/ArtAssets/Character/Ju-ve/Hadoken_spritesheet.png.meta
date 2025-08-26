@@ -135,10 +135,10 @@ TextureImporter:
         serializedVersion: 2
         x: 137
         y: 35
-        width: 101
-        height: 105
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,10 +157,10 @@ TextureImporter:
         serializedVersion: 2
         x: 514
         y: 35
-        width: 110
-        height: 99
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,10 +179,10 @@ TextureImporter:
         serializedVersion: 2
         x: 898
         y: 35
-        width: 109
-        height: 95
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -201,10 +201,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1280
         y: 35
-        width: 160
-        height: 94
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -223,10 +223,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1666
         y: 35
-        width: 132
-        height: 97
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,81 +240,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hadoken_spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 1788
-        y: 99
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8525f7cb62bcfdec0800000000000000
-      internalID: -3539887414858263976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hadoken_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 1793
-        y: 88
-        width: 25
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e6f9ff217a91e860800000000000000
-      internalID: 7557491460631295718
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hadoken_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 1801
-        y: 82
-        width: 16
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b409d8a2492e6120800000000000000
-      internalID: 2408908216967169205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Hadoken_spritesheet_8
       rect:
         serializedVersion: 2
         x: 2052
         y: 35
-        width: 149
-        height: 96
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,10 +267,10 @@ TextureImporter:
         serializedVersion: 2
         x: 2438
         y: 35
-        width: 126
-        height: 95
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -354,11 +288,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2829
-        y: 35
-        width: 107
-        height: 99
+        y: 36
+        width: 179
+        height: 115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,7 +309,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f38c801926392c24caf547d19e937f41
     internalID: 0
     vertices: []
     indices: 
