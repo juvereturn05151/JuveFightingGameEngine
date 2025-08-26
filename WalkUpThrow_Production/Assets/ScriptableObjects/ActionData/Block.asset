@@ -15,7 +15,7 @@ MonoBehaviour:
   actionID: 6
   actionType: 3
   frameCount: 5
-  isLoop: 0
+  isLoop: 1
   loopFromFrame: 0
   animations:
   - startEndFrame: {x: 0, y: 4}
@@ -41,4 +41,4 @@ MonoBehaviour:
     useBaseRect: 1
   movements: []
   cancels: []
-  alwaysCancelable: 0
+  alwaysCancelable: 1

@@ -50,6 +50,18 @@ namespace FightingGameEngine
         Hadouken7,
         Hadouken8,
         Block1,
+        Lose1,
+        Lose2,
+        Lose3,
+        Lose4,
+        Lose5,
+        Lose6,
+        Lose7,
+        Lose8,
+        Lose9,
+        Lose10,
+        Lose11,
+        Lose12,
     }
 
     [System.Serializable]

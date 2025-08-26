@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace FightingGameEngine 
@@ -45,6 +46,7 @@ namespace FightingGameEngine
         private bool isInputBackward;
         private ActionID bufferActionID = ActionID.Nothing;
         private bool hasWon = false;
+        private bool hasLost = false;
         private bool isHitThisFrame = false;
         public bool isBlocking { get; private set; }
         private bool _wasBlockingLastFrame = false;
@@ -289,12 +291,25 @@ namespace FightingGameEngine
             //    return;
             //}
 
+
+
             if (currentActionID != ActionID.Hadouken && _inputManager.CheckHadokenMotion())
             {
                 RequestAction(ActionID.Hadouken);
                 return;
             }
 
+            if (bufferActionID != ActionID.Nothing)
+            {
+                SetCurrentAction(bufferActionID);
+                bufferActionID = ActionID.Nothing;
+                return;
+            }
+
+            if (hasLost)
+            {
+                return;
+            }
 
             var isForward = IsForwardInput(_inputManager.CurrentInput.input);
             var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
@@ -303,7 +318,17 @@ namespace FightingGameEngine
 
             if (isAttack)
             {
-                RequestAction(ActionID.Cr_Mk);
+                if (currentActionID == ActionID.Cr_Mk && opponent.currentActionID == ActionID.Hurt)
+                {
+                    RequestAction(ActionID.Hadouken);
+                    opponent.hasLost = true;
+                    opponent.RequestAction(ActionID.Lose);
+                }
+                else 
+                {
+                    RequestAction(ActionID.Cr_Mk);
+                }
+
             }
             else if (isSpecial) 
             {

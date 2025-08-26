@@ -17,7 +17,8 @@ namespace FightingGameEngine
         Cr_Mk,
         Hurt,
         Hadouken,
-        Block
+        Block,
+        Lose
     }
 
     public enum ActionType
@@ -26,6 +27,7 @@ namespace FightingGameEngine
         Attack,
         Damage,
         Guard,
+        WinOrLose
     }
 
     public enum AttackID

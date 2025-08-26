@@ -100,7 +100,7 @@ MonoBehaviour:
     useBaseRect: 1
   movements: []
   cancels:
-  - startEndFrame: {x: 10, y: 19}
+  - startEndFrame: {x: 10, y: 24}
     buffer: 0
     execute: 1
     actionID: 05000000
