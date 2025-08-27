@@ -12,41 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18e56417c251e94f91896b2b0b5c508, type: 3}
   m_Name: WinAnimationData
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationFrameDataSet
-  totalFrame: 60
+  totalFrame: 75
   animationDataList:
   - startEndFrame: {x: 0, y: 4}
-    sprite: {fileID: -420575450474446974, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -2924877612601578769, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 5, y: 9}
-    sprite: {fileID: -8263494568069189870, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: 1731956123470543226, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 10, y: 14}
-    sprite: {fileID: 5854421813932604069, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -8693088888453032366, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 15, y: 19}
-    sprite: {fileID: 8223316808151467380, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: 5053782177203009023, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 20, y: 24}
-    sprite: {fileID: -7955771701505652668, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: 8594041816914803377, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 25, y: 29}
-    sprite: {fileID: -6840320131214505270, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -8532304992013737601, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 30, y: 34}
-    sprite: {fileID: -9186167685029208677, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -2297855206538739398, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 35, y: 39}
-    sprite: {fileID: -3993056821919431878, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -7894563266403481287, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 40, y: 44}
-    sprite: {fileID: -6568506148692879454, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -5758431940525884674, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 45, y: 49}
-    sprite: {fileID: 1700980144098541911, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: 5807547116460470710, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 50, y: 54}
-    sprite: {fileID: 300692084721736182, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: -7352394674128009819, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 55, y: 59}
-    sprite: {fileID: -6939360453503043724, guid: c4bd41ba81a582f4a9cbc5588b979270, type: 3}
+    sprite: {fileID: 3247534292105568539, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 60, y: 64}
+    sprite: {fileID: -7409437679110017999, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 55, y: 59}
+    sprite: {fileID: 3247534292105568539, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 55, y: 59}
+    sprite: {fileID: 3247534292105568539, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
