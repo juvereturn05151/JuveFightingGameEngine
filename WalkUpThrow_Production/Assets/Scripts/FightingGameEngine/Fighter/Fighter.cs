@@ -285,22 +285,7 @@ namespace FightingGameEngine
                 return;
             }
 
-            // If won then just request win animation
-            //if (hasWon)
-            //{
-            //    RequestAction((int)CommonActionID.WIN);
-            //    return;
-            //}
 
-            if (hasLost)
-            {
-                if (currentActionID != ActionID.Lose) 
-                {
-                    RequestAction(ActionID.Lose);
-                }
-
-                return;
-            }
 
             if (currentActionID != ActionID.Hadouken && _inputManager.CheckHadokenMotion())
             {
@@ -315,21 +300,26 @@ namespace FightingGameEngine
                 return;
             }
 
-
-
-            if (!isFaceRight) 
+            // If won then just request win animation
+            if (hasWon)
             {
-                if (currentActionID == ActionID.Cr_Mk && opponent.currentActionID == ActionID.Hurt)
+                if (currentActionID != ActionID.Win)
                 {
-                    Debug.Log("Hit confirmable");
+                    RequestAction(ActionID.Win);
                 }
-                else
-                {
-                    Debug.Log("currentActionID: " + currentActionID + " opponent.currentActionID: " + opponent.currentActionID);
-                }
-
+                
+                return;
             }
 
+            if (hasLost)
+            {
+                if (currentActionID != ActionID.Lose)
+                {
+                    RequestAction(ActionID.Lose);
+                }
+
+                return;
+            }
 
             var isForward = IsForwardInput(_inputManager.CurrentInput.input);
             var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
@@ -341,6 +331,7 @@ namespace FightingGameEngine
                 if (currentActionID == ActionID.Cr_Mk && opponent.currentActionID == ActionID.Hurt)
                 {
                     RequestAction(ActionID.Hadouken);
+                    RequestWinAction();
                     opponent.RequestLoseAction();
                 }
                 else 

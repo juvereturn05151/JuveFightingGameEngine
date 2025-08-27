@@ -18,7 +18,8 @@ namespace FightingGameEngine
         Hurt,
         Hadouken,
         Block,
-        Lose
+        Lose,
+        Win
     }
 
     public enum ActionType
