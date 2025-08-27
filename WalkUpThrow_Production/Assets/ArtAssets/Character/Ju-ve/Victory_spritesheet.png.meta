@@ -190,7 +190,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 913
-        y: 36
+        y: 35
         width: 179
         height: 115
       alignment: 0
@@ -233,7 +233,7 @@ TextureImporter:
       name: Victory_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1685
+        x: 1684
         y: 35
         width: 179
         height: 115

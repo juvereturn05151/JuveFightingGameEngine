@@ -401,6 +401,9 @@ namespace WalkUpThrow
             var stageMinX = battleAreaWidth * -1 ;
             var stageMaxX = battleAreaWidth;
 
+            float gravity = 9.8f;
+            float groundLevel = -1.17f;
+
             _fighters.ForEach((f) =>
             {
                 if (f.pushbox.xMin < stageMinX)
@@ -412,9 +415,27 @@ namespace WalkUpThrow
                     f.ApplyPositionChange(stageMaxX - f.pushbox.xMax, 0);
                 }
 
-                if (f.transform.position.y <= -1.17f) 
+                // Handle gravity and ground collision
+                if (f.transform.position.y > groundLevel)
                 {
-                    f.transform.position = new Vector3(f.transform.position.x, -1.17f, 0);
+                    // Apply gravity - character is above ground, make them fall
+                    float fallSpeed = gravity * Time.deltaTime;
+                    f.transform.position = new Vector3(
+                        f.transform.position.x,
+                        f.transform.position.y - fallSpeed,
+                        f.transform.position.z
+                    );
+
+                    // Ensure we don't fall through the ground
+                    if (f.transform.position.y <= groundLevel)
+                    {
+                        f.transform.position = new Vector3(f.transform.position.x, groundLevel, 0);
+                    }
+                }
+                else if (f.transform.position.y < groundLevel)
+                {
+                    // Character is below ground, push them up
+                    f.transform.position = new Vector3(f.transform.position.x, groundLevel, 0);
                 }
             });
         }
@@ -425,6 +446,7 @@ namespace WalkUpThrow
             {
                 Vector2 damagePos = Vector2.zero;
                 bool isHit = false;
+                bool isGrabbed = false;
                 AttackID hitAttackID = 0;
 
                 foreach (var damaged in _fighters)
@@ -442,9 +464,6 @@ namespace WalkUpThrow
 
                         foreach (var hurtbox in damaged.hurtboxes)
                         {
-                            //Debug.Log($"Hitbox bounds: ({hitbox.xMin}, {hitbox.yMin}) to ({hitbox.xMax}, {hitbox.yMax})");
-                            //Debug.Log($"Hurtbox bounds: ({hurtbox.xMin}, {hurtbox.yMin}) to ({hurtbox.xMax}, {hurtbox.yMax})");
-
                             if (hitbox.Overlaps(hurtbox))
                             {
                                 isHit = true;
@@ -468,6 +487,34 @@ namespace WalkUpThrow
                             break;
                     }
 
+                    foreach (var grabbox in attacker.grabboxes)
+                    {
+                        // continue if attack already hit
+                        //if (!attacker.CanAttackHit(hitbox.attackID))
+                        //{
+                        //    continue;
+                        //}
+
+                        if (grabbox.Overlaps(damaged.pushbox))
+                        {
+                            isGrabbed = true;
+                            hitAttackID = grabbox.attackID;
+                            float x1 = Mathf.Min(grabbox.xMax, damaged.pushbox.xMax);
+                            float x2 = Mathf.Max(grabbox.xMin, damaged.pushbox.xMin);
+                            float y1 = Mathf.Min(grabbox.yMax, damaged.pushbox.yMax);
+                            float y2 = Mathf.Max(grabbox.yMin, damaged.pushbox.yMin);
+                            break;
+
+                        }
+                        else
+                        {
+                            Debug.Log("No overlap");
+                        }
+
+                        if (isGrabbed)
+                            break;
+                    }
+
                     if (isHit)
                     {
                         //attacker.NotifyAttackHit(damaged, damagePos);
@@ -481,6 +528,11 @@ namespace WalkUpThrow
                         //Debug.Log("It hurts");
                         //damaged.RequestAction(ActionID.Hurt);
                         damaged.HandleOnAttackHit();
+                    }
+
+                    if (isGrabbed)
+                    {
+                        damaged.HandleOnBeingGrabbed();
                     }
                 }
             }

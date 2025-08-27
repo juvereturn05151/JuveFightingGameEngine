@@ -79,8 +79,6 @@ namespace FightingGameEngine
 
     }
 
-
-
     [System.Serializable]
     public class MovementData : FrameData
     {
@@ -96,6 +94,12 @@ namespace FightingGameEngine
         public List<ActionID> actionID = new List<ActionID>();
     }
 
+    [System.Serializable]
+    public class ConsequenceData : FrameData
+    {
+        public ActionID actionID;
+    }
+
     [CreateAssetMenu]
     public class ActionData : ScriptableObject
     {
@@ -109,9 +113,9 @@ namespace FightingGameEngine
         public GrabboxData[] grabboxes;
         public HurtboxData[] hurtboxes;
         public PushboxData[] pushboxes;
-
         public MovementData[] movements;
         public CancelData[] cancels;
+        public ConsequenceData[] opponentConsequences;
         public bool alwaysCancelable;
 
         public Sprite GetAnimationSprite(int frame)
@@ -207,6 +211,21 @@ namespace FightingGameEngine
             foreach (var data in this.cancels)
             {
                 if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y) 
+                {
+                    cd.Add(data);
+                }
+            }
+
+            return cd;
+        }
+
+        public List<ConsequenceData> GetConsequenceDatas(int frame)
+        {
+            var cd = new List<ConsequenceData>();
+
+            foreach (var data in this.opponentConsequences)
+            {
+                if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y)
                 {
                     cd.Add(data);
                 }

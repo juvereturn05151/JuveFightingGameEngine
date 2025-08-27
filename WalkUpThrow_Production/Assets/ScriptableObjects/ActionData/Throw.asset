@@ -10,25 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
-  m_Name: AttemptThrow
+  m_Name: Throw
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
-  actionID: 9
-  actionType: 5
-  frameCount: 15
+  actionID: 10
+  actionType: 1
+  frameCount: 60
   isLoop: 0
   loopFromFrame: 0
-  animationFrameDataSet: {fileID: 11400000, guid: b76f5148d0a34f04ea876a0a683af616, type: 2}
+  animationFrameDataSet: {fileID: 11400000, guid: eb474d4e921dc8d42beee673d452f376, type: 2}
   hitboxes: []
-  grabboxes:
-  - startEndFrame: {x: 0, y: 14}
-    rect:
-      serializedVersion: 2
-      x: 1.91
-      y: 0.45
-      width: 1.68
-      height: 1.61
-    useBaseRect: 0
-    attackID: 2
+  grabboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 59}
     rect:
@@ -49,8 +40,11 @@ MonoBehaviour:
     useBaseRect: 1
   movements: []
   cancels:
-  - startEndFrame: {x: 0, y: 14}
+  - startEndFrame: {x: 58, y: 59}
     buffer: 0
     execute: 1
-    actionID: 0a000000
+    actionID: 08000000
+  opponentConsequences:
+  - startEndFrame: {x: 19, y: 20}
+    actionID: 7
   alwaysCancelable: 0

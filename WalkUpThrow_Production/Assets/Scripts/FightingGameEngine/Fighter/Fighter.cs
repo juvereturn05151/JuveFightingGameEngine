@@ -65,6 +65,7 @@ namespace FightingGameEngine
         private void FixedUpdate()
         {
             UpdateSprite();
+            UpdateOpponentConsequeces();
         }
 
         void UpdateSprite()
@@ -75,6 +76,17 @@ namespace FightingGameEngine
                 if (sprite != null) 
                 {
                     _spriteRenderer.sprite = sprite;
+                }
+            }
+        }
+
+        void UpdateOpponentConsequeces()
+        {
+            foreach (var consequence in fighterData.actions[currentActionID].GetConsequenceDatas(currentActionFrame))
+            {
+                if (consequence.actionID == ActionID.Lose) 
+                {
+                    opponent.RequestLoseAction();
                 }
             }
         }
@@ -251,6 +263,14 @@ namespace FightingGameEngine
             {
                 RequestAction(ActionID.Hurt);
             }
+        }
+
+        public void HandleOnBeingGrabbed() 
+        {
+            opponent.RequestAction(ActionID.Throw);
+            opponent.RequestWinAction();
+            RequestAction(ActionID.BeingGrabbed);
+            //RequestLoseAction();
         }
 
         /// <summary>

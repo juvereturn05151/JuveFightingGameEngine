@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18e56417c251e94f91896b2b0b5c508, type: 3}
+  m_Name: ThrowAnimationData
+  m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationFrameDataSet
+  totalFrame: 60
+  animationDataList:
+  - startEndFrame: {x: 0, y: 4}
+    sprite: {fileID: -5837498460366036575, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 5, y: 9}
+    sprite: {fileID: 3123069537667104021, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 10, y: 14}
+    sprite: {fileID: 4830394453370525809, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 15, y: 19}
+    sprite: {fileID: -1814252328784698386, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 20, y: 24}
+    sprite: {fileID: -8332892937115635955, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 25, y: 29}
+    sprite: {fileID: -1656762751335695554, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 30, y: 34}
+    sprite: {fileID: -2221579869622334126, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 35, y: 49}
+    sprite: {fileID: 1471417926431082255, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 50, y: 54}
+    sprite: {fileID: -4018490944633312333, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 55, y: 59}
+    sprite: {fileID: -1973926002703127117, guid: 080b04ee90be5fe40ae519e7417422ab, type: 3}
+    audioClip: {fileID: 0}
