@@ -21,17 +21,11 @@ namespace FightingGameEngine
         //[SerializeField]
         //private AttackDataContainer attackDataContainer;
 
-        [SerializeField]
-        private AnimationDataContainer animationDataContainer;
-
         public Dictionary<ActionID, ActionData> actions { get { return _actions; } }
         private Dictionary<ActionID, ActionData> _actions = new Dictionary<ActionID, ActionData>();
 
         //public Dictionary<int, AttackData> attackData { get { return _attackData; } }
         //private Dictionary<int, AttackData> _attackData = new Dictionary<int, AttackData>();
-
-        public Dictionary<AnimationID, AnimationData> animationData { get { return _animationData; } }
-        private Dictionary<AnimationID, AnimationData> _animationData = new Dictionary<AnimationID, AnimationData>();
 
         public void SetupDictionary()
         {
@@ -52,12 +46,6 @@ namespace FightingGameEngine
             //{
             //    _attackData.Add(data.attackID, data);
             //}
-
-            _animationData = new Dictionary<AnimationID, AnimationData>();
-            foreach (var data in animationDataContainer.animationDataList)
-            {
-                _animationData.Add(data.animationID, data);
-            }
         }
     }
 }

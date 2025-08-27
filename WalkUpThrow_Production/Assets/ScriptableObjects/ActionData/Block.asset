@@ -20,6 +20,7 @@ MonoBehaviour:
   animations:
   - startEndFrame: {x: 0, y: 4}
     animationID: 40
+  animationFrameDataSet: {fileID: 11400000, guid: c0f953a5313c27a428463c5414fa46c6, type: 2}
   hitboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 4}

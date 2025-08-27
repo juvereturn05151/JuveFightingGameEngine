@@ -32,6 +32,7 @@ MonoBehaviour:
     animationID: 5
   - startEndFrame: {x: 30, y: 34}
     animationID: 6
+  animationFrameDataSet: {fileID: 11400000, guid: 1b05ce9e12a84e042a177dab7848f006, type: 2}
   hitboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 59}

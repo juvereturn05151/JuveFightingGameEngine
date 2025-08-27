@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace FightingGameEngine 
 {
@@ -29,8 +30,8 @@ namespace FightingGameEngine
 
         public ActionID currentActionID { get; private set; }
         public int currentActionFrame { get; private set; }
-        public int currentActionFrameCount { get { return fighterData.actions[currentActionID].frameCount; } }
-        private bool isActionEnd { get { return (currentActionFrame >= fighterData.actions[currentActionID].frameCount); } }
+        public int currentActionFrameCount { get { return fighterData.actions[currentActionID].animationFrameDataSet.totalFrame; } }
+        private bool isActionEnd { get { return (currentActionFrame >= fighterData.actions[currentActionID].animationFrameDataSet.totalFrame); } }
         public bool isAlwaysCancelable { get { return fighterData.actions[currentActionID].alwaysCancelable; } }
 
         public int currentActionHitCount { get; private set; }
@@ -485,13 +486,13 @@ namespace FightingGameEngine
 
         public Sprite GetCurrentAnimationSprite()
         {
-            var animationData = fighterData.actions[currentActionID].GetAnimationData(currentActionFrame);
+            var animationData = fighterData.actions[currentActionID].GetAnimationSprite(currentActionFrame);
             if (animationData == null) 
             {
                 return null;
             }
 
-            return fighterData.animationData[animationData.animationID].sprite;
+            return animationData;
         }
 
         public void ClearInput()

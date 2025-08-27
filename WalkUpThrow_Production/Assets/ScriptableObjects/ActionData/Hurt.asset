@@ -17,13 +17,7 @@ MonoBehaviour:
   frameCount: 15
   isLoop: 0
   loopFromFrame: 0
-  animations:
-  - startEndFrame: {x: 0, y: 4}
-    animationID: 29
-  - startEndFrame: {x: 5, y: 9}
-    animationID: 30
-  - startEndFrame: {x: 10, y: 14}
-    animationID: 31
+  animationFrameDataSet: {fileID: 11400000, guid: e9cd8ca83c7243845b527fc6339ad4d6, type: 2}
   hitboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 15}

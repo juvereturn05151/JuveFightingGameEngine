@@ -42,6 +42,7 @@ MonoBehaviour:
     animationID: 51
   - startEndFrame: {x: 55, y: 59}
     animationID: 52
+  animationFrameDataSet: {fileID: 11400000, guid: 604f6575bae367847b711c512098fab6, type: 2}
   hitboxes: []
   hurtboxes: []
   pushboxes: []

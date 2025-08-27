@@ -34,6 +34,7 @@ MonoBehaviour:
     animationID: 38
   - startEndFrame: {x: 35, y: 39}
     animationID: 39
+  animationFrameDataSet: {fileID: 11400000, guid: 3d7b9c82119e00646a183f929ce24553, type: 2}
   hitboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 59}

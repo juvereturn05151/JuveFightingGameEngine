@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18e56417c251e94f91896b2b0b5c508, type: 3}
+  m_Name: HadoukenAnimationData
+  m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationFrameDataSet
+  totalFrame: 40
+  animationDataList:
+  - startEndFrame: {x: 0, y: 4}
+    sprite: {fileID: -6294433580333216274, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 5, y: 9}
+    sprite: {fileID: -1977130571649220966, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 10, y: 14}
+    sprite: {fileID: -4504523756977218408, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 15, y: 19}
+    sprite: {fileID: 8825129849740655396, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 20, y: 24}
+    sprite: {fileID: 9074565030832433978, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 25, y: 29}
+    sprite: {fileID: -2934190786256511997, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 30, y: 34}
+    sprite: {fileID: -1051611392833696738, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}
+  - startEndFrame: {x: 35, y: 39}
+    sprite: {fileID: -3612723399133531529, guid: 4465faf6f8433324eb0b3c7cfca3a812, type: 3}
+    audioClip: {fileID: 0}

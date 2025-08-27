@@ -43,12 +43,6 @@ namespace FightingGameEngine
     }
 
     [System.Serializable]
-    public class AnimationFrameData : FrameData
-    {
-        public AnimationID animationID;
-    }
-
-    [System.Serializable]
     public class CollisionBoxData : FrameData
     {
         public Rect rect;
@@ -96,7 +90,7 @@ namespace FightingGameEngine
         public int frameCount;
         public bool isLoop;
         public int loopFromFrame;
-        public AnimationFrameData[] animations;
+        public AnimationFrameDataSet animationFrameDataSet;
         public HitboxData[] hitboxes;
         public HurtboxData[] hurtboxes;
         public PushboxData[] pushboxes;
@@ -104,13 +98,13 @@ namespace FightingGameEngine
         public CancelData[] cancels;
         public bool alwaysCancelable;
 
-        public AnimationFrameData GetAnimationData(int frame)
+        public Sprite GetAnimationSprite(int frame)
         {
-            foreach (var data in animations)
+            foreach (var data in animationFrameDataSet.animationDataList)
             {
-                if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y) 
+                if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y)
                 {
-                    return data;
+                    return data.sprite;
                 }
             }
 
