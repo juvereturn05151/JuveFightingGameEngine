@@ -15,43 +15,20 @@ MonoBehaviour:
   actionID: 7
   actionType: 4
   frameCount: 60
-  isLoop: 0
-  loopFromFrame: 0
-  animations:
-  - startEndFrame: {x: 0, y: 4}
-    animationID: 41
-  - startEndFrame: {x: 5, y: 9}
-    animationID: 42
-  - startEndFrame: {x: 10, y: 14}
-    animationID: 43
-  - startEndFrame: {x: 15, y: 19}
-    animationID: 44
-  - startEndFrame: {x: 20, y: 24}
-    animationID: 45
-  - startEndFrame: {x: 25, y: 29}
-    animationID: 46
-  - startEndFrame: {x: 30, y: 34}
-    animationID: 47
-  - startEndFrame: {x: 35, y: 39}
-    animationID: 48
-  - startEndFrame: {x: 40, y: 44}
-    animationID: 49
-  - startEndFrame: {x: 45, y: 49}
-    animationID: 50
-  - startEndFrame: {x: 50, y: 54}
-    animationID: 51
-  - startEndFrame: {x: 55, y: 59}
-    animationID: 52
+  isLoop: 1
+  loopFromFrame: 55
   animationFrameDataSet: {fileID: 11400000, guid: 604f6575bae367847b711c512098fab6, type: 2}
   hitboxes: []
+  grabboxes: []
   hurtboxes: []
   pushboxes: []
   movements:
-  - startEndFrame: {x: 0, y: 27}
+  - startEndFrame: {x: 0, y: 20}
     velocity_x: -15
-    velocity_y: 8
-  - startEndFrame: {x: 40, y: 51}
+    velocity_y: 15
+  - startEndFrame: {x: 40, y: 45}
     velocity_x: 0
-    velocity_y: -25
+    velocity_y: -30
   cancels: []
+  opponentConsequences: []
   alwaysCancelable: 0

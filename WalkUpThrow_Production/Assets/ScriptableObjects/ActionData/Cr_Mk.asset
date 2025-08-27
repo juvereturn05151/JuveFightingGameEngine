@@ -17,19 +17,6 @@ MonoBehaviour:
   frameCount: 30
   isLoop: 0
   loopFromFrame: 0
-  animations:
-  - startEndFrame: {x: 0, y: 4}
-    animationID: 23
-  - startEndFrame: {x: 5, y: 9}
-    animationID: 24
-  - startEndFrame: {x: 10, y: 14}
-    animationID: 25
-  - startEndFrame: {x: 15, y: 19}
-    animationID: 26
-  - startEndFrame: {x: 20, y: 24}
-    animationID: 27
-  - startEndFrame: {x: 25, y: 29}
-    animationID: 28
   animationFrameDataSet: {fileID: 11400000, guid: 4d0ac0d146ee8c84e8bc17be664bd7e9, type: 2}
   hitboxes:
   - startEndFrame: {x: 10, y: 18}
@@ -41,6 +28,7 @@ MonoBehaviour:
       height: 1
     useBaseRect: 0
     attackID: 0
+  grabboxes: []
   hurtboxes:
   - startEndFrame: {x: 0, y: 59}
     rect:
@@ -105,4 +93,9 @@ MonoBehaviour:
     buffer: 0
     execute: 1
     actionID: 05000000
+  - startEndFrame: {x: 0, y: 30}
+    buffer: 0
+    execute: 1
+    actionID: 04000000
+  opponentConsequences: []
   alwaysCancelable: 0

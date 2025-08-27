@@ -456,12 +456,7 @@ namespace WalkUpThrow
 
                     foreach (var hitbox in attacker.hitboxes)
                     {
-                        // continue if attack already hit
-                        //if (!attacker.CanAttackHit(hitbox.attackID))
-                        //{
-                        //    continue;
-                        //}
-
+                        Debug.Log($"Checking Hurtbox : "+ damaged.hurtboxes.Count);
                         foreach (var hurtbox in damaged.hurtboxes)
                         {
                             if (hitbox.Overlaps(hurtbox))
@@ -474,12 +469,16 @@ namespace WalkUpThrow
                                 float y2 = Mathf.Max(hitbox.yMin, hurtbox.yMin);
                                 damagePos.x = (x1 + x2) / 2;
                                 damagePos.y = (y1 + y2) / 2;
+
+                                Debug.Log($"Overlap detected! ");
                                 break;
 
                             }
                             else 
                             {
-                                Debug.Log("No overlap");
+                                Debug.Log($"No overlap. " +
+                  $"Hitbox: [xMin={hitbox.xMin}, xMax={hitbox.xMax}, yMin={hitbox.yMin}, yMax={hitbox.yMax}] " +
+                  $"Hurtbox: [xMin={hurtbox.xMin}, xMax={hurtbox.xMax}, yMin={hurtbox.yMin}, yMax={hurtbox.yMax}]");
                             }
                         }
 
@@ -489,11 +488,6 @@ namespace WalkUpThrow
 
                     foreach (var grabbox in attacker.grabboxes)
                     {
-                        // continue if attack already hit
-                        //if (!attacker.CanAttackHit(hitbox.attackID))
-                        //{
-                        //    continue;
-                        //}
 
                         if (grabbox.Overlaps(damaged.pushbox))
                         {

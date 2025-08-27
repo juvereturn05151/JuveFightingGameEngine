@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b166c9757434fcc43973991ff0913cee, type: 3}
   m_Name: Ju-veFighterData
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.FighterData
-  forwardMoveSpeed: 3
-  backwardMoveSpeed: 3
+  forwardMoveSpeed: 5
+  backwardMoveSpeed: 5
   baseHurtBoxRect:
     serializedVersion: 2
     x: 0
@@ -27,4 +27,3 @@ MonoBehaviour:
     width: 2.18
     height: 4.08
   actionDataContainer: {fileID: 11400000, guid: 534cbc915aea2e4488e5bc0d5bd27b07, type: 2}
-  animationDataContainer: {fileID: 11400000, guid: d457b5d6ea4e3184698034d3bff7fc12, type: 2}

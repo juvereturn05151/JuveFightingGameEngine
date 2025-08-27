@@ -553,11 +553,6 @@ namespace FightingGameEngine
                 hitboxes.Add(box);
              }
 
-            if (fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame) == null)
-            {
-                Debug.Log("fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame): " + fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame));
-            }
-
             foreach (var grabbox in fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame))
             {
                 var box = new Grabbox();

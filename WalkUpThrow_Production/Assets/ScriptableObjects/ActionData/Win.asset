@@ -15,12 +15,14 @@ MonoBehaviour:
   actionID: 8
   actionType: 4
   frameCount: 60
-  isLoop: 0
-  loopFromFrame: 0
+  isLoop: 1
+  loopFromFrame: 10
   animationFrameDataSet: {fileID: 11400000, guid: b54204020fe12e644b429ada5ee564a3, type: 2}
   hitboxes: []
+  grabboxes: []
   hurtboxes: []
   pushboxes: []
   movements: []
   cancels: []
+  opponentConsequences: []
   alwaysCancelable: 0
