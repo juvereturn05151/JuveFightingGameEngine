@@ -31,6 +31,11 @@ namespace FightingGameEngine
     {
     }
 
+    public class Grabbox : BoxBase
+    {
+        public AttackID attackID;
+    }
+
     public class Pushbox : BoxBase
     {
     }

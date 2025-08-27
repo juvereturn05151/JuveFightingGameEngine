@@ -19,7 +19,10 @@ namespace FightingGameEngine
         Hadouken,
         Block,
         Lose,
-        Win
+        Win,
+        AttemptThrow,
+        Throw,
+        BeingGrabbed,
     }
 
     public enum ActionType
@@ -28,14 +31,16 @@ namespace FightingGameEngine
         Attack,
         Damage,
         Guard,
-        WinOrLose
+        WinOrLose,
+        AttemptThrow,
     }
 
     public enum AttackID
     {
         Nothing = -1,
         CrouchMediumKick,
-        Hadouken
+        Hadouken,
+        AttemptThrow
     }
 
     public abstract class FrameData
@@ -57,6 +62,12 @@ namespace FightingGameEngine
     }
 
     [System.Serializable]
+    public class GrabboxData : CollisionBoxData
+    {
+        public AttackID attackID;
+    }
+
+    [System.Serializable]
     public class HurtboxData : CollisionBoxData
     {
 
@@ -67,6 +78,8 @@ namespace FightingGameEngine
     {
 
     }
+
+
 
     [System.Serializable]
     public class MovementData : FrameData
@@ -93,8 +106,10 @@ namespace FightingGameEngine
         public int loopFromFrame;
         public AnimationFrameDataSet animationFrameDataSet;
         public HitboxData[] hitboxes;
+        public GrabboxData[] grabboxes;
         public HurtboxData[] hurtboxes;
         public PushboxData[] pushboxes;
+
         public MovementData[] movements;
         public CancelData[] cancels;
         public bool alwaysCancelable;
@@ -127,19 +142,34 @@ namespace FightingGameEngine
             return hb;
         }
 
+        public List<GrabboxData> GetGrabboxData(int frame)
+        {
+            var gb = new List<GrabboxData>();
+
+            foreach (var data in this.grabboxes)
+            {
+                if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y)
+                {
+                    gb.Add(data);
+                }
+            }
+
+            return gb;
+        }
+
         public List<HurtboxData> GetHurtboxData(int frame)
         {
-            var hb = new List<HurtboxData>();
+            var gb = new List<HurtboxData>();
 
             foreach (var data in this.hurtboxes)
             {
                 if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y) 
                 {
-                    hb.Add(data);
+                    gb.Add(data);
                 }
             }
 
-            return hb;
+            return gb;
         }
 
         public PushboxData GetPushboxData(int frame)
@@ -154,6 +184,8 @@ namespace FightingGameEngine
 
             return null;
         }
+
+
 
         public MovementData GetMovementData(int frame)
         {

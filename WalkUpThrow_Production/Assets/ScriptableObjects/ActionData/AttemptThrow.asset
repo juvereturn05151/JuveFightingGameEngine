@@ -10,15 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
-  m_Name: Hadouken
+  m_Name: AttemptThrow
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
-  actionID: 5
-  actionType: 1
-  frameCount: 40
+  actionID: 9
+  actionType: 5
+  frameCount: 15
   isLoop: 0
   loopFromFrame: 0
-  animationFrameDataSet: {fileID: 11400000, guid: 3d7b9c82119e00646a183f929ce24553, type: 2}
-  hitboxes: []
+  animationFrameDataSet: {fileID: 11400000, guid: b76f5148d0a34f04ea876a0a683af616, type: 2}
+  hitboxes:
+  - startEndFrame: {x: 0, y: 14}
+    rect:
+      serializedVersion: 2
+      x: 3.04
+      y: -1.73
+      width: 1.68
+      height: 1
+    useBaseRect: 0
+    attackID: 2
   hurtboxes:
   - startEndFrame: {x: 0, y: 59}
     rect:
@@ -37,10 +46,20 @@ MonoBehaviour:
       width: 0.8
       height: 1
     useBaseRect: 1
+  grabboxes:
+  - startEndFrame: {x: 0, y: 14}
+    rect:
+      serializedVersion: 2
+      x: 3.04
+      y: -1.73
+      width: 1.68
+      height: 1
+    useBaseRect: 0
+    attackID: 2
   movements: []
   cancels:
-  - startEndFrame: {x: 38, y: 39}
+  - startEndFrame: {x: 0, y: 14}
     buffer: 0
     execute: 1
-    actionID: 08000000
+    actionID: 05000000
   alwaysCancelable: 0

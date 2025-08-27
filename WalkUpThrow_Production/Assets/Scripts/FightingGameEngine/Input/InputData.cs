@@ -11,6 +11,7 @@ namespace FightingGameEngine
         Up = 1 << 3,
         Attack = 1 << 4,
         Special = 1 << 5,
+        AttemptThrow = 1 << 6,
     }
 
     public class InputData

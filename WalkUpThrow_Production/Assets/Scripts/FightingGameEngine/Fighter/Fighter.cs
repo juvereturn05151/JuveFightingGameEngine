@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace FightingGameEngine 
 {
@@ -21,6 +22,7 @@ namespace FightingGameEngine
 
         public List<Hitbox> hitboxes = new List<Hitbox>();
         public List<Hurtbox> hurtboxes = new List<Hurtbox>();
+        public List<Grabbox> grabboxes = new List<Grabbox>();
         public Pushbox pushbox;
 
         private FighterData fighterData;
@@ -50,7 +52,6 @@ namespace FightingGameEngine
         private bool hasLost = false;
         private bool isHitThisFrame = false;
         public bool isBlocking { get; private set; }
-        private bool _wasBlockingLastFrame = false;
         public int currentBlockStunFrame { get; private set; }
         public bool isInBlockStun { get { return currentBlockStunFrame > 0; } }
 
@@ -325,6 +326,7 @@ namespace FightingGameEngine
             var isBackward = IsBackwardInput(_inputManager.CurrentInput.input);
             bool isAttack = _inputManager.GetInputDown(InputDefine.Attack);
             bool isSpecial = _inputManager.GetInputDown(InputDefine.Special);
+            bool isAttemptThrow = _inputManager.GetInputDown(InputDefine.AttemptThrow);
 
             if (isAttack)
             {
@@ -334,19 +336,23 @@ namespace FightingGameEngine
                     RequestWinAction();
                     opponent.RequestLoseAction();
                 }
-                else 
+                else
                 {
                     RequestAction(ActionID.Cr_Mk);
                 }
 
             }
-            else if (isSpecial) 
+            else if (isSpecial)
             {
                 RequestAction(ActionID.Hadouken);
             }
+            else if (isAttemptThrow) 
+            {
+                RequestAction(ActionID.AttemptThrow);
+            }
 
                 // for proximity guard check
-            isInputBackward = isBackward;
+                isInputBackward = isBackward;
 
             if (isForward && isBackward)
             {
@@ -517,6 +523,7 @@ namespace FightingGameEngine
         {
             hitboxes.Clear();
             hurtboxes.Clear();
+            grabboxes.Clear();
 
             foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
             {
@@ -524,6 +531,19 @@ namespace FightingGameEngine
                 box.rect = UpdateCollisionBox(hitbox.rect, transform.position, isFaceRight);
                 box.attackID = hitbox.attackID;
                 hitboxes.Add(box);
+             }
+
+            if (fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame) == null)
+            {
+                Debug.Log("fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame): " + fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame));
+            }
+
+            foreach (var grabbox in fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame))
+            {
+                var box = new Grabbox();
+                box.rect = UpdateCollisionBox(grabbox.rect, transform.position, isFaceRight);
+                box.attackID = grabbox.attackID;
+                grabboxes.Add(box);
             }
 
             foreach (var hurtbox in fighterData.actions[currentActionID].GetHurtboxData(currentActionFrame))
@@ -533,6 +553,7 @@ namespace FightingGameEngine
                 box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
                 hurtboxes.Add(box);
             }
+
 
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
             if (pushBoxData == null)

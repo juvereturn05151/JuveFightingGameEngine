@@ -18,14 +18,8 @@ namespace FightingGameEngine
         [SerializeField]
         private ActionDataContainer actionDataContainer;
 
-        //[SerializeField]
-        //private AttackDataContainer attackDataContainer;
-
         public Dictionary<ActionID, ActionData> actions { get { return _actions; } }
         private Dictionary<ActionID, ActionData> _actions = new Dictionary<ActionID, ActionData>();
-
-        //public Dictionary<int, AttackData> attackData { get { return _attackData; } }
-        //private Dictionary<int, AttackData> _attackData = new Dictionary<int, AttackData>();
 
         public void SetupDictionary()
         {
@@ -40,12 +34,6 @@ namespace FightingGameEngine
             {
                 _actions.Add(action.actionID, action);
             }
-
-            //_attackData = new Dictionary<int, AttackData>();
-            //foreach (var data in attackDataContainer.attackDataList)
-            //{
-            //    _attackData.Add(data.attackID, data);
-            //}
         }
     }
 }

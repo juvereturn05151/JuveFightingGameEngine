@@ -18,6 +18,7 @@ namespace FightingGameEngine
         private InputAction _moveAction;
         private InputAction _attackAction;
         private InputAction _specialAction;
+        private InputAction _attemptThrowAction;
 
         // Raw input per frame
         private InputData _currentInput = new InputData();
@@ -49,10 +50,12 @@ namespace FightingGameEngine
             _moveAction = _playerInput.actions["Move"];
             _attackAction = _playerInput.actions["Attack"];
             _specialAction = _playerInput.actions["Special"];
+            _attemptThrowAction = _playerInput.actions["Throw"];
 
             _moveAction.Enable();
             _attackAction.Enable();
             _specialAction.Enable();
+            _attemptThrowAction.Enable();
         }
 
         private void OnDestroy()
@@ -60,6 +63,7 @@ namespace FightingGameEngine
             _moveAction.Disable();
             _attackAction.Disable();
             _specialAction.Disable();
+            _attemptThrowAction.Disable();
             Debug.Log("[InputManager] Input actions disabled.");
         }
 
@@ -88,9 +92,11 @@ namespace FightingGameEngine
             // Use ReadValue instead of triggered for continuous button state
             float attackValue = _attackAction.ReadValue<float>();
             float specialValue = _specialAction.ReadValue<float>();
+            float attemptThrowValue = _attemptThrowAction.ReadValue<float>();
 
             if (attackValue > 0.5f) newInput |= (int)InputDefine.Attack;
             if (specialValue > 0.5f) newInput |= (int)InputDefine.Special;
+            if (attemptThrowValue > 0.5f) newInput |= (int)InputDefine.AttemptThrow;
 
             // Check if input changed from previous frame
             if (newInput != _currentInput.input)
