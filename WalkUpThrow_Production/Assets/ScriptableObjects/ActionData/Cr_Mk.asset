@@ -19,10 +19,10 @@ MonoBehaviour:
   loopFromFrame: 0
   animationFrameDataSet: {fileID: 11400000, guid: 4d0ac0d146ee8c84e8bc17be664bd7e9, type: 2}
   hitboxes:
-  - startEndFrame: {x: 10, y: 18}
+  - startEndFrame: {x: 8, y: 11}
     rect:
       serializedVersion: 2
-      x: 3.04
+      x: 2.88
       y: -1.73
       width: 1.68
       height: 1

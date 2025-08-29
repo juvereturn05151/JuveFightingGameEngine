@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.AnimationFrameDataSet
   totalFrame: 30
   animationDataList:
-  - startEndFrame: {x: 0, y: 4}
+  - startEndFrame: {x: 0, y: 3}
     sprite: {fileID: -4062786716257048572, guid: a98ea10385a174f40be9750366452f14, type: 3}
     audioClip: {fileID: 0}
-  - startEndFrame: {x: 5, y: 9}
+  - startEndFrame: {x: 4, y: 7}
     sprite: {fileID: -2298970779738961978, guid: a98ea10385a174f40be9750366452f14, type: 3}
     audioClip: {fileID: 0}
-  - startEndFrame: {x: 10, y: 14}
+  - startEndFrame: {x: 8, y: 11}
     sprite: {fileID: -348103282443412749, guid: a98ea10385a174f40be9750366452f14, type: 3}
     audioClip: {fileID: 0}
-  - startEndFrame: {x: 15, y: 19}
+  - startEndFrame: {x: 12, y: 19}
     sprite: {fileID: -7635738758057918301, guid: a98ea10385a174f40be9750366452f14, type: 3}
     audioClip: {fileID: 0}
   - startEndFrame: {x: 20, y: 24}

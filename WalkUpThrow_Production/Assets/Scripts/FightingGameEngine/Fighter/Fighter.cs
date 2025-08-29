@@ -1,8 +1,5 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace FightingGameEngine 
 {
@@ -267,10 +264,14 @@ namespace FightingGameEngine
 
         public void HandleOnBeingGrabbed() 
         {
+            if(currentActionID == ActionID.AttemptThrow)
+            {
+                return;
+            }
+
             opponent.RequestAction(ActionID.Throw);
             opponent.RequestWinAction();
             RequestAction(ActionID.BeingGrabbed);
-            //RequestLoseAction();
         }
 
         /// <summary>
@@ -573,7 +574,7 @@ namespace FightingGameEngine
             var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
             if (pushBoxData == null)
             {
-                //Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
+                Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
             }
             else
             {
