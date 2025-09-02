@@ -11,10 +11,6 @@ namespace FightingGameEngine
         [SerializeField]
         PlayerInputManager playerInputManager;
 
-        [Header("Input Assets")]
-        public InputActionAsset player1InputAsset;
-        public InputActionAsset player2InputAsset;
-
         [Header("Player References")]
         public PlayerInput player1Input;
         public PlayerInput player2Input;
