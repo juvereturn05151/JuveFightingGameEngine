@@ -86,15 +86,21 @@ namespace WalkUpThrow
                 fighter1.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player1Input);
             }
 
+            fighter1.PreGameSetup();
+
             if (GameInputManager.Instance.player2Input)
             {
                 fighter2.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player2Input);
             }
 
+            fighter2.PreGameSetup();
+
             // Subscribe to UI completion event so we can start the fight only after the UI finishes
             if (gameplaySceneUIManager != null)
             {
                 gameplaySceneUIManager.OnMessageComplete += OnUIMessageComplete;
+
+                gameplaySceneUIManager.InitHearts(fighter1.currentHealth, fighter2.currentHealth);
             }
 
             Application.targetFrameRate = 60;
@@ -226,13 +232,13 @@ namespace WalkUpThrow
                     {
                         if (deadFighter[0] == fighter1)
                         {
-                            fighter2RoundWon++;
-                            //fighter2.RequestWinAction();
+                            fighter2.currentHealth--;
+                            gameplaySceneUIManager.UpdateHearts(1, fighter2.currentHealth);
                         }
                         else if (deadFighter[0] == fighter2)
                         {
-                            fighter1RoundWon++;
-                            //fighter1.RequestWinAction();
+                            fighter1.currentHealth--;
+                            gameplaySceneUIManager.UpdateHearts(2, fighter1.currentHealth);
                         }
                     }
                     break;

@@ -22,6 +22,10 @@ namespace WalkUpThrow
         [Header("Special Case Durations")]
         [SerializeField] private float fightMessageDuration = 0.1f; // faster hide for "Fight!"
 
+        [Header("Health UI")]
+        [SerializeField] private Image[] player1Hearts;
+        [SerializeField] private Image[] player2Hearts;
+
         private Coroutine currentRoutine;
 
         public void ShowMessageForState(BattleCore.RoundStateType state, int roundNumber = 1)
@@ -90,5 +94,25 @@ namespace WalkUpThrow
             // IMPORTANT: notify listeners that this message finished
             OnMessageComplete?.Invoke(state);
         }
+
+        public void InitHearts(int p1Health, int p2Health)
+        {
+            UpdateHearts(1, p1Health);
+            UpdateHearts(2, p2Health);
+        }
+
+        public void UpdateHearts(int playerId, int health)
+        {
+            Image[] hearts = (playerId == 1) ? player1Hearts : player2Hearts;
+
+            for (int i = 0; i < hearts.Length; i++)
+            {
+                if (i < health)
+                    hearts[i].color = Color.red;  // still alive
+                else
+                    hearts[i].color = Color.black; // lost health
+            }
+        }
+
     }
 }

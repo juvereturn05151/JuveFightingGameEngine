@@ -45,6 +45,10 @@ namespace FightingGameEngine
         private bool hasWon = false;
         private bool hasLost = false;
         public bool HasLost { get { return hasLost; } }
+
+        private int maxHealth = 3;
+        public int currentHealth;
+
         private bool isHitThisFrame = false;
         public bool isBlocking { get; private set; }
         public int currentBlockStunFrame { get; private set; }
@@ -133,6 +137,11 @@ namespace FightingGameEngine
         public bool IsAttackInput(int input)
         {
             return (input & (int)InputDefine.Attack) != 0;
+        }
+
+        public void PreGameSetup() 
+        {
+            currentHealth = maxHealth;
         }
 
         /// <summary>
