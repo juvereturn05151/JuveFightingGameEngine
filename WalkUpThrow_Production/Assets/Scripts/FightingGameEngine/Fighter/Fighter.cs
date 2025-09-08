@@ -44,6 +44,7 @@ namespace FightingGameEngine
         private ActionID bufferActionID = ActionID.Nothing;
         private bool endGamePose = false;
         private bool hasWon = false;
+        public bool HasWon { get { return hasWon; } }
         private bool hasLost = false;
         public bool HasLost { get { return hasLost; } }
 
@@ -345,11 +346,15 @@ namespace FightingGameEngine
             // If won then just request win animation
             if (hasWon)
             {
-                if (currentActionID != ActionID.Win)
+                //Hack I need to find a better way to do this
+                if (currentActionID == ActionID.Hadouken)
                 {
                     RequestAction(ActionID.Win);
+                }else if (currentActionID == ActionID.Cr_Mk)
+                {
+                    RequestAction(ActionID.Hadouken);
                 }
-                
+
                 return;
             }
 

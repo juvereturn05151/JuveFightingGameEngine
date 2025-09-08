@@ -62,7 +62,7 @@ namespace WalkUpThrow
         private bool isReplayingLastRoundInput = false;
 
         private int roundNumber = 1;
-        private float introStateTime = 3f;
+        private float introStateTime = 1.5f;
         private float koStateTime = 2f;
         private float endStateTime = 3f;
         private float endStateSkippableTime = 1.5f;
@@ -227,7 +227,7 @@ namespace WalkUpThrow
                     break;
 
                 case RoundStateType.KO:
-                    //timer = koStateTime;
+                    timer = koStateTime;
 
                     roundNumber++;
 
@@ -235,6 +235,19 @@ namespace WalkUpThrow
 
                     fighter1.ClearInput();
                     fighter2.ClearInput();
+
+                    var winnerFighter = _fighters.FindAll((f) => f.HasWon);
+                    if (winnerFighter.Count == 1)
+                    {
+                        if (winnerFighter[0] == fighter1)
+                        {
+                            fighter1.RequestWinAction();
+                        }
+                        else if (winnerFighter[0] == fighter2)
+                        {
+                            fighter2.RequestWinAction();
+                        }
+                    }
 
                     //battleAI = null;
 
@@ -329,7 +342,14 @@ namespace WalkUpThrow
 
         void UpdateKOState()
         {
+            _fighters.ForEach((f) => f.IncrementActionFrame());
 
+            _fighters.ForEach((f) => f.UpdateActionRequest());
+            _fighters.ForEach((f) => f.UpdateMovement());
+            _fighters.ForEach((f) => f.UpdateBoxes());
+
+            UpdatePushCharacterVsCharacter();
+            UpdatePushCharacterVsBackground();
         }
 
         void UpdateEndState()
