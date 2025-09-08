@@ -135,6 +135,8 @@ namespace FightingGameEngine
         {
             var hb = new List<HitboxData>();
 
+            if(this.hitboxes == null) return hb;
+
             foreach (var data in this.hitboxes)
             {
                 if (frame >= data.startEndFrame.x && frame <= data.startEndFrame.y) 
@@ -149,6 +151,8 @@ namespace FightingGameEngine
         public List<GrabboxData> GetGrabboxData(int frame)
         {
             var gb = new List<GrabboxData>();
+
+            if (this.grabboxes == null) return gb;
 
             foreach (var data in this.grabboxes)
             {
@@ -222,6 +226,8 @@ namespace FightingGameEngine
         public List<ConsequenceData> GetConsequenceDatas(int frame)
         {
             var cd = new List<ConsequenceData>();
+
+            if (this.opponentConsequences == null) return cd;
 
             foreach (var data in this.opponentConsequences)
             {

@@ -18,12 +18,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2.15
+    width: 2.95
     height: 4.08
   basePushBoxRect:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 2.18
-    height: 4.08
+    width: 2.95
+    height: 4.59
   actionDataContainer: {fileID: 11400000, guid: 534cbc915aea2e4488e5bc0d5bd27b07, type: 2}

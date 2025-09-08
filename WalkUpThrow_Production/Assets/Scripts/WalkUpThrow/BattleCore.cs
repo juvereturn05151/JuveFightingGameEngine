@@ -35,6 +35,9 @@ namespace WalkUpThrow
         [SerializeField]
         public Fighter fighter2;
 
+        [SerializeField]
+        GameplaySceneUIManager gameplaySceneUIManager;
+
         public uint fighter1RoundWon { get; private set; }
         public uint fighter2RoundWon { get; private set; }
 
@@ -58,6 +61,7 @@ namespace WalkUpThrow
         private uint lastRoundMaxRecordingInput = 0;
         private bool isReplayingLastRoundInput = false;
 
+        private int roundNumber = 1;
         private float introStateTime = 3f;
         private float koStateTime = 2f;
         private float endStateTime = 3f;
@@ -69,12 +73,7 @@ namespace WalkUpThrow
             fighterDataList.ForEach((data) => data.SetupDictionary());
 
             _fighters.Add(fighter1);
-
-
-
             _fighters.Add(fighter2);
-
-
         }
 
         void Start()
@@ -172,6 +171,8 @@ namespace WalkUpThrow
 
                     timer = introStateTime;
 
+                    gameplaySceneUIManager.ShowMessageForState(_roundState, roundNumber);
+
                     //roundUIAnimator.SetTrigger("RoundStart");
 
                     //if (GameManager.Instance.isVsCPU)
@@ -180,6 +181,7 @@ namespace WalkUpThrow
                     break;
                 case RoundStateType.Fight:
 
+                    gameplaySceneUIManager.ShowMessageForState(_roundState, roundNumber);
                     roundStartTime = Time.fixedTime;
                     frameCount = -1;
 
@@ -189,6 +191,8 @@ namespace WalkUpThrow
                 case RoundStateType.KO:
 
                     //timer = koStateTime;
+
+                    roundNumber++;
 
                     //CopyLastRoundInput();
 

@@ -405,7 +405,46 @@ namespace FightingGameEngine
 
         public void UpdateBoxes()
         {
-            ApplyCurrentActionData();
+            hitboxes.Clear();
+            hurtboxes.Clear();
+            grabboxes.Clear();
+
+            foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
+            {
+                var box = new Hitbox();
+                box.rect = UpdateCollisionBox(hitbox.rect, transform.position, isFaceRight);
+                box.attackID = hitbox.attackID;
+                hitboxes.Add(box);
+            }
+
+            foreach (var grabbox in fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame))
+            {
+                var box = new Grabbox();
+                box.rect = UpdateCollisionBox(grabbox.rect, transform.position, isFaceRight);
+                box.attackID = grabbox.attackID;
+                grabboxes.Add(box);
+            }
+
+            foreach (var hurtbox in fighterData.actions[currentActionID].GetHurtboxData(currentActionFrame))
+            {
+                var box = new Hurtbox();
+                Rect rect = hurtbox.useBaseRect ? fighterData.baseHurtBoxRect : hurtbox.rect;
+                box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
+                hurtboxes.Add(box);
+            }
+
+
+            var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
+            if (pushBoxData == null)
+            {
+                //Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
+            }
+            else
+            {
+                pushbox = new Pushbox();
+                Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
+                pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
+            }
         }
 
         /// <summary>
@@ -535,53 +574,6 @@ namespace FightingGameEngine
 
             currentActionHitCount = 0;
             bufferActionID = ActionID.Nothing;
-        }
-
-        /// <summary>
-        /// Copy data from current action and convert relative box position with fighter position
-        /// </summary>
-        private void ApplyCurrentActionData()
-        {
-            hitboxes.Clear();
-            hurtboxes.Clear();
-            grabboxes.Clear();
-
-            foreach (var hitbox in fighterData.actions[currentActionID].GetHitboxData(currentActionFrame))
-            {
-                var box = new Hitbox();
-                box.rect = UpdateCollisionBox(hitbox.rect, transform.position, isFaceRight);
-                box.attackID = hitbox.attackID;
-                hitboxes.Add(box);
-             }
-
-            foreach (var grabbox in fighterData.actions[currentActionID].GetGrabboxData(currentActionFrame))
-            {
-                var box = new Grabbox();
-                box.rect = UpdateCollisionBox(grabbox.rect, transform.position, isFaceRight);
-                box.attackID = grabbox.attackID;
-                grabboxes.Add(box);
-            }
-
-            foreach (var hurtbox in fighterData.actions[currentActionID].GetHurtboxData(currentActionFrame))
-            {
-                var box = new Hurtbox();
-                Rect rect = hurtbox.useBaseRect ? fighterData.baseHurtBoxRect : hurtbox.rect;
-                box.rect = UpdateCollisionBox(rect, transform.position, isFaceRight);
-                hurtboxes.Add(box);
-            }
-
-
-            var pushBoxData = fighterData.actions[currentActionID].GetPushboxData(currentActionFrame);
-            if (pushBoxData == null)
-            {
-                Debug.LogError("Pushbox data is null for currentActionFrame: " + currentActionFrame);
-            }
-            else
-            {
-                pushbox = new Pushbox();
-                Rect pushRect = pushBoxData.useBaseRect ? fighterData.basePushBoxRect : pushBoxData.rect;
-                pushbox.rect = UpdateCollisionBox(pushRect, transform.position, isFaceRight);
-            }
         }
 
         private Rect UpdateCollisionBox(Rect dataRect, Vector2 basePosition, bool isFaceRight)

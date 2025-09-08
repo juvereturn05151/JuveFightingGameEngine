@@ -10,10 +10,6 @@ public class ControllerSceneUIManager : MonoBehaviour
     [SerializeField] private Image player2Sprite;
 
     [SerializeField] private string nextSceneName = "TestScene";
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

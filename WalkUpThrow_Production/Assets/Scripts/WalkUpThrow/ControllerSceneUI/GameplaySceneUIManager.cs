@@ -1,0 +1,87 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+namespace WalkUpThrow 
+{
+    public class GameplaySceneUIManager : MonoBehaviour
+    {
+        [Header("UI References")]
+        [SerializeField] private CanvasGroup messageCanvasGroup; // fade in/out
+        [SerializeField] private TMP_Text messageText;           // message text (Round, Fight, KO, etc.)
+        [SerializeField] private Animator bannerAnimator;        // optional animation for text/banner
+
+        [Header("Settings")]
+        [SerializeField] private float fadeDuration = 0.5f;
+        [SerializeField] private float messageDuration = 1.5f;
+
+        private Coroutine currentRoutine;
+
+        /// <summary>
+        /// Called by BattleCore when round state changes.
+        /// </summary>
+        public void ShowMessageForState(BattleCore.RoundStateType state, int roundNumber = 1)
+        {
+            string message = "";
+            switch (state)
+            {
+                case BattleCore.RoundStateType.Intro:
+                    message = $"Round {roundNumber}";
+                    break;
+                case BattleCore.RoundStateType.Fight:
+                    message = "Fight!";
+                    break;
+                case BattleCore.RoundStateType.KO:
+                    message = "KO!";
+                    break;
+            }
+
+            if (!string.IsNullOrEmpty(message))
+            {
+                if (currentRoutine != null) StopCoroutine(currentRoutine);
+                currentRoutine = StartCoroutine(ShowMessageRoutine(message));
+            }
+        }
+
+        private IEnumerator ShowMessageRoutine(string message)
+        {
+            messageText.text = message;
+
+            // Reset alpha
+            messageCanvasGroup.alpha = 0f;
+            messageCanvasGroup.gameObject.SetActive(true);
+
+            // Fade in
+            float t = 0f;
+            while (t < fadeDuration)
+            {
+                t += Time.deltaTime;
+                messageCanvasGroup.alpha = Mathf.Lerp(0, 1, t / fadeDuration);
+                yield return null;
+            }
+
+            // Play animator if assigned
+            if (bannerAnimator != null)
+            {
+                bannerAnimator.SetTrigger("Play");
+            }
+
+            yield return new WaitForSeconds(messageDuration);
+
+            // Fade out
+            t = 0f;
+            while (t < fadeDuration)
+            {
+                t += Time.deltaTime;
+                messageCanvasGroup.alpha = Mathf.Lerp(1, 0, t / fadeDuration);
+                yield return null;
+            }
+
+            messageCanvasGroup.gameObject.SetActive(false);
+            currentRoutine = null;
+        }
+    
+    }
+
+}
