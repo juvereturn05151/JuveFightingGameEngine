@@ -23,6 +23,10 @@ MonoBehaviour:
   hurtboxes: []
   pushboxes: []
   movements: []
-  cancels: []
+  cancels:
+  - startEndFrame: {x: 73, y: 74}
+    buffer: 0
+    execute: 1
+    actionID: 0c000000
   opponentConsequences: []
   alwaysCancelable: 0

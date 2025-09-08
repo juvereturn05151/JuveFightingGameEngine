@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
   m_Name: EndGame
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
-  actionID: 8
+  actionID: 12
   actionType: 4
-  frameCount: 75
+  frameCount: 60
   isLoop: 1
   loopFromFrame: 10
-  animationFrameDataSet: {fileID: 11400000, guid: b54204020fe12e644b429ada5ee564a3, type: 2}
+  animationFrameDataSet: {fileID: 11400000, guid: 55b51fd890ae3984d9046114b267f3b7, type: 2}
   hitboxes: []
   grabboxes: []
   hurtboxes: []
