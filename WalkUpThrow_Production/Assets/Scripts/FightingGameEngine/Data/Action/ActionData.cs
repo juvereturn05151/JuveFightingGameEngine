@@ -23,6 +23,7 @@ namespace FightingGameEngine
         AttemptThrow,
         Throw,
         BeingGrabbed,
+        EndGame
     }
 
     public enum ActionType

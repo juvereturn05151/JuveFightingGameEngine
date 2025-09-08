@@ -42,6 +42,7 @@ namespace FightingGameEngine
 
         private bool isInputBackward;
         private ActionID bufferActionID = ActionID.Nothing;
+        private bool endGamePose = false;
         private bool hasWon = false;
         private bool hasLost = false;
         public bool HasLost { get { return hasLost; } }
@@ -158,7 +159,7 @@ namespace FightingGameEngine
             hasWon = false;
             hasLost = false;
             isBlocking = false;
-            
+            endGamePose = false;
             transform.position = new Vector3(startPosition.x, startPosition.y, transform.position.z);
 
             ClearInput();
@@ -331,6 +332,16 @@ namespace FightingGameEngine
                 return;
             }
 
+            if (endGamePose) 
+            {
+                if (currentActionID != ActionID.EndGame)
+                {
+                    RequestAction(ActionID.EndGame);
+                }
+
+                return;
+            }
+
             // If won then just request win animation
             if (hasWon)
             {
@@ -400,6 +411,11 @@ namespace FightingGameEngine
             {
                 RequestAction(ActionID.Idle);
             }
+        }
+
+        public void RequestEndGameAction() 
+        {
+            endGamePose = true;
         }
 
         public void RequestLoseAction() 

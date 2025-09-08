@@ -53,9 +53,9 @@ MonoBehaviour:
   - startEndFrame: {x: 60, y: 64}
     sprite: {fileID: -7409437679110017999, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
-  - startEndFrame: {x: 55, y: 59}
-    sprite: {fileID: 3247534292105568539, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
+  - startEndFrame: {x: 65, y: 69}
+    sprite: {fileID: 1740254680403859086, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}
-  - startEndFrame: {x: 55, y: 59}
-    sprite: {fileID: 3247534292105568539, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
+  - startEndFrame: {x: 70, y: 74}
+    sprite: {fileID: -3327636465425783983, guid: fc67a7f55d8be4441a113f8979fc87d1, type: 3}
     audioClip: {fileID: 0}

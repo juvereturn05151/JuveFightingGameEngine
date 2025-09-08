@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45cee04cb1bc0644b3ee6538901dacc, type: 3}
-  m_Name: Win
+  m_Name: EndGame
   m_EditorClassIdentifier: Assembly-CSharp::FightingGameEngine.ActionData
   actionID: 8
   actionType: 4

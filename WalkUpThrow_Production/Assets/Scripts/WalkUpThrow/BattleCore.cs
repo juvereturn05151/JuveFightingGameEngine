@@ -120,8 +120,17 @@ namespace WalkUpThrow
             switch (_roundState)
             {
                 case RoundStateType.Stop:
-                    ChangeRoundState(RoundStateType.Intro);
-                    break;
+                    if (fighter1.currentHealth > 0
+                        && fighter2.currentHealth > 0)
+                    {
+                        ChangeRoundState(RoundStateType.Intro);
+                    }
+                    else 
+                    {
+                        UpdateEndGame();
+                    }
+
+                        break;
 
                 case RoundStateType.Intro:
                     UpdateIntroState();
@@ -172,10 +181,19 @@ namespace WalkUpThrow
             switch (_roundState)
             {
                 case RoundStateType.Stop:
-                    if (fighter1RoundWon >= maxRoundWon
-                        || fighter2RoundWon >= maxRoundWon)
+                    if (fighter1.currentHealth <= 0
+                        || fighter2.currentHealth <= 0)
                     {
-                        //GameManager.Instance.LoadTitleScene();
+                        Debug.Log("Battle Over");
+                        if (fighter1.currentHealth <= 0)
+                        {
+                            fighter2.RequestEndGameAction();
+                        }
+                        else if (fighter2.currentHealth <= 0)
+                        {
+                            Debug.Log("player 2 lose");
+                            fighter1.RequestEndGameAction();
+                        }
                     }
                     break;
 
@@ -232,13 +250,13 @@ namespace WalkUpThrow
                     {
                         if (deadFighter[0] == fighter1)
                         {
-                            fighter2.currentHealth--;
-                            gameplaySceneUIManager.UpdateHearts(1, fighter2.currentHealth);
+                            fighter1.currentHealth--;
+                            gameplaySceneUIManager.UpdateHearts(1, fighter1.currentHealth);
                         }
                         else if (deadFighter[0] == fighter2)
                         {
-                            fighter1.currentHealth--;
-                            gameplaySceneUIManager.UpdateHearts(2, fighter1.currentHealth);
+                            fighter2.currentHealth--;
+                            gameplaySceneUIManager.UpdateHearts(2, fighter2.currentHealth);
                         }
                     }
                     break;
@@ -258,6 +276,13 @@ namespace WalkUpThrow
 
             // If you want to react to other UI completions (Intro -> do something after Round X UI finishes),
             // you can handle them here as well.
+        }
+
+        void UpdateEndGame() 
+        {
+            _fighters.ForEach((f) => f.IncrementActionFrame());
+
+            _fighters.ForEach((f) => f.UpdateActionRequest());
         }
 
         void UpdateIntroState()
