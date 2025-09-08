@@ -24,9 +24,6 @@ namespace FightingGameEngine
 
         private FighterData fighterData;
 
-        public bool isDead { get { return vitalHealth <= 0; } }
-        public int vitalHealth { get; private set; }
-
         public ActionID currentActionID { get; private set; }
         public int currentActionFrame { get; private set; }
         public int currentActionFrameCount { get { return fighterData.actions[currentActionID].animationFrameDataSet.totalFrame; } }
@@ -47,6 +44,7 @@ namespace FightingGameEngine
         private ActionID bufferActionID = ActionID.Nothing;
         private bool hasWon = false;
         private bool hasLost = false;
+        public bool HasLost { get { return hasLost; } }
         private bool isHitThisFrame = false;
         public bool isBlocking { get; private set; }
         public int currentBlockStunFrame { get; private set; }
@@ -148,11 +146,13 @@ namespace FightingGameEngine
             this.fighterData = fighterData;
             isFaceRight = isPlayerOne;
 
-            vitalHealth = 1;
             hasWon = false;
+            hasLost = false;
+            isBlocking = false;
+            
+            transform.position = new Vector3(startPosition.x, startPosition.y, transform.position.z);
 
             ClearInput();
-
             SetCurrentAction(ActionID.Idle);
         }
 

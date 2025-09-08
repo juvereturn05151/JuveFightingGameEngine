@@ -67,6 +67,9 @@ namespace WalkUpThrow
         private float endStateTime = 3f;
         private float endStateSkippableTime = 1.5f;
 
+        // New: guard to prevent gameplay running while "Fight!" UI is showing
+        private bool _isFightActive = false;
+
         void Awake()
         {
             // Setup dictionary from ScriptableObject data
@@ -83,14 +86,27 @@ namespace WalkUpThrow
                 fighter1.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player1Input);
             }
 
-
             if (GameInputManager.Instance.player2Input)
             {
                 fighter2.GetComponentInChildren<CharacterInputManager>().AssignInput(GameInputManager.Instance.player2Input);
             }
 
+            // Subscribe to UI completion event so we can start the fight only after the UI finishes
+            if (gameplaySceneUIManager != null)
+            {
+                gameplaySceneUIManager.OnMessageComplete += OnUIMessageComplete;
+            }
+
             Application.targetFrameRate = 60;
             QualitySettings.vSyncCount = 0; // Turn off vSync to control FPS manually
+        }
+
+        void OnDestroy()
+        {
+            if (gameplaySceneUIManager != null)
+            {
+                gameplaySceneUIManager.OnMessageComplete -= OnUIMessageComplete;
+            }
         }
 
         void FixedUpdate()
@@ -98,12 +114,10 @@ namespace WalkUpThrow
             switch (_roundState)
             {
                 case RoundStateType.Stop:
-
                     ChangeRoundState(RoundStateType.Intro);
-
                     break;
-                case RoundStateType.Intro:
 
+                case RoundStateType.Intro:
                     UpdateIntroState();
 
                     timer -= Time.deltaTime;
@@ -111,33 +125,30 @@ namespace WalkUpThrow
                     {
                         ChangeRoundState(RoundStateType.Fight);
                     }
-
                     break;
-                case RoundStateType.Fight:
 
+                case RoundStateType.Fight:
                     frameCount++;
 
                     UpdateFightState();
 
-                    var deadFighter = _fighters.Find((f) => f.isDead);
+                    var deadFighter = _fighters.Find((f) => f.HasLost);
                     if (deadFighter != null)
                     {
                         ChangeRoundState(RoundStateType.KO);
                     }
-
                     break;
-                case RoundStateType.KO:
 
+                case RoundStateType.KO:
                     UpdateKOState();
                     timer -= Time.deltaTime;
                     if (timer <= 0f)
                     {
                         ChangeRoundState(RoundStateType.End);
                     }
-
                     break;
-                case RoundStateType.End:
 
+                case RoundStateType.End:
                     UpdateEndState();
                     timer -= Time.deltaTime;
                     if (timer <= 0f
@@ -145,7 +156,6 @@ namespace WalkUpThrow
                     {
                         ChangeRoundState(RoundStateType.Stop);
                     }
-
                     break;
             }
         }
@@ -156,40 +166,43 @@ namespace WalkUpThrow
             switch (_roundState)
             {
                 case RoundStateType.Stop:
-
                     if (fighter1RoundWon >= maxRoundWon
                         || fighter2RoundWon >= maxRoundWon)
                     {
                         //GameManager.Instance.LoadTitleScene();
                     }
-
                     break;
-                case RoundStateType.Intro:
 
-                    fighter1.SetupBattleStart(fighterDataList[0], new Vector2(-2f, 0f), true);
-                    fighter2.SetupBattleStart(fighterDataList[0], new Vector2(2f, 0f), false);
+                case RoundStateType.Intro:
+                    fighter1.SetupBattleStart(fighterDataList[0], new Vector2(-3f, -1.17f), true);
+                    fighter2.SetupBattleStart(fighterDataList[0], new Vector2(3f, -1.17f), false);
 
                     timer = introStateTime;
 
-                    gameplaySceneUIManager.ShowMessageForState(_roundState, roundNumber);
-
-                    //roundUIAnimator.SetTrigger("RoundStart");
-
-                    //if (GameManager.Instance.isVsCPU)
-                    //    battleAI = new BattleAI(this);
+                    // Show "Round X" (this doesn't pause intro logic — only Fight is gated)
+                    if (gameplaySceneUIManager != null)
+                        gameplaySceneUIManager.ShowMessageForState(_roundState, roundNumber);
 
                     break;
+
                 case RoundStateType.Fight:
-
-                    gameplaySceneUIManager.ShowMessageForState(_roundState, roundNumber);
-                    roundStartTime = Time.fixedTime;
-                    frameCount = -1;
-
-                    //currentRecordingInputIndex = 0;
-
+                    // show "Fight!" UI and wait for its completion before enabling gameplay
+                    if (gameplaySceneUIManager != null)
+                    {
+                        _isFightActive = false; // Block UpdateFightState until UI completes
+                        gameplaySceneUIManager.ShowMessageForState(_roundState, roundNumber);
+                        // roundStartTime and frameCount will be set when UI signals completion
+                    }
+                    else
+                    {
+                        // fallback: no UI present -> start immediately
+                        _isFightActive = true;
+                        roundStartTime = Time.fixedTime;
+                        frameCount = -1;
+                    }
                     break;
-                case RoundStateType.KO:
 
+                case RoundStateType.KO:
                     //timer = koStateTime;
 
                     roundNumber++;
@@ -204,27 +217,41 @@ namespace WalkUpThrow
                     //roundUIAnimator.SetTrigger("RoundEnd");
 
                     break;
-                case RoundStateType.End:
 
+                case RoundStateType.End:
                     timer = endStateTime;
 
-                    var deadFighter = _fighters.FindAll((f) => f.isDead);
+                    var deadFighter = _fighters.FindAll((f) => f.HasLost);
                     if (deadFighter.Count == 1)
                     {
                         if (deadFighter[0] == fighter1)
                         {
                             fighter2RoundWon++;
-                            fighter2.RequestWinAction();
+                            //fighter2.RequestWinAction();
                         }
                         else if (deadFighter[0] == fighter2)
                         {
                             fighter1RoundWon++;
-                            fighter1.RequestWinAction();
+                            //fighter1.RequestWinAction();
                         }
                     }
-
                     break;
             }
+        }
+
+        // Called when the GameplaySceneUIManager completes showing a message
+        private void OnUIMessageComplete(RoundStateType state)
+        {
+            if (state == RoundStateType.Fight)
+            {
+                // Enable actual fight processing now that "Fight!" UI has fully disappeared.
+                _isFightActive = true;
+                roundStartTime = Time.fixedTime;
+                frameCount = -1;
+            }
+
+            // If you want to react to other UI completions (Intro -> do something after Round X UI finishes),
+            // you can handle them here as well.
         }
 
         void UpdateIntroState()
@@ -247,6 +274,8 @@ namespace WalkUpThrow
 
         void UpdateFightState()
         {
+            // Wait until the UI finished the "Fight!" sequence
+
             var p1Input = GetP1InputData();
             var p2Input = GetP2InputData();
             RecordInput(p1Input, p2Input);
@@ -254,6 +283,9 @@ namespace WalkUpThrow
             fighter2.UpdateInput(p2Input);
 
             _fighters.ForEach((f) => f.IncrementActionFrame());
+
+            if (!_isFightActive)
+                return;
 
             _fighters.ForEach((f) => f.UpdateActionRequest());
             _fighters.ForEach((f) => f.UpdateMovement());
@@ -308,8 +340,6 @@ namespace WalkUpThrow
 
         InputData GetP2InputData()
         {
-
-
             if (isReplayingLastRoundInput)
             {
                 return lastRoundP2Input[currentReplayingInputIndex];
@@ -318,9 +348,6 @@ namespace WalkUpThrow
             var time = Time.fixedTime - roundStartTime;
 
             InputData p2Input = new InputData();
-            
-            //Hack
-            return p2Input;
 
             //if (battleAI != null)
             //{
@@ -329,10 +356,8 @@ namespace WalkUpThrow
             //else
             //{
             p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Left) ? (int)InputDefine.Left : 0;
-                p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Right) ? (int)InputDefine.Right : 0;
-                p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Attack) ? (int)InputDefine.Attack : 0;
-            //}
-
+            p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Right) ? (int)InputDefine.Right : 0;
+            p2Input.input |= fighter2.InputManager.GetInput(InputDefine.Attack) ? (int)InputDefine.Attack : 0;
             p2Input.time = time;
 
             //if (debugP2Attack)
@@ -402,7 +427,7 @@ namespace WalkUpThrow
 
         void UpdatePushCharacterVsBackground()
         {
-            var stageMinX = battleAreaWidth * -1 ;
+            var stageMinX = battleAreaWidth * -1;
             var stageMaxX = battleAreaWidth;
 
             float gravity = 9.8f;
@@ -460,7 +485,7 @@ namespace WalkUpThrow
 
                     foreach (var hitbox in attacker.hitboxes)
                     {
-                        Debug.Log($"Checking Hurtbox : "+ damaged.hurtboxes.Count);
+                        Debug.Log($"Checking Hurtbox : " + damaged.hurtboxes.Count);
                         foreach (var hurtbox in damaged.hurtboxes)
                         {
                             if (hitbox.Overlaps(hurtbox))
@@ -478,7 +503,7 @@ namespace WalkUpThrow
                                 break;
 
                             }
-                            else 
+                            else
                             {
                                 Debug.Log($"No overlap. " +
                   $"Hitbox: [xMin={hitbox.xMin}, xMax={hitbox.xMax}, yMin={hitbox.yMin}, yMax={hitbox.yMax}] " +
@@ -537,5 +562,3 @@ namespace WalkUpThrow
         }
     }
 }
-
-

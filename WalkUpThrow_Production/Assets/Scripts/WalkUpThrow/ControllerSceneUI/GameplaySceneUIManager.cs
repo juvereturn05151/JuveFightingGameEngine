@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace WalkUpThrow 
+namespace WalkUpThrow
 {
     public class GameplaySceneUIManager : MonoBehaviour
     {
+        public event Action<BattleCore.RoundStateType> OnMessageComplete;
+
         [Header("UI References")]
         [SerializeField] private CanvasGroup messageCanvasGroup; // fade in/out
         [SerializeField] private TMP_Text messageText;           // message text (Round, Fight, KO, etc.)
@@ -14,23 +17,26 @@ namespace WalkUpThrow
 
         [Header("Settings")]
         [SerializeField] private float fadeDuration = 0.5f;
-        [SerializeField] private float messageDuration = 1.5f;
+        [SerializeField] private float messageDuration = 0.25f;
+
+        [Header("Special Case Durations")]
+        [SerializeField] private float fightMessageDuration = 0.1f; // faster hide for "Fight!"
 
         private Coroutine currentRoutine;
 
-        /// <summary>
-        /// Called by BattleCore when round state changes.
-        /// </summary>
         public void ShowMessageForState(BattleCore.RoundStateType state, int roundNumber = 1)
         {
             string message = "";
+            float durationOverride = messageDuration; // default
+
             switch (state)
             {
                 case BattleCore.RoundStateType.Intro:
                     message = $"Round {roundNumber}";
                     break;
                 case BattleCore.RoundStateType.Fight:
-                    message = "Fight!";
+                    message = "Fight !";
+                    durationOverride = fightMessageDuration; // special case
                     break;
                 case BattleCore.RoundStateType.KO:
                     message = "KO!";
@@ -40,11 +46,11 @@ namespace WalkUpThrow
             if (!string.IsNullOrEmpty(message))
             {
                 if (currentRoutine != null) StopCoroutine(currentRoutine);
-                currentRoutine = StartCoroutine(ShowMessageRoutine(message));
+                currentRoutine = StartCoroutine(ShowMessageRoutine(state, message, durationOverride));
             }
         }
 
-        private IEnumerator ShowMessageRoutine(string message)
+        private IEnumerator ShowMessageRoutine(BattleCore.RoundStateType state, string message, float duration)
         {
             messageText.text = message;
 
@@ -67,7 +73,7 @@ namespace WalkUpThrow
                 bannerAnimator.SetTrigger("Play");
             }
 
-            yield return new WaitForSeconds(messageDuration);
+            yield return new WaitForSeconds(duration);
 
             // Fade out
             t = 0f;
@@ -80,8 +86,9 @@ namespace WalkUpThrow
 
             messageCanvasGroup.gameObject.SetActive(false);
             currentRoutine = null;
-        }
-    
-    }
 
+            // IMPORTANT: notify listeners that this message finished
+            OnMessageComplete?.Invoke(state);
+        }
+    }
 }
